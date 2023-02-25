@@ -1,0 +1,19 @@
+{
+    "name": "gabrielkleber/phpstore",
+    "description": "Loja online teste",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "core\\" : "core/"
+        },
+        "files": [
+            "config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Gabriel Kleber"
+        }
+    ],
+    "require": {} 
+}
