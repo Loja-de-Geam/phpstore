@@ -4,6 +4,7 @@
     $rotas = [
         'inicio' => 'main@index',
         'loja' => 'main@loja',
+        'cadastro' => 'main@cadastro'
     ];
 
     // Ação por defeito

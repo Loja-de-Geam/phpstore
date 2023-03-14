@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/cadastro.css">
     <title>Cadastro</title>
+    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
     <style>
         @charset "UTF-8";
 
