@@ -249,5 +249,11 @@
             </form>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#idcelular').mask('(00) 00000-0000');
+        $('#idcpf').mask('000.000.000-00', {reverse: true});
+    </script>
 </body>
 </html>
