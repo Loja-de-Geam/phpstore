@@ -21,6 +21,15 @@
             echo 'Loja!!!!!!!!!';
         }
 
+        public function cadastro()
+        {
+
+            Store::Layout([
+                'cadastro'
+            ]);
+
+        }
+
     }
 
 ?>
