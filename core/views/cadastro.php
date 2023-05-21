@@ -255,6 +255,17 @@
     <script>
         $('#idcelular').mask('(00) 00000-0000');
         $('#idcpf').mask('000.000.000-00', {reverse: true});
+        function mostrarSenha() {
+        var senhaInput = document.getElementById("idsenha");
+        var iconeSenha = document.getElementById("idmostrar-senha");
+  if (senhaInput.type === "password") {
+    senhaInput.type = "text";
+    iconeSenha.style.color = "rgb(107, 136, 224)"; // define a cor do ícone para verde
+  } else {
+    senhaInput.type = "password";
+    iconeSenha.style.color = "#423acf"; // define a cor do ícone para vermelho
+  }
+}
     </script>
 </body>
 </html>
