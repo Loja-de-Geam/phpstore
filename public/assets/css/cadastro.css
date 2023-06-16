@@ -172,3 +172,42 @@ body {
     font-weight: bolder;
     color: #fff;
 }
+
+@media screen and (max-width: 1330px) {
+    .form-img {
+        display: none;
+    }
+    .container {
+        width: 50%;
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .grupo_input {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .genero {
+        margin-top: 2rem;
+    }
+    .genero-grupo {
+        flex-direction: column;
+    }
+    .genero-titulo h5 {
+        margin: 0;
+    }
+    .genero-input {
+        margin-top: 0.5rem;
+    }
+}
