@@ -148,3 +148,37 @@ body {
     font-weight: bolder;
     color: #fff;
 }
+@media screen and (max-width: 1330px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .form-img {
+      display: none;
+    }
+  
+    .form {
+      width: 100%;
+      border-radius: 0px 0px 7px 7px;
+    }
+  }
+  
+  /* Dispositivos móveis */
+  @media screen and (max-width: 1064px) {
+    .container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .form-img {
+      display: none;
+    }
+  
+    .form {
+      width: 100%;
+      border-radius: 0px 0px 7px 7px;
+    }
+  
+    
+  }
