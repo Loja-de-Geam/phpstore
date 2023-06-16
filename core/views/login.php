@@ -193,7 +193,7 @@
             </form>
         </div>
         <div class="form-img">
-            <img src="..\public\assets\images\undraw_login_re_4vu2.svg" alt="">
+            <img src="..\public\assets\images\login.svg" alt="">
         </div>
     </div>
 </body>

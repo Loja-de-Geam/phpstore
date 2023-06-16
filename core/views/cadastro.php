@@ -183,7 +183,7 @@
 <body>
     <div class="container">
         <div class="form-img">
-            <img src="..\public\assets\images\undraw_eating_together_re_ux62.svg" alt="">
+            <img src="..\public\assets\images\cadastro.svg" alt="">
         </div>
         <div class="form">
             <form action="#" method="post">
