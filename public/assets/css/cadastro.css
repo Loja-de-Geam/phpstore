@@ -71,14 +71,11 @@ body {
     padding: 0.4rem 1rem;
     border-radius: 20px;
     cursor: pointer;
+    color: white;
+    font-weight: bold;
 }
 .login button:hover {
     background-color: #6c63fff1;
-}
-.login button a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #fff;
 }
 .cabeca h1 {
     color: #09072e;

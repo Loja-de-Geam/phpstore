@@ -17,7 +17,7 @@
                         <h1>Login</h1>
                     </div>
                 <div class="cadastro">
-                    <button><a href="cadastro.html">Cadastrar-se</a></button>
+                    <button onclick="window.location.href='cadastro.html'">Cadastrar-se</button>
                 </div>
                 </div>
                 <div class="grupo_input">

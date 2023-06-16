@@ -21,7 +21,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                 <div class="login">
-                    <button class="btn"><a href="?a=login">Entrar</a></button>
+                    <button onclick="window.location.href='?a=login'">Entrar</button>
                 </div>
                 </div>
                 <div class="grupo_input">
