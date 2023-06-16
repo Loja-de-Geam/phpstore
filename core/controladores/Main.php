@@ -30,6 +30,24 @@
 
         }
 
+        public function login()
+        {
+
+            Store::Layout([
+                'login'
+            ]);
+
+        }
+
+        public function suporte()
+        {
+
+            Store::Layout([
+                'suporte'
+            ]);
+
+        }
+
     }
 
 ?>

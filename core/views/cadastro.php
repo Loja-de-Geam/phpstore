@@ -6,179 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/cadastro.css">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="..\public\assets\css\cadastro.css">
     <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
-    <style>
-        @charset "UTF-8";
-
-        @import url('https://fonts.googleapis.com/css2? family= Inter:wght@100;200;300;400;500;600;700;800;900 & display=swap');
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            
-        }
-
-        body {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center ;
-            background-image: linear-gradient(to bottom, rgb(0, 0, 206),rgb(0, 0, 65));
-        }
-        .container {
-            width: 80%;
-            height: 80vh;
-            display: flex;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308) ;
-        }
-        .form-img {
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            background-color: rgba(127, 255, 212, 0.664);
-            padding: 1rem;
-            border-radius: 7px 0px 0px 7px;
-        }
-        .form-img  img {
-            width: 31rem;
-        }
-        .form {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: #fff;
-            padding: 3rem;
-            border-radius: 0px 7px 7px 0px;
-        }
-        .cabeca {
-            margin-bottom: 3em;
-            display: flex;
-            justify-content: space-between;
-        }
-        .login {
-            display: flex;
-            align-items: center;
-            
-        }
-        .login button {
-            border: none;
-            background-color: #423acf;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-        .login button:hover {
-            background-color: #6c63fff1;
-        }
-        .login button a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #fff;
-        }
-        .cabeca h1 {
-            color: #09072e;
-        }
-        .cabeca h1::after {
-            content: '';
-            display: block;
-            width: 5rem;
-            height: 0.3rem;
-            background-color: #4f48cc;
-            margin: 0 auto;
-            position: absolute;
-            border-radius: 10px;
-        }
-        .grupo_input {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-        }
-        .caixa {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.1rem;
-        }
-
-        .caixa input {
-            margin: 0.6rem 0;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 1px 1px 6px #0000001c;
-            font-size: 0.8rem;
-        }
-        /*-------------------------------*/
-        .caixa input:hover {
-            background-color: #eeeeee75;
-        }
-
-        .caixa input:focus-visible {
-            outline: 1px solid #6c63ff;
-        }
-
-        .caixa label,
-        .genero-titulo h5 {
-            font-size: 0.9rem;
-            font-weight: bolder;
-            color: #000000;
-        }
-
-        .caixa input::placeholder {
-            color: #000000be;
-        }
-
-        .genero-grupo {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.62rem;
-            padding: 0 .5rem;
-        }
-
-        .genero-input {
-            display: flex;
-            align-items: center;
-        }
-
-        .genero-input input {
-            margin-right: 0.35rem;
-        }
-
-        .genero-input label {
-            font-size: 0.81rem;
-            font-weight: 600;
-            color: #000000e5;
-        }
-
-        .continuar button {
-            width: 100%;
-            margin-top: 2.5rem;
-            border: none;
-            background-color: #423acf;
-            padding: 0.62rem;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .continuar button:hover {
-            background-color: #6b63fff1;
-        }
-
-        .continuar button a {
-            text-decoration: none;
-            font-size: 0.93rem;
-            font-weight: bolder;
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -192,7 +21,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                 <div class="login">
-                    <button><a href="login.html">Entrar</a></button>
+                    <button class="btn"><a href="?a=login">Entrar</a></button>
                 </div>
                 </div>
                 <div class="grupo_input">
@@ -240,7 +69,7 @@
                         </div>
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idnone">
-                            <label for="none">Prefiro não dizer</label>
+                            <label for="none">Prefiro não informar</label>
                         </div>
                     </div>
                 </div>
@@ -252,20 +81,21 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="..\public\assets\css\cadastro.js"></script>
     <script>
         $('#idcelular').mask('(00) 00000-0000');
         $('#idcpf').mask('000.000.000-00', {reverse: true});
         function mostrarSenha() {
-        var senhaInput = document.getElementById("idsenha");
-        var iconeSenha = document.getElementById("idmostrar-senha");
-  if (senhaInput.type === "password") {
-    senhaInput.type = "text";
-    iconeSenha.style.color = "rgb(107, 136, 224)"; // define a cor do ícone para verde
-  } else {
-    senhaInput.type = "password";
-    iconeSenha.style.color = "#423acf"; // define a cor do ícone para vermelho
-  }
-}
+            var senhaInput = document.getElementById("idsenha");
+            var iconeSenha = document.getElementById("idmostrar-senha");
+            if (senhaInput.type === "password") {
+                senhaInput.type = "text";
+                iconeSenha.style.color = "rgb(107, 136, 224)"; // define a cor do ícone para verde
+            } else {
+                senhaInput.type = "password";
+                iconeSenha.style.color = "#423acf"; // define a cor do ícone para vermelho
+            }
+        }
     </script>
 </body>
 </html>
