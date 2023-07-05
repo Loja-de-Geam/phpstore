@@ -10,9 +10,9 @@
     <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <div class="form-img">
-            <img src="..\public\assets\images\cadastro.svg" alt="">
+            <img src="imagem/cadastro.svg" alt="">
         </div>
         <div class="form">
             <form action="#" method="post">
@@ -21,13 +21,13 @@
                         <h1>Cadastre-se</h1>
                     </div>
                 <div class="login">
-                    <button onclick="window.location.href='?a=login'">Entrar</button>
+                    <button onclick="window.location.href='login.html'">Entrar</button>
                 </div>
                 </div>
                 <div class="grupo_input">
                     <div class="caixa">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="idnome" placeholder="Digite seu  nome" required>
+                        <label for="nome">Primeiro nome</label>
+                        <input type="text" name="nome" id="idnome" placeholder="Digite seu primeiro nome" required>
                     </div>
                     <div class="caixa">
                         <label for="celular">Celular</label>
@@ -43,11 +43,16 @@
                     </div>
                     <div class="caixa">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required>
+                        <div class="input-wrapper">
+                            <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8">
+                            <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
+                                <span class="material-icons-outlined">visibility</span>
+                            </button>
+                        </div>
                     </div>
                     <div class="caixa">
                         <label for="csenha">Confirme sua senha</label>
-                        <input type="password" name="csenha" id="id1csenha" placeholder="Digite sua senha outra vez" required>
+                        <input type="password" name="csenha" id="id1csenha" placeholder="Digite sua senha outra vez" required minlength="8">
                     </div>
                 </div>
                 <div class="genero">
@@ -69,7 +74,7 @@
                         </div>
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idnone">
-                            <label for="none">Prefiro não informar</label>
+                            <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>
@@ -81,19 +86,19 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-    <script src="..\public\assets\css\cadastro.js"></script>
     <script>
         $('#idcelular').mask('(00) 00000-0000');
         $('#idcpf').mask('000.000.000-00', {reverse: true});
         function mostrarSenha() {
             var senhaInput = document.getElementById("idsenha");
-            var iconeSenha = document.getElementById("idmostrar-senha");
+            var mostrarSenhaBtn = document.getElementById("idmostrar-senha");
+    
             if (senhaInput.type === "password") {
                 senhaInput.type = "text";
-                iconeSenha.style.color = "rgb(107, 136, 224)"; // define a cor do ícone para verde
+                mostrarSenhaBtn.innerHTML = '<span class="material-icons-outlined">visibility_off</span>';
             } else {
                 senhaInput.type = "password";
-                iconeSenha.style.color = "#423acf"; // define a cor do ícone para vermelho
+                mostrarSenhaBtn.innerHTML = '<span class="material-icons-outlined">visibility</span>';
             }
         }
     </script>
