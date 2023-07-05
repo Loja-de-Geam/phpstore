@@ -199,10 +199,14 @@ body {
     }
     .form {
         width: 100%;
+        border-radius: 7px;
     }
 }
 
 @media screen and (max-width: 1064px) {
+    .form {
+        border-radius: 7px;
+    }
     .container {
         width: 90%;
         height: auto;
