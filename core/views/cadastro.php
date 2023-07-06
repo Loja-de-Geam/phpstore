@@ -12,7 +12,7 @@
 <body>
 <div class="container">
         <div class="form-img">
-            <img src="imagem/cadastro.svg" alt="">
+            <img src="..\public\assets\images\cadastro.svg" alt="">
         </div>
         <div class="form">
             <form action="#" method="post">
