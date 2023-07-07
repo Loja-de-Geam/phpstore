@@ -48,6 +48,15 @@
 
         }
 
+        public function erro()
+        {
+
+            Store::Layout([
+                'erro'
+            ]);
+
+        }
+
     }
 
 ?>

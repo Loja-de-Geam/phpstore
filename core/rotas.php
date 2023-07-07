@@ -6,7 +6,8 @@
         'loja' => 'main@loja',
         'cadastro' => 'main@cadastro',
         'login' => 'main@login',
-        'suporte' => 'main@suporte'
+        'suporte' => 'main@suporte',
+        'erro' => 'main@erro'
     ];
 
     // Ação por defeito
@@ -19,7 +20,7 @@
         // Ação existe nas rotas
         if (!key_exists($_GET['a'], $rotas))
         {
-            $acao = 'inicio';
+            $acao = 'erro';
         }else
         {
             $acao = $_GET['a'];
