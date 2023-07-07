@@ -17,16 +17,16 @@
                 <h1>O que deseja fazer?</h1>
                 <form action="{{ url_for('suporte') }}" method="post">
                     <ul>
-                        <li class="pergunta">1 -Como usar o site</li>
-                        <li class="pergunta">2 - Reclamação do site</li>
-                        <li class="pergunta">3 - Informar bug ou erro do site</li>
-                        <li class="pergunta">4 - Como funciona a forma de pagamento</li>
-                        <li class="pergunta">5 - Outro problema</li>
+                        <li class="pergunta"><a href="@">1 -Como usar o site</a></li>
+                        <li class="pergunta"><a href="@">2 - Reclamação do site</a></li>
+                        <li class="pergunta"><a href="@">3 - Informar bug ou erro do site</a></li>
+                        <li class="pergunta"><a href="@">4 - Como funciona a forma de pagamento</a></li>
+                        <li class="pergunta"><a href="@">5 - Outro problema</a></li>
                     </ul>
-                    <p><a href="/phpstore/public/">Voltar ao site</a></p>
+                    <p><a href="@">Voltar ao site</a></p>
                     <div class="problema">
                         <label for="Problema">Qual é o problema?</label>
-                        <input type="number" name="problema" placeholder="Digite aqui">
+                        <input type="number" name="problema" placeholder="Digite aqui aqui">
                     </div>
                     <button class="botao">Enviar</button>
                 </form>

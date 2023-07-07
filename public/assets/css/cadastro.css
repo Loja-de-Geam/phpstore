@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center ;
-    background-image: linear-gradient(to bottom, #0000ce,#000041);
+    background-color: #EDE9D8;
 }
 .container {
     width: 80%;
@@ -30,8 +30,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: rgba(127, 255, 212, 0.664);
+    background-image: linear-gradient(to bottom, #80ffd4a9, #80ffd4a9, #80ffd4a9, #339473a9);
     border-radius: 7px 0px 0px 7px;
+    
 }
 .form-img  img {
     width: 31rem;
@@ -204,12 +205,12 @@ body {
 }
 
 @media screen and (max-width: 1064px) {
-    .form {
-        border-radius: 7px;
-    }
     .container {
         width: 90%;
         height: auto;
+    }
+    .form {
+        border-radius: 7px;
     }
     .grupo_input {
         flex-direction: column;

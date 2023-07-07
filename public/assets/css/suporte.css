@@ -21,7 +21,7 @@ body{
 main{
     width: 100vw;
     height: 100vh;
-    background-image: linear-gradient(to bottom, var(--cor_fundo1),var(--cor_fundo2));
+    background-color: #EDE9D8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ main{
 }
 .imagem > h1{
     font-size: 2vw;
-    color: white;
+    color: #423acf;
 }
 .imagem > img{
     width: 35vw;
