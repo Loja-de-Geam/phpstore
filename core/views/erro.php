@@ -14,7 +14,7 @@
             <h1>Ops!</h1>
             <h2>Ocorreu um erro.</h2>
             <P>Por favor verifique se está logado.</P>
-            <button onclick="window.location.href='@'">Voltar</button>
+            <button onclick="window.location.href='/phpstore/public/'">Voltar</button>
         </div>
         <div class="erro-img">
             <img src="..\public\assets\images\erro.svg" alt="">
