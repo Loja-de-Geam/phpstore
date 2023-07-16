@@ -21,7 +21,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                 <div class="login">
-                    <button onclick="window.location.href='login.html'">Entrar</button>
+                    <button onclick="window.location.href='/phpstore/public/?a=login'">Entrar</button>
                 </div>
                 </div>
                 <div class="grupo_input">

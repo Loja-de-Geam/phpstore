@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo/inicio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="..\..\public\assets\css\inicio.css">
+    <link rel="stylesheet" href="..\public\assets\css\inicio.css">
     <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
 </head>
@@ -14,15 +14,15 @@
     <header>
         <nav class="navegador">
             <img src="assets\images\logo\LOGO.png" alt="" width="50px" height="50px">
-            <a href="#" class="titulo">Fynder Foodie</a>
+            <a href="/phpstore/public" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
                 <li class="nav-item"><a href="#">Menu</a></li>
                 <li class="nav-item"><a href="#">Contact</a></li>
                 <li class="nav-item">
-                    <button onclick="window.location.href='login.html'" class="botaoEC">Entrar</button>
-                    <button onclick="window.location.href='cadastro.html'" class="botaoEC">Cadastrar</button>
+                    <button onclick="window.location.href='/phpstore/public/?a=login'" class="botaoEC">Entrar</button>
+                    <button onclick="window.location.href='/phpstore/public/?a=cadastro'" class="botaoEC">Cadastrar</button>
                 </li>
             </ul>
         </nav>
@@ -47,27 +47,27 @@
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="comidas">Home</a></li>
-                    <li><a href="/suporte">Suporte</a></li>
+                    <li><a href="/phpstore/public/">Home</a></li>
+                    <li><a href="/phpstore/public/?a=suporte">Suporte</a></li>
                 </ul>
             </div>
             <div class="boxs"> 
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="/termos">Sobre a empresa</a></li>
-                    <li><a href="#">O que fazemos</a></li>
+                    <li><a href="/phpstore/public/?a=termos">Sobre a empresa</a></li>
+                    <li><a href="/phpstore/public/">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">
                 <h2>Contatos</h2> <br>
                 <ul>
-                    <li><a href="@" target="_blank">GitHub</a></li>
-                    <li><a href="@" target="_blank">WhatsApp</a></li>
+                    <li><a href="#" target="_blank">GitHub</a></li>
+                    <li><a href="#" target="_blank">WhatsApp</a></li>
                 </ul>
             </div>
         </div>
         <div class="copy">
-            <p>&copy;2022 Copyright - Fynder Foodie</p>
+            <p>&copy;<?=date('Y')?> Copyright - Fynder Foodie</p>
         </div>
     </footer>
     <script>
