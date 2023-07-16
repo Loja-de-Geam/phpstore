@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --cor_fundo1: #0000ce;
+    --cor_fundo2: #000041;
+    --cor_texto: #030216;
+    --cor_menu: #fff;
+    --cor_texto_2: #1d134b;
+    --cor_botao: #2f00ff;
+    --cor_botao_fundo: #423acf;
+    --sombra_colorida: #6963e7;
+    --padrao: 0px 8px 40px #00000046;
+}
+
+body,
+html {
+    color: var(--cor_texto);
+    background-color: var(--sombra_colorida);
+    min-height: 100vh; /* Altura mínima da tela inteira */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 45px;
+}
+
+.navegador {
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background-color: var(--cor_menu);
+    transition: all 0.5s;
+    position: fixed;
+}
+
+
+.navegador .titulo {
+    color: #0000ce;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-right:315px;
+}
+
+.navegador ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navegador ul li a {
+    color: var(--dark);
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.botaoEC {
+    border: none;
+    background-color: #423acf;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+
+}
+.bb-expandir {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.material-symbols-outlined {
+    color: #fff;
+    font-size: 24px; 
+}
+
+
+.botaoEC:hover {
+    color: #423acf;
+    border: 2px solid #423acf;
+    background-color: #fff;
+    transition: .20s;
+    margin-right: 10px;
+}
+
+
+/*-------------------------------*/
+input:hover {
+    background-color: #eeeeee75;
+}
+
+input:focus-visible {
+    outline: 1px solid #6c63ff;
+}
+
+main {
+    flex: 1; /* Ocupa o espaço restante na página */
+    min-height: 300px;
+    width: 1050px;
+    max-width: 1100px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    margin-top: 0px;
+    box-shadow: 0px 0px 10px #0000006b;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 10px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Vermelho1,
+.Amarelo1,
+.Amarelo2,
+.Amarelo3,
+.Vermelho2,
+.Vermelho3 {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+}
+
+.cinza {
+    display: block;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: grey;
+}
+
+.Vermelho1,
+.Vermelho2,
+.Vermelho3 {
+    display: inline-block;
+    background-color: var(--sombra_colorida);
+    height: 300px;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.Amarelo1,
+.Amarelo2,
+.Amarelo3 {
+    display: inline-block;
+    background-color: var(--cor_fundo1);
+    height: 300px;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.bb-expandir {
+    margin: 10px;
+}
+.expandir {
+    display: block;
+    width: 700px;
+    height: 500px;
+}
+footer {
+    background-color: var(--cor_texto);
+    color: azure;
+    padding: 20px 0;
+    margin-top: auto; /* Cola o footer na parte inferior da página */
+}
+
+.rodape {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    flex-wrap: wrap; /* Quebra em várias linhas caso não caiba em uma única linha */
+}
+
+.rodape > .boxs {
+    color: azure;
+    width: 320px;
+    min-height: 150px;
+    padding: 20px;
+}
+
+.boxs > ul > li {
+    list-style: none;
+}
+
+.boxs > ul > li > a {
+    text-decoration: none;
+    color: azure;
+    transition: .25s;
+    
+}
+
+.boxs > ul > li > a:hover {
+    font-weight: bold;
+    color: #80ffd4a9;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+footer > .copy {
+    background-color: var(--cor_texto);
+    color: var(--cor_fundo1);
+    text-align: center;
+}
+
+
