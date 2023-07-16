@@ -8,6 +8,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="..\public\assets\css\cadastro.css">
     <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
 <div class="container">
@@ -46,7 +47,9 @@
                         <div class="input-wrapper">
                             <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8">
                             <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
-                                <span class="material-icons-outlined">visibility</span>
+                                <span class="material-symbols-outlined">
+                                    visibility
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -95,10 +98,10 @@
     
             if (senhaInput.type === "password") {
                 senhaInput.type = "text";
-                mostrarSenhaBtn.innerHTML = '<span class="material-icons-outlined">visibility_off</span>';
+                mostrarSenhaBtn.innerHTML = '<span class="material-symbols-outlined">visibility_off</span>';
             } else {
                 senhaInput.type = "password";
-                mostrarSenhaBtn.innerHTML = '<span class="material-icons-outlined">visibility</span>';
+                mostrarSenhaBtn.innerHTML = '<span class="material-symbols-outlined">visibility</span>';
             }
         }
     </script>
