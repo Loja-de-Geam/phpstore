@@ -2,32 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/inicio.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="..\public\assets\css\inicio.css">
-    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>ínicio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <title>Bebidas</title>
     <style>
         .Vermelho1 {
-        background-image: url(..\public\assets\comida\marmita\feijoada300x300.jpg);
+        background-image: url(..\public\assets\comida\bebida\cola300x300.png);
         }
         .Vermelho2 {
-            background-image: url(..\public\assets\comida\marmita\LASANHA300x300.png);
+            background-image: url(..\public\assets\comida\bebida\GELADINHA300x300.png);
         }
 
         .Vermelho3 {
-            background-image: url(..\public\assets\comida\marmita\strogonoff\ de\ carne300x300.jpg);
+            background-image: url(..\public\assets\comida\bebida\cola300x300.png);
         }
         .Amarelo1 {
-                background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+                background-image: url(..\public\assets\comida\bebida\iorgute\ de\ chocolate600x300.png);
         }
         .Amarelo2 {
-            background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+            background-image: url(..\public\assets\comida\bebida\milkshake\ de\ morango600x300.png);
         }
         .Amarelo3 {
-            background-image: url(..\public\assets\comida\marmita\yakisoba600x300.png);
+            background-image: url(..\public\assets\comida\bebida\raspadinha600x300.jpg);
         }
     </style>
 </head>
@@ -50,7 +48,8 @@
     </header>
     <main>
         <div class="container">
-            <div class="cinza"></div>
+            <div class="cinza">
+            </div>
             <div class="Vermelho1"><button class="bb-expandir"><span class="material-symbols-outlined">expand_more</span></button></div>
             <div class="Amarelo1" backgroend-image: url() ;><button class="bb-expandir"><span class="material-symbols-outlined">expand_more</span></button></div>
             <div class="Amarelo2" backgroend-image: url() ;><button class="bb-expandir"><span class="material-symbols-outlined">expand_more</span></button></div>

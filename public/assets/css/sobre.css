@@ -34,7 +34,7 @@ html {
 
 header {
     height: 45px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
 }
 
 .navegador {
@@ -131,103 +131,31 @@ main {
 .container {
     max-width: 1050px;
     margin: 0 auto;
-    padding: 10px 5px;
+    padding: 10px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.Vermelho1,
-.Amarelo1,
-.Amarelo2,
-.Amarelo3,
-.Vermelho2,
-.Vermelho3 {
-    margin: 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.363);
-    background-position: center center;
+.container h1 {
+    font-size: 32px;
+    color: var(--cor_texto_2); 
+    margin-bottom: 50px; 
+  }
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--cor_texto_2); 
 }
 
-.cinza {
-    display: block;
-    height: 400px;
-    width: 1000px;
+.container p {
+    color: #000;
+    font-size: 18px;
+    text-indent: 40px;
     margin-bottom: 20px;
-    background-color: grey;
-    overflow: hidden;
-}
-.slides {
-    width: 400%;
-    height: 400px;
-    display: flex;
-}
-.slides input {
-    display: none;
-}
-.slide {
-    width: 25%;
-    position: relative;
-}
-
-.slide img {
-    width: 1000px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Vermelho1,
-.Vermelho2,
-.Vermelho3 {
-    display: inline-block;
-    height: 300px;
-    width: 300px;
-    margin-bottom: 20px;
-}
-
-.Amarelo1,
-.Amarelo2,
-.Amarelo3 {
-    display: inline-block;
-    height: 300px;
-    width: 600px;
-    margin-bottom: 20px;
-}
-/*DEPOIS EU AJEITO KSKSKSKSKSKKSKSKSKS*/
-
-.bb-expandir {
-    margin: 10px;
-}
-.expandir {
-    display: block;
-    width: 700px;
-    height: 500px;
+    text-align: justify;
 }
 
 footer {
@@ -274,3 +202,5 @@ footer > .copy {
     color: var(--cor_fundo1);
     text-align: center;
 }
+
+

@@ -2,32 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/inicio.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="..\public\assets\css\inicio.css">
-    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>ínicio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <title>Salgados</title>
     <style>
         .Vermelho1 {
-        background-image: url(..\public\assets\comida\marmita\feijoada300x300.jpg);
+        background-image: url(..\public\assets\comida\salgado\bolinho\ de\ bacalhau\ 300x300.png);
         }
         .Vermelho2 {
-            background-image: url(..\public\assets\comida\marmita\LASANHA300x300.png);
+            background-image: url(..\public\assets\comida\salgado\empada300x300.png);
         }
 
         .Vermelho3 {
-            background-image: url(..\public\assets\comida\marmita\strogonoff\ de\ carne300x300.jpg);
+            background-image: url(..\public\assets\comida\salgado\esfirra300x300.png);
         }
         .Amarelo1 {
-                background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+                background-image: url(..\public\assets\comida\salgado\batata\ frita600x300.png);
         }
         .Amarelo2 {
-            background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+            background-image: url(..\public\assets\comida\salgado\coxinha\ 600x300.png);
         }
         .Amarelo3 {
-            background-image: url(..\public\assets\comida\marmita\yakisoba600x300.png);
+            background-image: url(..\public\assets\comida\salgado\coxinha\ 600x300.png);
         }
     </style>
 </head>

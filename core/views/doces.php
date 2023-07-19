@@ -2,32 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/inicio.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="..\public\assets\css\inicio.css">
-    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>ínicio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <title>Doces</title>
     <style>
         .Vermelho1 {
-        background-image: url(..\public\assets\comida\marmita\feijoada300x300.jpg);
+    background-image: url(..\public\assets\comida\doce\Mousse\ de\ chocolate\ 300x300.png);
         }
         .Vermelho2 {
-            background-image: url(..\public\assets\comida\marmita\LASANHA300x300.png);
+            background-image: url(..\public\assets\comida\doce\pavê\ de\ chocolate\ 300x300.png);
         }
 
         .Vermelho3 {
-            background-image: url(..\public\assets\comida\marmita\strogonoff\ de\ carne300x300.jpg);
+            background-image: url(..\public\assets\comida\doce\pudim\ de\ leite\ 300x300.png);
         }
         .Amarelo1 {
-                background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+                background-image: url(..\public\assets\comida\doce\Torta\ de\ limão\ 600x300.png);
         }
         .Amarelo2 {
-            background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+            background-image: url(..\public\assets\comida\doce\churros\ 300x600.png);
         }
         .Amarelo3 {
-            background-image: url(..\public\assets\comida\marmita\yakisoba600x300.png);
+            background-image: url(..\public\assets\comida\doce\churros\ 300x600.png);
         }
     </style>
 </head>
