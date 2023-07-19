@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suporte</title>
     <link rel="stylesheet" href="..\public\assets\css\suporte.css">
+    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
 </head>
 <body>
     <main>
@@ -15,9 +16,9 @@
         <div class="menu">
             <div class="conteudo">
                 <h1>O que deseja fazer?</h1>
-                <form action="{{ url_for('suporte') }}" method="post">
+                <form action="" method="post">
                     <ul>
-                        <li class="pergunta"><a href="">1 -Como usar o site</a></li>
+                        <li class="pergunta"><a href="">1 - Como usar o site</a></li>
                         <li class="pergunta"><a href="">2 - Reclamação do site</a></li>
                         <li class="pergunta"><a href="">3 - Informar bug ou erro do site</a></li>
                         <li class="pergunta"><a href="">4 - Como funciona a forma de pagamento</a></li>

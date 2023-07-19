@@ -5,43 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\public\assets\css\inicio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="shortcut icon" href="imagem/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Doces</title>
     <style>
         .Vermelho1 {
-    background-image: url(..\public\assets\comida\doce\Mousse\ de\ chocolate\ 300x300.png);
+            background-image: url('../public/assets/comida/doce/Mousse/de/chocolate/300x300.png');
         }
         .Vermelho2 {
-            background-image: url(..\public\assets\comida\doce\pavê\ de\ chocolate\ 300x300.png);
+            background-image: url('../public/assets/comida/doce/pavê/de/chocolate/300x300.png');
         }
 
         .Vermelho3 {
-            background-image: url(..\public\assets\comida\doce\pudim\ de\ leite\ 300x300.png);
+            background-image: url('../public/assets/comida/doce/pudim/de/leite/300x300.png');
         }
         .Amarelo1 {
-                background-image: url(..\public\assets\comida\doce\Torta\ de\ limão\ 600x300.png);
+            background-image: url('../public/assets/comida/doce/Torta/de/limão/600x300.png');
         }
         .Amarelo2 {
-            background-image: url(..\public\assets\comida\doce\churros\ 300x600.png);
+            background-image: url('../public/assets/comida/doce/churros/300x600.png');
         }
         .Amarelo3 {
-            background-image: url(..\public\assets\comida\doce\churros\ 300x600.png);
+            background-image: url('../public/assets/comida/doce/churros/300x600.png');
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navegador">
-            <img src="imagem/LOGO.png" alt="" width="50px" height="50px">
-            <a href="#" class="titulo">Fynder Foodie</a>
+            <img src="../public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+            <a href="/phpstore/public/" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
                 <li class="nav-item"><a href="#">Menu</a></li>
                 <li class="nav-item"><a href="#">Contact</a></li>
                 <li class="nav-item">
-                    <button onclick="window.location.href='login.html'" class="botaoEC">Entrar</button>
-                    <button onclick="window.location.href='cadastro.html'" class="botaoEC">Cadastrar</button>
+                    <button onclick="window.location.href='/phpstore/public/?a=login'" class="botaoEC">Entrar</button>
+                    <button onclick="window.location.href='/phpstore/public/?a=cadastro'" class="botaoEC">Cadastrar</button>
                 </li>
             </ul>
         </nav>
@@ -61,20 +61,20 @@
     <footer>
         <div class="rodape">
             <div class="boxs">
-                <img src="imagem/LOGO.png" alt="" width="70px">
+                <img src="../public/assets/images/logo/logo.png" alt="" width="70px">
             </div>
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="comidas">Home</a></li>
-                    <li><a href="/suporte">Suporte</a></li>
+                    <li><a href="/phpstore/public/">Home</a></li>
+                    <li><a href="/phpstore/public/?a=suporte">Suporte</a></li>
                 </ul>
             </div>
             <div class="boxs"> 
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="/termos">Sobre a empresa</a></li>
-                    <li><a href="#">O que fazemos</a></li>
+                    <li><a href="/phpstore/public/?a=sobre">Sobre a empresa</a></li>
+                    <li><a href="/phpstore/public/?a=oquefazemos">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">
@@ -86,7 +86,7 @@
             </div>
         </div>
         <div class="copy">
-            <p>&copy;2022 Copyright - Fynder Foodie</p>
+            <p>&copy;<?=date('Y') ?> Copyright - Fynder Foodie</p>
         </div>
     </footer>
     <script>

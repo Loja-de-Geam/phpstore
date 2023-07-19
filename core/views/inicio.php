@@ -11,30 +11,35 @@
     <title>ínicio</title>
     <style>
         .Vermelho1 {
-        background-image: url(..\public\assets\comida\marmita\feijoada300x300.jpg);
+            background-image: url('../public/assets/comida/marmita/feijoada300x300.jpg');
+            background-size: cover;
         }
         .Vermelho2 {
-            background-image: url(..\public\assets\comida\marmita\LASANHA300x300.png);
+            background-image: url('../public/assets/comida/marmita/LASANHA300x300.png');
+            background-size: cover;
         }
-
         .Vermelho3 {
-            background-image: url(..\public\assets\comida\marmita\strogonoff\ de\ carne300x300.jpg);
+            background-image: url('../public/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
+            background-size: cover;
         }
         .Amarelo1 {
-                background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+            background-image: url('../public/assets/comida/marmita/parmegiana600x300.png');
+            background-size: cover;
         }
         .Amarelo2 {
-            background-image: url(..\public\assets\comida\marmita\bife\ a\ parmegiana600x300.png);
+            background-image: url('../public/assets/comida/marmita/parmegiana600x300.png');
+            background-size: cover;
         }
         .Amarelo3 {
-            background-image: url(..\public\assets\comida\marmita\yakisoba600x300.png);
+            background-image: url('../public/assets/comida/marmita/yakisoba600x300.png');
+            background-size: cover;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navegador">
-            <img src="imagem/LOGO.png" alt="" width="50px" height="50px">
+            <img src="../public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
             <a href="#" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
@@ -63,20 +68,20 @@
     <footer>
         <div class="rodape">
             <div class="boxs">
-                <img src="imagem/LOGO.png" alt="" width="70px">
+                <img src="../public/assets/images/logo/logo.png" alt="" width="70px">
             </div>
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="comidas">Home</a></li>
-                    <li><a href="/suporte">Suporte</a></li>
+                    <li><a href="/phpstore/public/">Home</a></li>
+                    <li><a href="/phpstore/public/?a=suporte">Suporte</a></li>
                 </ul>
             </div>
             <div class="boxs"> 
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="/termos">Sobre a empresa</a></li>
-                    <li><a href="#">O que fazemos</a></li>
+                    <li><a href="/phpstore/public/?a=sobre">Sobre a empresa</a></li>
+                    <li><a href="/phpstore/public/?a=oquefazemos">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">
@@ -88,7 +93,7 @@
             </div>
         </div>
         <div class="copy">
-            <p>&copy;2022 Copyright - Fynder Foodie</p>
+            <p>&copy;<?=date('Y') ?> Copyright - Fynder Foodie</p>
         </div>
     </footer>
     <script>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/login.css">
     <title>Login</title>
     <link rel="stylesheet" href="..\public\assets\css\login.css">
+    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="entrar">
-                    <button><a href="@">Entrar</a></button>
+                    <button><a href="">Entrar</a></button>
                 </div>
             </form>
         </div>

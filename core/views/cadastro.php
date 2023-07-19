@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class="continuar">
-                    <button><a href="@">Continuar</a></button>
+                    <button>Continuar</button>
                 </div>
             </form>
         </div>

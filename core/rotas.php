@@ -7,6 +7,11 @@
         'cadastro' => 'main@cadastro',
         'login' => 'main@login',
         'suporte' => 'main@suporte',
+        'sobre' => 'main@sobre',
+        'oquefazemos' => 'main@oquefazemos',
+        'bebidas' => 'main@bebidas',
+        'doces' => 'main@doces',
+        'salgados' => 'main@salgados',
         'erro' => 'main@erro'
     ];
 

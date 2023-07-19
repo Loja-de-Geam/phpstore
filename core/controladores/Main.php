@@ -48,6 +48,51 @@
 
         }
 
+        public function sobre()
+        {
+
+            Store::Layout([
+                'sobre_a_Empresa'
+            ]);
+
+        }
+
+        public function oquefazemos()
+        {
+
+            Store::Layout([
+                'o_que_fazemos'
+            ]);
+
+        }
+        
+        public function bebidas()
+        {
+
+            Store::Layout([
+                'Bebidas'
+            ]);
+
+        }
+
+        public function doces()
+        {
+
+            Store::Layout([
+                'doces'
+            ]);
+
+        }
+
+        public function salgados()
+        {
+
+            Store::Layout([
+                'salgados'
+            ]);
+
+        }
+
         public function erro()
         {
 
