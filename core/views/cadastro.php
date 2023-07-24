@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="..\public\assets\css\cadastro.css">
-    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public\assets\css\cadastro.css">
+    <link rel="shortcut icon" href="public\assets\images\logo\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
 <div class="container">
         <div class="form-img">
-            <img src="..\public\assets\images\cadastro.svg" alt="">
+            <img src="public\assets\images\cadastro.svg" alt="">
         </div>
         <div class="form">
             <form action="#" method="post">
@@ -22,7 +22,7 @@
                         <h1>Cadastre-se</h1>
                     </div>
                 <div class="login">
-                    <button onclick="window.location.href='/phpstore/public/?a=login'">Entrar</button>
+                    <button onclick="window.location.href='?a=login'">Entrar</button>
                 </div>
                 </div>
                 <div class="grupo_input">

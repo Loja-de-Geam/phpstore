@@ -15,7 +15,7 @@
             }
 
             foreach ($estruturas as $estrutura) {
-                include ("../core/views/$estrutura.php");
+                include ("core/views/$estrutura.php");
             }
 
         }

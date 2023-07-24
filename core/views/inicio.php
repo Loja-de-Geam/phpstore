@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/inicio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="..\public\assets\css\inicio.css">
-    <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="public\assets\css\inicio.css">
+    <link rel="shortcut icon" href="public\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>ínicio</title>
     <style>
         .Vermelho1 {
-            background-image: url('../public/assets/comida/marmita/feijoada300x300.jpg');
+            background-image: url('public/assets/comida/marmita/feijoada300x300.jpg');
             background-size: cover;
         }
         .Vermelho2 {
-            background-image: url('../public/assets/comida/marmita/LASANHA300x300.png');
+            background-image: url('public/assets/comida/marmita/LASANHA300x300.png');
             background-size: cover;
         }
         .Vermelho3 {
-            background-image: url('../public/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
+            background-image: url('public/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
             background-size: cover;
         }
         .Amarelo1 {
-            background-image: url('../public/assets/comida/marmita/parmegiana600x300.png');
+            background-image: url('public/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
         .Amarelo2 {
-            background-image: url('../public/assets/comida/marmita/parmegiana600x300.png');
+            background-image: url('public/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
         .Amarelo3 {
-            background-image: url('../public/assets/comida/marmita/yakisoba600x300.png');
+            background-image: url('public/assets/comida/marmita/yakisoba600x300.png');
             background-size: cover;
         }
     </style>
@@ -39,16 +38,16 @@
 <body>
     <header>
         <nav class="navegador">
-            <img src="../public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="#" class="titulo">Fynder Foodie</a>
+            <img src="public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+            <a href="" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
                 <li class="nav-item"><a href="#">Menu</a></li>
                 <li class="nav-item"><a href="#">Contact</a></li>
                 <li class="nav-item">
-                    <button onclick="window.location.href='login.html'" class="botaoEC">Entrar</button>
-                    <button onclick="window.location.href='cadastro.html'" class="botaoEC">Cadastrar</button>
+                    <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
+                    <button onclick="window.location.href='?a=cadastro'" class="botaoEC">Cadastrar</button>
                 </li>
             </ul>
         </nav>
@@ -68,20 +67,20 @@
     <footer>
         <div class="rodape">
             <div class="boxs">
-                <img src="../public/assets/images/logo/logo.png" alt="" width="70px">
+                <img src="public/assets/images/logo/logo.png" alt="" width="70px">
             </div>
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="/phpstore/public/">Home</a></li>
-                    <li><a href="/phpstore/public/?a=suporte">Suporte</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="?a=suporte">Suporte</a></li>
                 </ul>
             </div>
             <div class="boxs"> 
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="/phpstore/public/?a=sobre">Sobre a empresa</a></li>
-                    <li><a href="/phpstore/public/?a=oquefazemos">O que fazemos</a></li>
+                    <li><a href="?a=sobre">Sobre a empresa</a></li>
+                    <li><a href="?a=oquefazemos">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">
