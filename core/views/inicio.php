@@ -5,32 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public\assets\css\inicio.css">
-    <link rel="shortcut icon" href="public\assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>ínicio</title>
+    <link rel="stylesheet" href="public_html\assets\css\inicio.css">
+    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+    <title>Início</title>
     <style>
         .Vermelho1 {
-            background-image: url('public/assets/comida/marmita/feijoada300x300.jpg');
+            background-image: url('public_html/assets/comida/marmita/feijoada300x300.jpg');
             background-size: cover;
         }
         .Vermelho2 {
-            background-image: url('public/assets/comida/marmita/LASANHA300x300.png');
+            background-image: url('public_html/assets/comida/marmita/LASANHA300x300.png');
             background-size: cover;
         }
         .Vermelho3 {
-            background-image: url('public/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
+            background-image: url('public_html/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
             background-size: cover;
         }
         .Amarelo1 {
-            background-image: url('public/assets/comida/marmita/parmegiana600x300.png');
+            background-image: url('public_html/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
         .Amarelo2 {
-            background-image: url('public/assets/comida/marmita/parmegiana600x300.png');
+            background-image: url('public_html/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
         .Amarelo3 {
-            background-image: url('public/assets/comida/marmita/yakisoba600x300.png');
+            background-image: url('public_html/assets/comida/marmita/yakisoba600x300.png');
             background-size: cover;
         }
     </style>
@@ -38,8 +38,8 @@
 <body>
     <header>
         <nav class="navegador">
-            <img src="public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="" class="titulo">Fynder Foodie</a>
+            <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+            <a href="?a=inicio" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
@@ -67,12 +67,12 @@
     <footer>
         <div class="rodape">
             <div class="boxs">
-                <img src="public/assets/images/logo/logo.png" alt="" width="70px">
+                <img src="public_html/assets/images/logo/logo.png" alt="" width="70px">
             </div>
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="?a=inicio">Home</a></li>
                     <li><a href="?a=suporte">Suporte</a></li>
                 </ul>
             </div>

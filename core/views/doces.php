@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public\assets\css\inicio.css">
+    <link rel="stylesheet" href="public_html\assets\css\inicio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="shortcut icon" href="public\assets\images\logo\favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Doces</title>
     <style>
         .Vermelho1 {
-            background-image: url('../public/assets/comida/doce/Mousse/de/chocolate/300x300.png');
+            background-image: url('public_html/assets/comida/doce/Mousse/de/chocolate/300x300.png');
         }
         .Vermelho2 {
-            background-image: url('../public/assets/comida/doce/pavê/de/chocolate/300x300.png');
+            background-image: url('public_html/assets/comida/doce/pavê/de/chocolate/300x300.png');
         }
 
         .Vermelho3 {
-            background-image: url('../public/assets/comida/doce/pudim/de/leite/300x300.png');
+            background-image: url('public_html/assets/comida/doce/pudim/de/leite/300x300.png');
         }
         .Amarelo1 {
-            background-image: url('../public/assets/comida/doce/Torta/de/limão/600x300.png');
+            background-image: url('public_html/assets/comida/doce/Torta/de/limão/600x300.png');
         }
         .Amarelo2 {
-            background-image: url('../public/assets/comida/doce/churros/300x600.png');
+            background-image: url('public_html/assets/comida/doce/churros/300x600.png');
         }
         .Amarelo3 {
-            background-image: url('../public/assets/comida/doce/churros/300x600.png');
+            background-image: url('public_html/assets/comida/doce/churros/300x600.png');
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navegador">
-            <img src="public/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="/" class="titulo">Fynder Foodie</a>
+            <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+            <a href="?a=inicio" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <li class="nav-item"><a href="#">Home</a></li>
                 <li class="nav-item"><a href="#">About</a></li>
@@ -61,12 +61,12 @@
     <footer>
         <div class="rodape">
             <div class="boxs">
-                <img src="public/assets/images/logo/logo.png" alt="" width="70px">
+                <img src="public_html/assets/images/logo/logo.png" alt="" width="70px">
             </div>
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="?a=inicio">Home</a></li>
                     <li><a href="?a=suporte">Suporte</a></li>
                 </ul>
             </div>

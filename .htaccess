@@ -2,3 +2,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ core/views/erro.php?url=$1 [NC,L]
+RewriteRule ^$ ./public_html/index.php [NC,L]
