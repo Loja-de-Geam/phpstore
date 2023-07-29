@@ -12,7 +12,8 @@
 }
 
 :root {
-    --cor_fundo1: #0000ce;
+    /* --cor_fundo1: #0000ce; */
+    --cor_fundo: #000;
     --cor_fundo2: #000041;
     --cor_texto: #030216;
     --cor_menu: #fff;
@@ -35,6 +36,7 @@ html {
 header {
     height: 45px;
     margin-bottom: 25px;
+    z-index: 100;
 }
 
 .navegador {
@@ -159,6 +161,7 @@ main {
     margin-bottom: 20px;
     background-color: grey;
     overflow: hidden;
+    z-index: 0;
 }
 .slides {
     width: 400%;
@@ -171,16 +174,67 @@ main {
 .slide {
     width: 25%;
     position: relative;
+    transition: 2s;
 }
 
 .slide img {
     width: 1000px;
 }
-
-
-
-
-
+.manual-navigation {
+    position: absolute;
+    width: 1000px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manual-btn {
+    border: 2px solid #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+.manual-btn:hover {
+    background-color: #ffffff;
+}
+#radio1:checked ~ .primeiro{
+    margin-left: 0;
+}
+#radio2:checked ~ .primeiro{
+    margin-left: -25%;
+}
+#radio3:checked ~ .primeiro{
+    margin-left: -50%;
+}
+.navigation-auto div {
+    border: 2px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.navigation-auto {
+    position: absolute;
+    width: 1000px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #ffffff;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #ffffff;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #ffffff;
+}
 
 
 
