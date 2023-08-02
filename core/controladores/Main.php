@@ -102,6 +102,15 @@
 
         }
 
+        public function logout()
+        {
+
+            Store::Layout([
+                'logout'
+            ]);
+
+        }
+
     }
 
 ?>

@@ -57,6 +57,31 @@ header {
     margin-right:315px;
 }
 
+.box-search {
+    display: flex;
+}
+
+.form-control {
+    border: 1px solid var(--cor_botao);
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: var(--cor_botao);
+    border: none;
+    padding: 3px;
+    margin-right: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#btn-pesquisar {
+    color: var(--cor_texto);
+    font-size: 25px;
+}
+
 .navegador ul {
     display: flex;
     align-items: center;

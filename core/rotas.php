@@ -12,7 +12,8 @@
         'bebidas' => 'main@bebidas',
         'doces' => 'main@doces',
         'salgados' => 'main@salgados',
-        'erro' => 'main@erro'
+        'erro' => 'main@erro',
+        'logout' => 'main@logout'
     ];
 
     // Ação por defeito
