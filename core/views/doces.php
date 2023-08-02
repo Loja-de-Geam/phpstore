@@ -35,14 +35,16 @@
             <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
             <a href="?a=inicio" class="titulo">Fynder Foodie</a>
             <ul class="nav">
-                <li class="nav-item"><a href="#">Home</a></li>
-                <li class="nav-item"><a href="#">About</a></li>
-                <li class="nav-item"><a href="#">Menu</a></li>
-                <li class="nav-item"><a href="#">Contact</a></li>
-                <li class="nav-item">
-                    <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
-                    <button onclick="window.location.href='?a=cadastro'" class="botaoEC">Cadastrar</button>
-                </li>
+                <?php if(!isset($_SESSION['logado'])) {?>
+                    <li class="nav-item">
+                        <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
+                        <button onclick="window.location.href='?a=cadastro'" class="botaoEC">Cadastrar</button>
+                    </li>
+                <?php }else {?>
+                    <li>
+                        <button onclick="window.location.href='?a=logout'" class="botaoEC">Sair</button>
+                    </li>
+                <?php }?>
             </ul>
         </nav>
     </header>
