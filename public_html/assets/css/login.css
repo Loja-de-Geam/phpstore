@@ -84,7 +84,10 @@ body {
 }
 
 .cadastro button:hover {
-  background-color: #6c63fff1;
+  color: #423acf;
+  background-color: #fff;
+  border: 2px solid #423acf;
+  padding: 0.45rem;
 }
 
 .grupo_input {
@@ -176,7 +179,10 @@ body {
 }
 
 .entrar button:hover {
-  background-color: #6b63fff1;
+  color: #423acf;
+  background-color: #fff;
+  border: 2px solid #423acf;
+  padding: 0.5rem;
 }
 
 .entrar a {
