@@ -16,7 +16,7 @@
             <img src="public_html\assets\images\cadastro.svg" alt="">
         </div>
         <div class="form">
-            <form action="#" method="post">
+            <form action="" method="post">
                 <div class="cabeca">
                     <div class="titulo">
                         <h1>Cadastre-se</h1>
@@ -28,7 +28,7 @@
                 <div class="grupo_input">
                     <div class="caixa">
                         <label for="nome">Primeiro nome</label>
-                        <input type="text" name="nome" id="idnome" placeholder="Digite seu primeiro nome" required>
+                        <input type="text" name="nome" id="idnome" placeholder="Digite seu primeiro nome" required maxlength="200">
                     </div>
                     <div class="caixa">
                         <label for="celular">Celular</label>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="caixa">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="idemail" placeholder="Digite seu e-mail" required>
+                        <input type="email" name="email" id="idemail" placeholder="Digite seu e-mail" required maxlength="50">
                     </div>
                     <div class="caixa">
                         <label for="cpf">CPF</label>
@@ -45,7 +45,7 @@
                     <div class="caixa">
                         <label for="senha">Senha</label>
                         <div class="input-wrapper">
-                            <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8">
+                            <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8" maxlength="60">
                             <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
                                 <span class="material-symbols-outlined">
                                     visibility
@@ -64,25 +64,25 @@
                     </div>
                     <div class="genero-grupo">
                         <div class="genero-input">
-                            <input type="radio" name="genero" id="idmasculino">
+                            <input type="radio" name="genero" id="idmasculino" value="mas">
                             <label for="masculino">Masculino</label>
                         </div>
                         <div class="genero-input">
-                            <input type="radio" name="genero" id="idfeminino">
+                            <input type="radio" name="genero" id="idfeminino" value="fem">
                             <label for="feminino">Feminino</label>
                         </div>
                         <div class="genero-input">
-                            <input type="radio" name="genero" id="idoutros">
+                            <input type="radio" name="genero" id="idoutros" value="out">
                             <label for="outros">Outros</label>
                         </div>
                         <div class="genero-input">
-                            <input type="radio" name="genero" id="idnone">
+                            <input type="radio" name="genero" id="idnone" checked>
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>
                 <div class="continuar">
-                    <button>Continuar</button>
+                    <button name="cadastrar">Continuar</button>
                 </div>
             </form>
         </div>

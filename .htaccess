@@ -3,3 +3,14 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ core/views/erro.php?url=$1 [NC,L]
 RewriteRule ^$ ./public_html/index.php [NC,L]
+RewriteCond %{REQUEST_FILENAME} "config"
+RewriteRule .* - [F]
+Options -Indexes
+
+<FilesMatch "\.json$">
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.lock$">
+    Deny from all
+</FilesMatch>

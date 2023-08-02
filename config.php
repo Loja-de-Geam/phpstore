@@ -5,7 +5,7 @@
 
     // Banco de Dados MYSQL
     define('MYSQL_SERVER', 'localhost');
-    define('MYSQL_DATABASE', 'php_store');
+    define('MYSQL_DATABASE', 'fynderfood');
     define('MYSQL_USER', 'root');
     define('MYSQL_PASS', '');
     define('MYSQL_CHARSET', 'utf8');
