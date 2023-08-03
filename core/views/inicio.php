@@ -1,6 +1,6 @@
 <?php 
 
-    $encapsular = false;
+    $encapsular = true;
 
     // Entrando no BD
     $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
@@ -8,12 +8,12 @@
     if(!empty($_GET['search'])) {
         $data = $_GET['search'];
 
-        $comando = $gestor->query("SELECT * FROM comidas WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
+        $comando = $gestor->query("SELECT * FROM comidas WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll();
 
         // Checagem para ver se o usuario existe
         if (sizeof($comando) >= 1) {
 
-            $encapsular = true;
+            $encapsular = false;
 
         }
     }
@@ -118,39 +118,13 @@
                     <label for="radio3" class="manual-btn"></label>
                 </div>
 
-            <?php if(!$encapsular):?>
-                </div>
-                <div class="Vermelho1 salgado">
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div class="Amarelo1 salgado" backgroend-image: url() ;>
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div class="Amarelo2 salgado" backgroend-image: url() ;>
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div class="Vermelho2 salgado" backgroend-image: url() ;>
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div class="Vermelho3 salgado" backgroend-image: url() ;>
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div class="Amarelo3 salgado" backgroend-image: url() ;>
-                    <button class="bb-expandir">
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-            <?php endif;?>
+            </div>
+
+            <?php if($encapsular){
+                include("comidas.php");
+            }else {
+                include("pesquisa.php");
+            }?>
         </div>
     </main>
     <!--==============================================================================================-->
