@@ -9,9 +9,10 @@
         'suporte' => 'main@suporte',
         'sobre' => 'main@sobre',
         'oquefazemos' => 'main@oquefazemos',
-        'bebidas' => 'main@bebidas',
-        'doces' => 'main@doces',
-        'salgados' => 'main@salgados',
+        'comousar' => 'main@comousar',
+        'informarbug' => 'main@informarbug',
+        'outros' => 'main@outros',
+        'reclamacao' => 'main@reclamacao',
         'erro' => 'main@erro',
         'logout' => 'main@logout'
     ];

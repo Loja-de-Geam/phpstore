@@ -1,6 +1,7 @@
 <?php 
 
     $encapsular = true;
+    $resultado = false;
 
     // Entrando no BD
     $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
@@ -15,6 +16,11 @@
 
             $encapsular = false;
 
+        }else {
+
+            $encapsular = false;
+            $resultado = true;
+
         }
     }
 
@@ -28,6 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
     <style>
@@ -54,6 +61,10 @@
         .Amarelo3 {
             background-image: url('public_html/assets/comida/marmita/yakisoba600x300.png');
             background-size: cover;
+        }
+        #semresut {
+            color: rgba(158, 158, 158, 0.658);
+            font-size: 4em;
         }
     </style>
 </head>
@@ -121,9 +132,11 @@
             </div>
 
             <?php if($encapsular){
-                include("comidas.php");
+                include("src/comidas.php");
+            }elseif(!$encapsular && !$resultado) {
+                include("src/pesquisa.php");
             }else {
-                include("pesquisa.php");
+                include("src/semresut.php");
             }?>
         </div>
     </main>
