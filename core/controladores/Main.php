@@ -120,6 +120,15 @@
 
         }
 
+        public function adm()
+        {
+
+            Store::Layout([
+                'adm'
+            ]);
+
+        }
+
     }
 
 ?>
