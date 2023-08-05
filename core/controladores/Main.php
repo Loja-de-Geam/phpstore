@@ -66,29 +66,38 @@
 
         }
         
-        public function bebidas()
+        public function comousar()
         {
 
             Store::Layout([
-                'Bebidas'
+                'comousar'
             ]);
 
         }
 
-        public function doces()
+        public function informarbug()
         {
 
             Store::Layout([
-                'doces'
+                'informarbug'
             ]);
 
         }
 
-        public function salgados()
+        public function outros()
         {
 
             Store::Layout([
-                'salgados'
+                'outros'
+            ]);
+
+        }
+
+        public function reclamacao()
+        {
+
+            Store::Layout([
+                'reclamacao'
             ]);
 
         }
