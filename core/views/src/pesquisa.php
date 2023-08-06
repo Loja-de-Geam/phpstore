@@ -9,16 +9,16 @@ while($comida = $result->fetch(PDO::FETCH_ASSOC)) {
     <div>
         <div class="carrinho-pesq">
             <div class="imagem">
-                <img src="public_html\assets\images\comidas\<?=$comida['img']?>" alt="<?= $comida["nome"]?>">
-                <button class="favoritar-btn"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                <img src="public_html\assets\images\comidas\<?php echo $comida['img']?>" alt="<?php echo $comida["nome"]?>">
+                <a href="?search=<?php echo $_GET['search']?>&?adicionar=<?php echo $comida['nome']?>" class="favoritar-btn"><span class="material-symbols-outlined">add_shopping_cart</span></a>
             </div>
         <div class="conteudo">
-            <h2 class="nome"><?= $comida["nome"]?></h2>
-            <p class="descricao"><?= $comida["descricao"]?></p>
+            <h2 class="nome"><?php echo $comida["nome"]?></h2>
+            <p class="descricao"><?php echo $comida["descricao"]?></p>
         </div>
         <div class="botoes-container">
             <div class="input-container">
-                <input type="number" min="1" value="1" max="100">
+                <input type="number" min="1" value="1" max="50" id="quant">
                 <button class="comprar-btn">Comprar</button>
             </div>
         </div>
