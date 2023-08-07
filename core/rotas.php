@@ -14,7 +14,8 @@
         'outros' => 'main@outros',
         'reclamacao' => 'main@reclamacao',
         'erro' => 'main@erro',
-        'logout' => 'main@logout'
+        'logout' => 'main@logout',
+        'adm' => 'main@adm'
     ];
 
     // Ação por defeito

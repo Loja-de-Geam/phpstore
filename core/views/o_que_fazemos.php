@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="copy">
-            <p>&copy;<?=date('Y') ?> Copyright - Fynder Foodie</p>
+            <p>&copy;<?php echo date('Y') ?> Copyright - Fynder Foodie</p>
         </div>
     </footer>
 </body>
