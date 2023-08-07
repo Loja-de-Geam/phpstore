@@ -218,7 +218,7 @@
                     Após concluir o cadastro, você terá acesso a todos os recursos e benefícios disponíveis em nossa plataforma. Bem-vindo à nossa comunidade! Estamos felizes em tê-lo 
                     conosco e esperamos que tenha uma ótima experiência conosco!
                 </p>
-                <button class="botao" onclick="window.location.href='?a=inicio'"> voltar ao site</button>
+                <button class="botao" onclick="window.location.href='./'"> voltar ao site</button>
             </div>
         </div>
     </main>

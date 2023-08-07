@@ -90,6 +90,11 @@
     flex: 1;
 }
 
+h1.preco {
+    color: #1a1575;
+    padding-right: 10px;
+}
+
 h2.nome {
     color: #1d134b;
     font-size: 28px;

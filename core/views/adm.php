@@ -1,6 +1,6 @@
 <?php 
 if(!isset($_SESSION['adm'])) {
-    header('Location: ?a=inicio');
+    header('Location: ./');
 }
 
 if(isset($_POST['enviar'])) {

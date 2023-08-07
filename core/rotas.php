@@ -15,6 +15,7 @@
         'reclamacao' => 'main@reclamacao',
         'erro' => 'main@erro',
         'logout' => 'main@logout',
+        'carrinho' => 'main@carrinho',
         'adm' => 'main@adm'
     ];
 

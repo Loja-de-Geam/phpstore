@@ -3,8 +3,8 @@ session_start();
 if (isset($_SESSION['logado'])) {
     session_unset();
     session_destroy();
-    header('Location: ?a=inicio');
+    header('Location: ./');
 }else {
-    header('Location: ?a=inicio');
+    header('Location: ./');
 }
 ?>

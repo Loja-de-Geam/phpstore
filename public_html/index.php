@@ -35,7 +35,7 @@
         $_SESSION['logado'] = true;
 
         // Redirecionamento para a página inicial
-        // header('Location: ?a=inicio');
+        // header('Location: ./');
 
     }
 
@@ -67,7 +67,7 @@
             $_SESSION['logado'] = true;
 
             // Redirecionamento para a página inicial
-            header('Location: ?a=inicio');
+            header('Location: ./');
             
         }
 
@@ -100,7 +100,7 @@
             $_SESSION['adm'] = true;
 
             // Redirecionamento para a página inicial
-            header('Location: ?a=inicio');
+            header('Location: ./');
 
         }
     }

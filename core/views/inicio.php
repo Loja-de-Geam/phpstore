@@ -33,8 +33,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
-    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
+    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
     <style>
@@ -72,7 +72,7 @@
     <header>
         <nav class="navegador">
             <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="?a=inicio" class="titulo">Fynder Foodie</a>
+            <a href="./" class="titulo">Fynder Foodie</a>
             <div class="box-search">
                 <input type="search" name="pesquisar" id="pesquisar" class="form-control" placeholder="Pesquisar">
                 <button class="btn" onclick="searchData()">
@@ -82,6 +82,13 @@
                 </button>
             </div>
             <ul class="nav">
+                <li>
+                    <button class="carrinho" onclick="window.location.href='?a=carrinho'">
+                        <span class="material-symbols-outlined">
+                            shopping_cart_checkout
+                        </span>
+                    </button>
+                </li>
                 <?php if(!isset($_SESSION['logado'])) {?>
                     <li class="nav-item">
                         <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
@@ -149,7 +156,7 @@
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="?a=inicio">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="?a=suporte">Suporte</a></li>
                 </ul>
             </div>

@@ -105,6 +105,29 @@ header {
     font-weight: bold;
 
 }
+
+.carrinho {
+    border: none;
+    background-color: var(--cor_menu);
+    cursor: pointer;
+    transition: all ease .7s;
+    border-radius: 5px;
+}
+
+.carrinho span {
+    color: var(--cor_botao);
+    font-size: 2.8em;
+}
+
+.carrinho:hover {
+    background-color: var(--cor_botao_fundo);
+    padding: 3px;
+}
+
+.carrinho:hover span {
+    color: white;
+}
+
 .bb-expandir {
     width: 40px;
     height: 40px;

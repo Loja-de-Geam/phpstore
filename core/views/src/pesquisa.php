@@ -18,7 +18,7 @@ while($comida = $result->fetch(PDO::FETCH_ASSOC)) {
         </div>
         <div class="botoes-container">
             <div class="input-container">
-                <input type="number" min="1" value="1" max="50" id="quant">
+                <h1 class="preco">R$<?php echo $comida['preco']?></h1>
                 <button class="comprar-btn">Comprar</button>
             </div>
         </div>

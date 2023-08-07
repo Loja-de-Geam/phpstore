@@ -24,7 +24,7 @@
                         <li class="pergunta"><a href="?a=comousar">4 - Como funciona a forma de pagamento</a></li>
                         <li class="pergunta"><a href="?a=outros">5 - Outro problema</a></li>
                     </ul>
-                    <p><a href="?a=inicio">Voltar ao site</a></p>
+                    <p><a href="./">Voltar ao site</a></p>
                     <div class="problema">
                         <label for="Problema">Qual é o problema?</label>
                         <input type="number" name="problema" placeholder="Digite aqui aqui">

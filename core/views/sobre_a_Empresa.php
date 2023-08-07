@@ -12,7 +12,7 @@
     <header>
         <nav class="navegador">
             <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="?a=inicio" class="titulo">Fynder Foodie</a>
+            <a href="./" class="titulo">Fynder Foodie</a>
             <ul class="nav">
                 <?php if(!isset($_SESSION['logado'])) {?>
                     <li class="nav-item">
@@ -65,7 +65,7 @@
             <div class="boxs">
                 <h2>Páginas</h2> <br>
                 <ul>
-                    <li><a href="?a=inicio">Home</a></li>
+                    <li><a href="./">Home</a></li>
                     <li><a href="?a=suporte">Suporte</a></li>
                 </ul>
             </div>
