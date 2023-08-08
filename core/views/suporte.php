@@ -18,11 +18,11 @@
                 <h1>O que deseja fazer?</h1>
                 <form action="" method="post">
                     <ul>
-                        <li class="pergunta"><a href="?a=comousar">1 - Como usar o site</a></li>
-                        <li class="pergunta"><a href="?a=reclamacao">2 - Reclamação do site</a></li>
-                        <li class="pergunta"><a href="?a=informarbug">3 - Informar bug ou erro do site</a></li>
-                        <li class="pergunta"><a href="?a=comousar">4 - Como funciona a forma de pagamento</a></li>
-                        <li class="pergunta"><a href="?a=outros">5 - Outro problema</a></li>
+                        <li class="pergunta"><a href="./?a=comousar">1 - Como usar o site</a></li>
+                        <li class="pergunta"><a href="./?a=reclamacao">2 - Reclamação do site</a></li>
+                        <li class="pergunta"><a href="./?a=informarbug">3 - Informar bug ou erro do site</a></li>
+                        <li class="pergunta"><a href="./?a=comousar">4 - Como funciona a forma de pagamento</a></li>
+                        <li class="pergunta"><a href="./?a=outros">5 - Outro problema</a></li>
                     </ul>
                     <p><a href="./">Voltar ao site</a></p>
                     <div class="problema">

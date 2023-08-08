@@ -16,12 +16,12 @@
             <ul class="nav">
                 <?php if(!isset($_SESSION['logado'])) {?>
                     <li class="nav-item">
-                        <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
-                        <button onclick="window.location.href='?a=cadastro'" class="botaoEC">Cadastrar</button>
+                        <button onclick="window.location.href='./?a=login'" class="botaoEC">Entrar</button>
+                        <button onclick="window.location.href='./?a=cadastro'" class="botaoEC">Cadastrar</button>
                     </li>
                 <?php }else {?>
                     <li>
-                        <button onclick="window.location.href='?a=logout'" class="botaoEC">Sair</button>
+                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">Sair</button>
                     </li>
                 <?php }?>
             </ul>
@@ -55,14 +55,14 @@
                 <h2>Páginas</h2> <br>
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li><a href="?a=suporte">Suporte</a></li>
+                    <li><a href="./?a=suporte">Suporte</a></li>
                 </ul>
             </div>
             <div class="boxs"> 
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="?a=sobre">Sobre a empresa</a></li>
-                    <li><a href="?a=oquefazemos">O que fazemos</a></li>
+                    <li><a href="./?a=sobre">Sobre a empresa</a></li>
+                    <li><a href="./?a=oquefazemos">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">

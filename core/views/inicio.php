@@ -1,73 +1,78 @@
-<?php 
+<?php
 
-    $encapsular = true;
-    $resultado = false;
+$encapsular = true;
+$resultado = false;
 
-    // Entrando no BD
-    $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+// Entrando no BD
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
-    if(!empty($_GET['search'])) {
-        $data = $_GET['search'];
+if (!empty($_GET['search'])) {
+    $data = $_GET['search'];
 
-        $comando = $gestor->query("SELECT * FROM comidas WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll();
+    $comando = $gestor->query("SELECT * FROM comidas WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll();
 
-        // Checagem para ver se o usuario existe
-        if (sizeof($comando) >= 1) {
+    // Checagem para ver se o usuario existe
+    if (sizeof($comando) >= 1) {
 
-            $encapsular = false;
+        $encapsular = false;
+    } else {
 
-        }else {
-
-            $encapsular = false;
-            $resultado = true;
-
-        }
+        $encapsular = false;
+        $resultado = true;
     }
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
-    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
-    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>Início</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+<link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
+<link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
+<link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+<title>Início</title>
     <style>
         .Vermelho1 {
             background-image: url('public_html/assets/comida/marmita/feijoada300x300.jpg');
             background-size: cover;
         }
+
         .Vermelho2 {
             background-image: url('public_html/assets/comida/marmita/LASANHA300x300.png');
             background-size: cover;
         }
+
         .Vermelho3 {
             background-image: url('public_html/assets/comida/marmita/strogonoff_de_carne300x300.jpg');
             background-size: cover;
         }
+
         .Amarelo1 {
             background-image: url('public_html/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
+
         .Amarelo2 {
             background-image: url('public_html/assets/comida/marmita/parmegiana600x300.png');
             background-size: cover;
         }
+
         .Amarelo3 {
             background-image: url('public_html/assets/comida/marmita/yakisoba600x300.png');
             background-size: cover;
         }
+
         #semresut {
             color: rgba(158, 158, 158, 0.658);
             font-size: 4em;
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navegador">
@@ -83,22 +88,22 @@
             </div>
             <ul class="nav">
                 <li>
-                    <button class="carrinho" onclick="window.location.href='?a=carrinho'">
+                    <button class="carrinho" onclick="window.location.href='./?a=carrinho'">
                         <span class="material-symbols-outlined">
-                            shopping_cart_checkout
+                            shopping_cart_checkout <span class="quant-prod">0</span>
                         </span>
                     </button>
                 </li>
-                <?php if(!isset($_SESSION['logado'])) {?>
+                <?php if (!isset($_SESSION['logado'])) { ?>
                     <li class="nav-item">
-                        <button onclick="window.location.href='?a=login'" class="botaoEC">Entrar</button>
-                        <button onclick="window.location.href='?a=cadastro'" class="botaoEC">Cadastrar</button>
+                        <button onclick="window.location.href='./?a=login'" class="botaoEC">Entrar</button>
+                        <button onclick="window.location.href='./?a=cadastro'" class="botaoEC">Cadastrar</button>
                     </li>
-                <?php }else {?>
+                <?php } else { ?>
                     <li>
-                        <button onclick="window.location.href='?a=logout'" class="botaoEC">Sair</button>
+                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">Sair</button>
                     </li>
-                <?php }?>
+                <?php } ?>
             </ul>
         </nav>
     </header>
@@ -121,7 +126,7 @@
                     <div class="slide">
                         <img src="public_html/assets/comida/doce/churros300x600.png" alt="doces">
                     </div>
-                    
+
                     <!-- Navigation auto -->
                     <div class="navigation-auto">
                         <div class="auto-btn1"></div>
@@ -138,13 +143,13 @@
 
             </div>
 
-            <?php if($encapsular){
+            <?php if ($encapsular) {
                 include("src/comidas.php");
-            }elseif(!$encapsular && !$resultado) {
+            } elseif (!$encapsular && !$resultado) {
                 include("src/pesquisa.php");
-            }else {
+            } else {
                 include("src/semresut.php");
-            }?>
+            } ?>
         </div>
     </main>
     <!--==============================================================================================-->
@@ -157,14 +162,14 @@
                 <h2>Páginas</h2> <br>
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li><a href="?a=suporte">Suporte</a></li>
+                    <li><a href="./?a=suporte">Suporte</a></li>
                 </ul>
             </div>
-            <div class="boxs"> 
+            <div class="boxs">
                 <h2>Sobre nós</h2> <br>
                 <ul>
-                    <li><a href="?a=sobre">Sobre a empresa</a></li>
-                    <li><a href="?a=oquefazemos">O que fazemos</a></li>
+                    <li><a href="./?a=sobre">Sobre a empresa</a></li>
+                    <li><a href="./?a=oquefazemos">O que fazemos</a></li>
                 </ul>
             </div>
             <div class="boxs">
@@ -182,52 +187,52 @@
     <script src="public_html\assets\js\slider.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('.bb-expandir');
-        const divs = document.querySelectorAll('.Vermelho1, .Vermelho2, .Vermelho3, .Amarelo1, .Amarelo2, .Amarelo3');
+            const buttons = document.querySelectorAll('.bb-expandir');
+            const divs = document.querySelectorAll('.Vermelho1, .Vermelho2, .Vermelho3, .Amarelo1, .Amarelo2, .Amarelo3');
 
-        buttons.forEach((button, index) => {
-            button.addEventListener('click', function() {
-            const div = divs[index];
-            divs.forEach((divItem, divIndex) => {
-                if (divIndex === index) {
-                divItem.classList.toggle('expandir');
-                } else {
-                divItem.classList.remove('expandir');
-                }
-            });
+            buttons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    const div = divs[index];
+                    divs.forEach((divItem, divIndex) => {
+                        if (divIndex === index) {
+                            divItem.classList.toggle('expandir');
+                        } else {
+                            divItem.classList.remove('expandir');
+                        }
+                    });
+                });
             });
         });
-        });
-
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-          const buttons = document.querySelectorAll('.bb-expandir');
-      
-          buttons.forEach((button) => {
-            button.addEventListener('click', function() {
-              const span = button.querySelector('span.material-symbols-outlined');
-              if (span.textContent === 'expand_more') {
-                span.textContent = 'expand_less';
-              } else {
-                span.textContent = 'expand_more';
-              }
+            const buttons = document.querySelectorAll('.bb-expandir');
+
+            buttons.forEach((button) => {
+                button.addEventListener('click', function() {
+                    const span = button.querySelector('span.material-symbols-outlined');
+                    if (span.textContent === 'expand_more') {
+                        span.textContent = 'expand_less';
+                    } else {
+                        span.textContent = 'expand_more';
+                    }
+                });
             });
-          });
         });
     </script>
     <script>
         var search = document.getElementById('pesquisar');
 
         search.addEventListener("keydown", function(event) {
-            if(event.key === "Enter") {
+            if (event.key === "Enter") {
                 searchData();
             }
         })
 
         function searchData() {
-            window.location = '?search='+search.value;
+            window.location = '?search=' + search.value;
         }
     </script>
 </body>
+
 </html>

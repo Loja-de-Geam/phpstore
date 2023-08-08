@@ -18,7 +18,7 @@
                         <h1>Login</h1>
                     </div>
                 <div class="cadastro">
-                    <button onclick="window.location.href='?a=cadastro'">Cadastrar-se</button>
+                    <button onclick="window.location.href='./?a=cadastro'">Cadastrar-se</button>
                 </div>
                 </div>
                 <div class="grupo_input">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="entrar">
                     <button name="acao">Entrar</button>
-                    <p class="suporte"><a onclick="window.location.href='?a=suporte'">Suporte</a></p>
+                    <p class="suporte"><a onclick="window.location.href='./?a=suporte'">Suporte</a></p>
                 </div>
             </form>
         </div>
