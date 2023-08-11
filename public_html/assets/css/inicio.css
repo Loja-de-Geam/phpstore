@@ -60,6 +60,8 @@ header {
 
 .box-search {
     display: flex;
+    flex: 1;
+    left: 10px;
 }
 
 .form-control {
@@ -83,58 +85,33 @@ header {
     font-size: 25px;
 }
 
-.navegador ul {
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-}
-
-.navegador ul li a {
-    color: var(--dark);
-    font-size: 17px;
-    font-weight: 500;
-    transition: all 0.5s;
-}
-
 .botaoEC {
     border: none;
     background-color: #423acf;
-    padding: 0.4rem 1rem;
+    padding: .4rem .7rem;
     border-radius: 20px;
     cursor: pointer;
     color: white;
     font-weight: bold;
-
 }
 
 .carrinho {
     border: none;
-    background-color: var(--cor_botao_fundo);
+    background-color: var(--cor_menu);
     padding: 3px;
     cursor: pointer;
     border-radius: 5px;
+    transition: .8s;
+    margin-left: 10px;
 }
 
 .carrinho span {
-    color: white;
+    color: var(--cor_botao);
     font-size: 2.8em;
 }
 
-span.quant-prod {
-    font-size: .5em;
-}
-
 .carrinho:hover {
-    background-color: var(--cor_botao_fundo);
-    padding: 3px;
-}
-
-.carrinho:hover span {
-    font-size: 2.9em;
-}
-
-.carrinho:hover span.quant-prod {
-    font-size: .6em;
+    background-color: #ebebeb;
 }
 
 .bb-expandir {
@@ -159,9 +136,13 @@ span.quant-prod {
     color: #423acf;
     border: 2px solid #423acf;
     background-color: #fff;
-    transition: .20s;
-    margin-right: 10px;
+    transition: .6s;
+    margin-right: 5px;
     box-shadow: 0px 0px 10px #0000006b;
+}
+
+.botaoEC:hover span {
+    color: var(--cor_botao);
 }
 
 

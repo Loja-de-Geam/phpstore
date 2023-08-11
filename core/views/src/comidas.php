@@ -1,3 +1,36 @@
+<div class="cinza">
+    <div class="slides">
+        <!-- Radio Buttons -->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+
+        <!-- Slide img -->
+        <div class="primeiro slide">
+            <img src="public_html/assets/comida/marmita/parmegiana600x300.png" alt="comidas">
+        </div>
+        <div class="slide">
+            <img src="public_html/assets/comida/bebida/iorgutedechocolate600x300.png" alt="bebidas">
+        </div>
+        <div class="slide">
+            <img src="public_html/assets/comida/doce/churros300x600.png" alt="doces">
+        </div>
+
+        <!-- Navigation auto -->
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+        </div>
+    </div>
+
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+    </div>
+
+</div>
 <div class="Vermelho1">
     <button class="bb-expandir">
         <span class="material-symbols-outlined">expand_more</span>

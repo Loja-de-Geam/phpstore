@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="form">
-            <form action="#" method="post">
+            <form action="" method="post">
                 <div class="cabeca">
                     <div class="titulo">
                         <h1>Login</h1>

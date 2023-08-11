@@ -26,15 +26,17 @@ if (!empty($_GET['search'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-<link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
-<link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
-<link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
-<title>Início</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
+    <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
+    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+    <title>Início</title>
     <style>
         .Vermelho1 {
             background-image: url('public_html/assets/comida/marmita/feijoada300x300.jpg');
@@ -76,8 +78,9 @@ if (!empty($_GET['search'])) {
 <body>
     <header>
         <nav class="navegador">
-            <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="./" class="titulo">Fynder Foodie</a>
+            <a href="./" class="titulo">
+                <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+            </a>
             <div class="box-search">
                 <input type="search" name="pesquisar" id="pesquisar" class="form-control" placeholder="Pesquisar">
                 <button class="btn" onclick="searchData()">
@@ -86,63 +89,34 @@ if (!empty($_GET['search'])) {
                     </span>
                 </button>
             </div>
-            <ul class="nav">
-                <li>
-                    <button class="carrinho" onclick="window.location.href='./?a=carrinho'">
+            <?php if (!isset($_SESSION['logado'])) { ?>
+                <div class="nav-item">
+                    <button onclick="window.location.href='./?a=login'" class="botaoEC">
                         <span class="material-symbols-outlined">
-                            shopping_cart_checkout <span class="quant-prod">0</span>
+                            login
                         </span>
                     </button>
-                </li>
-                <?php if (!isset($_SESSION['logado'])) { ?>
-                    <li class="nav-item">
-                        <button onclick="window.location.href='./?a=login'" class="botaoEC">Entrar</button>
-                        <button onclick="window.location.href='./?a=cadastro'" class="botaoEC">Cadastrar</button>
-                    </li>
-                <?php } else { ?>
-                    <li>
-                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">Sair</button>
-                    </li>
-                <?php } ?>
-            </ul>
+                </div>
+            <?php } else { ?>
+                <div>
+                    <button onclick="window.location.href='./?a=logout'" class="botaoEC">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </button>
+                </div>
+            <?php } ?>
+            <div>
+                <button class="carrinho" onclick="carrinho()">
+                    <span class="material-symbols-outlined">
+                        local_mall
+                    </span>
+                </button>
+            </div>
         </nav>
     </header>
     <main>
         <div class="container">
-            <div class="cinza">
-                <div class="slides">
-                    <!-- Radio Buttons -->
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-
-                    <!-- Slide img -->
-                    <div class="primeiro slide">
-                        <img src="public_html/assets/comida/marmita/parmegiana600x300.png" alt="comidas">
-                    </div>
-                    <div class="slide">
-                        <img src="public_html/assets/comida/bebida/iorgutedechocolate600x300.png" alt="bebidas">
-                    </div>
-                    <div class="slide">
-                        <img src="public_html/assets/comida/doce/churros300x600.png" alt="doces">
-                    </div>
-
-                    <!-- Navigation auto -->
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                    </div>
-                </div>
-
-                <div class="manual-navigation">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                </div>
-
-            </div>
-
             <?php if ($encapsular) {
                 include("src/comidas.php");
             } elseif (!$encapsular && !$resultado) {
@@ -154,35 +128,9 @@ if (!empty($_GET['search'])) {
     </main>
     <!--==============================================================================================-->
     <footer>
-        <div class="rodape">
-            <div class="boxs">
-                <img src="public_html/assets/images/logo/logo.png" alt="" width="70px">
-            </div>
-            <div class="boxs">
-                <h2>Páginas</h2> <br>
-                <ul>
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./?a=suporte">Suporte</a></li>
-                </ul>
-            </div>
-            <div class="boxs">
-                <h2>Sobre nós</h2> <br>
-                <ul>
-                    <li><a href="./?a=sobre">Sobre a empresa</a></li>
-                    <li><a href="./?a=oquefazemos">O que fazemos</a></li>
-                </ul>
-            </div>
-            <div class="boxs">
-                <h2>Contatos</h2> <br>
-                <ul>
-                    <li><a href="https://github.com/GabrielKleber" target="_blank">GitHub</a></li>
-                    <li><a href="https://wa.me/558381958797" target="_blank">WhatsApp</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copy">
-            <p>&copy;<?php echo date('Y') ?> Copyright - Fynder Foodie</p>
-        </div>
+        <?php if ($encapsular) {
+            include("src/rodape.php");
+        } ?>
     </footer>
     <script src="public_html\assets\js\slider.js"></script>
     <script>
@@ -233,6 +181,8 @@ if (!empty($_GET['search'])) {
             window.location = '?search=' + search.value;
         }
     </script>
+    <?php include('src/carrinho.php') ?>
+    <script src="public_html\assets\js\carrinho.js"></script>
 </body>
 
 </html>

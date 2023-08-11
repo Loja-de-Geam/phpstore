@@ -120,15 +120,6 @@
 
         }
 
-        public function carrinho()
-        {
-
-            Store::Layout([
-                'carrinho'
-            ]);
-
-        }
-
         public function adm()
         {
 

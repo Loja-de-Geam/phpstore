@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.janela-modal {
+    width: 98.75vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #00000027;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    text-align: justify;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    position: fixed;
+}
+
+.janela-modal.abrir {
+    display: flex;
+}
+
+.carrinho-comp {
+    width: 40%;
+    min-width: 450px;
+    height: 100%;
+    background-color: #fff;
+    padding: 50px;
+    float: right;
+}
+
+h2.car {
+    border-bottom: 2px solid #b8b8b88c;
+    margin-bottom: 20px;
+}
+
+.produto {
+    border-bottom: 2px solid #b8b8b88c;
+}
+
+.aparencia-prod {
+    display: flex;
+}
+
+.img-prod-car {
+    width: 90px;
+}
+
+h3.nome-prod {
+    color: black;
+    font-size: 25px;
+    margin: 0 0 0 10px;
+}
+
+p.desc-car {
+    text-align: justify;
+}
