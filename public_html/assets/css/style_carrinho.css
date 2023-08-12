@@ -35,6 +35,11 @@
     background-color: #fff;
     padding: 50px;
     float: right;
+    overflow: auto;
+}
+
+.carrinho-comp::-webkit-scrollbar {
+    width: 0;
 }
 
 h2.car {
@@ -42,7 +47,7 @@ h2.car {
     margin-bottom: 20px;
 }
 
-.produto {
+.prod {
     border-bottom: 2px solid #b8b8b88c;
 }
 
@@ -62,4 +67,30 @@ h3.nome-prod {
 
 p.desc-car {
     text-align: justify;
+}
+
+.finalizar-comp {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.finalizar-comp>button {
+    margin-right: 50px;
+    border: none;
+    background-color: #423acf;
+    padding: .4rem .7rem;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    transition: .6s;
+}
+
+.finalizar-comp>button:hover {
+    color: #423acf;
+    border: 1px solid #423acf;
+    background-color: #fff;
+    margin-right: 5px;
+    box-shadow: 0px 0px 10px #0000006b;
 }

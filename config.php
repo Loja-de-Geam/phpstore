@@ -1,6 +1,6 @@
 <?php 
 
-    define('APP_NAME', 'PHP_STORE');
+    define('APP_NAME', 'Fynder foodie');
     define('APP_VERSION', '1.0.0');
 
     // Banco de Dados MYSQL

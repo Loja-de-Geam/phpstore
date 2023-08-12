@@ -2,6 +2,7 @@
 
 $encapsular = true;
 $resultado = false;
+$data = '';
 
 // Entrando no BD
 $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
@@ -32,9 +33,9 @@ if (!empty($_GET['search'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
-    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
-    <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
+    <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
+    <link rel="stylesheet" href="public_html/assets/css/style_carrinho.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
     <style>
@@ -68,9 +69,12 @@ if (!empty($_GET['search'])) {
             background-size: cover;
         }
 
-        #semresut {
-            color: rgba(158, 158, 158, 0.658);
-            font-size: 4em;
+        .semresut {
+            text-align: center;
+        }
+
+        .semresut>img {
+            width: 500px;
         }
     </style>
 </head>
@@ -78,40 +82,65 @@ if (!empty($_GET['search'])) {
 <body>
     <header>
         <nav class="navegador">
-            <a href="./" class="titulo">
-                <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            </a>
+            <abbr title="Fynder Foodie">
+                <a href="./" class="titulo">
+                    <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+                </a>
+            </abbr>
             <div class="box-search">
-                <input type="search" name="pesquisar" id="pesquisar" class="form-control" placeholder="Pesquisar">
+                <input type="search" name="pesquisar" id="pesquisar" class="form-control" placeholder="Pesquisar" value="<?= $data ?>">
                 <button class="btn" onclick="searchData()">
                     <span class="material-symbols-outlined" id="btn-pesquisar">
                         search
                     </span>
                 </button>
+                <select name="tipo" id="tipo">
+                    <option value="" selected disabled>...</option>
+                    <option value="massa">Massa</option>
+                    <option value="frios">Frios</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="doces">Doces</option>
+                </select>
             </div>
             <?php if (!isset($_SESSION['logado'])) { ?>
                 <div class="nav-item">
-                    <button onclick="window.location.href='./?a=login'" class="botaoEC">
-                        <span class="material-symbols-outlined">
-                            login
-                        </span>
-                    </button>
+                    <abbr title="Logar">
+                        <button onclick="window.location.href='./?a=login'" class="botaoEC">
+                            <span class="material-symbols-outlined">
+                                login
+                            </span>
+                        </button>
+                    </abbr>
                 </div>
             <?php } else { ?>
                 <div>
-                    <button onclick="window.location.href='./?a=logout'" class="botaoEC">
-                        <span class="material-symbols-outlined">
-                            logout
-                        </span>
-                    </button>
+                    <abbr title="Sair">
+                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">
+                            <span class="material-symbols-outlined">
+                                logout
+                            </span>
+                        </button>
+                    </abbr>
                 </div>
             <?php } ?>
             <div>
-                <button class="carrinho" onclick="carrinho()">
-                    <span class="material-symbols-outlined">
-                        local_mall
-                    </span>
-                </button>
+                <abbr title="Carrinho">
+                    <button class="carrinho" onclick="carrinho()">
+                        <div class="info-carrinho">
+                            <span class="material-symbols-outlined">
+                                local_mall
+                            </span>
+                            <div class="quant-preco">
+                                <span class="span-carrinho">
+                                    R$0.00
+                                </span><br>
+                                <span class="span-carrinho">
+                                    0
+                                </span>
+                            </div>
+                        </div>
+                    </button>
+                </abbr>
             </div>
         </nav>
     </header>

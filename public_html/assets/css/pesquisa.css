@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+.produto {
+    width: 270px;
+    height: 450px;
+    border: 1px solid rgba(131, 131, 131, 0.432);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.img {
+    width: 100%;
+    height: 220px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.img .saibamais {
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    margin-left: 3px;
+    padding-top: 1px;
+    background-color: transparent;
+    transition: .8s;
+}
+
+.img .saibamais span {
+    color: #000;
+    text-align: center;
+    font-size: 2em;
+}
+
+.img .saibamais:hover {
+    background-color: #2f00ff4b;
+}
+
+.conteudo {
+    margin: 35px 5px 0 5px;
+}
+
+h3.nome {
+    font-size: 1.37em;
+}
+
+p.descricao {
+    margin: 7px 0 7px 0;
+    text-align: justify;
+}
+
+p.preco {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #0000ce;
+    text-align: end;
+}
+
+.addCarrinho {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    /* display: inline-block; */
+    left: 50%;
+    bottom: -13%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%); 
+}
+
+.addCarrinho button {
+    border: 1px solid #2f00ff;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 0 0 10px 10px;
+    background-color: #2f00ff;
+    color: #fff;
+    font-weight: bolder;
+    transition: .8s;
+}
+
+.addCarrinho button:hover {
+    background-color: #fff;
+    color: #2f00ff;
+}

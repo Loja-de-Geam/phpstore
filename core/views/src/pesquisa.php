@@ -7,27 +7,27 @@ $result->execute();
 while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 ?>
     <div>
-        <div class="carrinho-pesq">
-            <div class="imagem">
+        <div class="produto">
+            <div class="img">
                 <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
-                <form action="core/controladores/AddCarrinho.php" method="post">
-                    <input type="hidden" name="adicionar" value="<?= $comida['nome']?>">
-                    <button class="favoritar-btn">
+                <abbr title="Saiba mais">
+                    <button class="saibamais">
                         <span class="material-symbols-outlined">
-                            add_shopping_cart
+                            add
                         </span>
                     </button>
-                </form>
+                </abbr>
             </div>
             <div class="conteudo">
-                <h2 class="nome"><?php echo $comida["nome"] ?></h2>
+                <h3 class="nome"><?php echo $comida["nome"] ?></h3>
                 <p class="descricao"><?php echo $comida["descricao"] ?></p>
+                <p class="preco">R$<?php echo $comida['preco'] ?></p>
             </div>
-            <div class="botoes-container">
-                <div class="input-container">
-                    <h1 class="preco">R$<?php echo $comida['preco'] ?></h1>
-                    <button class="comprar-btn">Comprar</button>
-                </div>
+            <div class="addCarrinho">
+                <button>
+                    ADICIONAR
+                </button>
             </div>
         </div>
-    <?php } ?>
+    </div>
+<?php } ?>
