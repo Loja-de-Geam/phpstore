@@ -10,7 +10,7 @@ $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . "
 if (!empty($_GET['search'])) {
     $data = $_GET['search'];
 
-    $comando = $gestor->query("SELECT * FROM comidas WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll();
+    $comando = $gestor->query("SELECT * FROM menu WHERE nome LIKE '%$data%' or descricao LIKE '%$data%' ORDER BY id DESC")->fetchAll();
 
     // Checagem para ver se o usuario existe
     if (sizeof($comando) >= 1) {
@@ -33,9 +33,9 @@ if (!empty($_GET['search'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
     <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
-    <link rel="stylesheet" href="public_html/assets/css/style_carrinho.css">
+    <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
     <style>

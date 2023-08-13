@@ -15,7 +15,7 @@ if(isset($_POST['enviar'])) {
 
     move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/".$_FILES['foto']['name']);
 
-    $comando = $gestor->query("INSERT INTO comidas VALUES (NULL, '$nome', '$descricao', $preco, '$img')");
+    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img')");
 
 }
 

@@ -7,13 +7,13 @@
 
         <!-- Slide img -->
         <div class="primeiro slide">
-            <img src="public_html/assets/comida/marmita/parmegiana600x300.png" alt="comidas">
+            <img src="public_html/assets/images/slides/slide1.png" alt="sobre">
         </div>
         <div class="slide">
-            <img src="public_html/assets/comida/bebida/iorgutedechocolate600x300.png" alt="bebidas">
+            <img src="public_html/assets/images/slides/slide2.png" alt="nosso preco">
         </div>
         <div class="slide">
-            <img src="public_html/assets/comida/doce/churros300x600.png" alt="doces">
+            <img src="public_html/assets/images/slides/slide3.png" alt="oque fazemos">
         </div>
 
         <!-- Navigation auto -->

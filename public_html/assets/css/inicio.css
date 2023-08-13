@@ -120,6 +120,7 @@ header {
 .carrinho .info-carrinho span {
     color: var(--cor_botao);
     font-size: 2.8em;
+    transition: .8s;
 }
 
 .carrinho .info-carrinho .span-carrinho {
@@ -128,6 +129,10 @@ header {
 
 .carrinho:hover {
     background-color: #ebebeb;
+}
+
+.carrinho:hover .info-carrinho > span {
+    font-size: 2.9em;
 }
 
 .bb-expandir {
@@ -161,6 +166,28 @@ header {
     color: var(--cor_botao);
 }
 
+.usuario {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 3px;
+    transition: .8s;
+    border-radius: 5px;
+}
+
+.usuario span {
+    color: var(--cor_botao);
+    font-size: 2.8em;
+    transition: .8s;
+}
+
+.usuario:hover {
+    background-color: #ebebeb;
+}
+
+.usuario:hover span {
+    font-size: 2.9em;
+}
 
 /*-------------------------------*/
 
@@ -384,7 +411,6 @@ footer {
     text-decoration: none;
     color: azure;
     transition: .25s;
-
 }
 
 .boxs>ul>li>a:hover {
@@ -392,6 +418,26 @@ footer {
     color: #80ffd4a9;
     cursor: pointer;
     font-size: 120%;
+}
+
+.boxs>ul>li>.btn-redes {
+    border: none;
+    background-color: var(--cor_texto);
+    color: azure;
+    font-size: 1.08em;
+    transition: .25s;
+}
+
+.boxs>ul>li>.btn-redes:hover {
+    font-weight: bold;
+    color: #80ffd4a9;
+    cursor: pointer;
+    font-size: 120%;
+}
+
+.icon-redes {
+    width: 100px;
+    color: white;
 }
 
 footer>.copy {
