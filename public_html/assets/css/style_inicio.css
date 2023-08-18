@@ -329,13 +329,53 @@ main {
     background-color: #ffffff;
 }
 
+.auto-complete {
+    display: none;
+    position: fixed;
+    top: 58px;
+    width: 300px;
+    max-height: 200px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 2px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 
+.auto-complete::-webkit-scrollbar {
+    width: 5px;
+}
 
+.auto-complete::-webkit-scrollbar-thumb {
+    background-color: var(--cor_texto_2);
+}
 
+.auto-complete ul li {
+    cursor: pointer;
+    margin: 2px;
+    font-size: 15px;
+    transition: .8s;
+}
 
+.auto-complete ul li:hover {
+    color: var(--cor_botao);
+    font-weight: bold;
+    border-bottom: 1px solid #8b8b8b34;
+    border-top: 1px solid #8b8b8b34;
+}
 
+.link-pesq {
+    text-decoration: none;
+    color: var(--cor_texto);
+}
 
-
+.auto-complete #notfound {
+    cursor: pointer;
+    margin: 2px;
+    font-size: 15px;
+    transition: .8s;
+}
 
 
 
