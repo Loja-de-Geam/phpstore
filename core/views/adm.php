@@ -1,9 +1,9 @@
-<?php 
-if(!isset($_SESSION['adm'])) {
+<?php
+if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-if(isset($_POST['enviar'])) {
+if (isset($_POST['enviar'])) {
 
     // Acessa o BD
     $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
@@ -13,20 +13,23 @@ if(isset($_POST['enviar'])) {
     $preco = $_POST['preco'];
     $img = $_FILES['foto']["name"];
 
-    move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/".$_FILES['foto']['name']);
+    move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
 
     $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img')");
-
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Formulário de Produto</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+    <title>Formulário de Produto</title>
     <style>
         @charset "UTF-8";
 
@@ -44,7 +47,7 @@ if(isset($_POST['enviar'])) {
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center ;
+            align-items: center;
             background-color: #EDE9D8;
         }
 
@@ -52,7 +55,7 @@ if(isset($_POST['enviar'])) {
             width: 50%;
             height: 80vh;
             display: flex;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308) ;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
             border-radius: 7px;
         }
 
@@ -139,16 +142,29 @@ if(isset($_POST['enviar'])) {
             margin-bottom: 3rem;
         }
 
+        .link_comidas {
+            color: #000;
+            text-decoration: none;
+            padding-top: 5px;
+            font-size: 1.19em;
+            transition: .8s;
+        }
+
+        .link_comidas:hover {
+            color: #423acf;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
         @media screen and (max-width: 768px) {
             .container {
                 width: 100%;
                 height: 100%;
             }
-            }
-        
-
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="form">
@@ -176,7 +192,9 @@ if(isset($_POST['enviar'])) {
                     <button type="submit" name="enviar">Adicionar</button>
                 </div>
             </form>
+            <a href="./?a=comidas" class="link_comidas">Comidas</a>
         </div>
     </div>
 </body>
+
 </html>

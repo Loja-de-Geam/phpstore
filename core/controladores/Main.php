@@ -129,6 +129,33 @@
 
         }
 
+        public function edit()
+        {
+
+            Store::Layout([
+                'edit'
+            ]);
+
+        }
+
+        public function delete()
+        {
+
+            Store::Layout([
+                'delete'
+            ]);
+
+        }
+
+        public function comidas()
+        {
+
+            Store::Layout([
+                'comidas'
+            ]);
+
+        }
+
     }
 
 ?>

@@ -15,7 +15,10 @@
         'reclamacao' => 'main@reclamacao',
         'erro' => 'main@erro',
         'logout' => 'main@logout',
-        'adm' => 'main@adm'
+        'adm' => 'main@adm',
+        'edit' => 'main@edit',
+        'delete' => 'main@delete',
+        'comidas' => 'main@comidas'
     ];
 
     // Ação por defeito

@@ -8,9 +8,9 @@ pesquisa.addEventListener('focusin', event => {
     }
 })
 
-// pesquisa.addEventListener('focusout', event => {
-//     autocomplete.style.display = 'none';
-// })
+pesquisa.addEventListener('focusout', event => {
+    autocomplete.style.display = 'none';
+})
 
 pesquisa.addEventListener('input', _.throttle(async event => {
 
@@ -39,7 +39,7 @@ pesquisa.addEventListener('input', _.throttle(async event => {
             var menuFound = '<ul>';
 
             menuFound += data.map(pesquisa => {
-                return `<a href="?search=${pesquisa.nome}" class="link-pesq"><li>${pesquisa.nome}</li></a>`;
+                return `<li>${pesquisa.nome}</li>`;
             }).join('');
 
             menuFound += '</ul>';
