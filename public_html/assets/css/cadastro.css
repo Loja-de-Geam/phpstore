@@ -1,13 +1,12 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2? family= Inter:wght@100;200;300;400;500;600;700;800;900 & display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    
 }
 
 body {
@@ -15,29 +14,31 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center ;
-    background-color: #EDE9D8;
+    align-items: center;
+    background-color: #001F3F;
 }
+
 .container {
     width: 80%;
     height: 80vh;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308) ;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
 }
+
 .form-img {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-image: linear-gradient(to bottom, #80ffd4a9, #80ffd4a9, #80ffd4a9, #339473a9);
+    background-image: linear-gradient(to bottom, #002366, #004080);
     border-radius: 7px 0px 0px 7px;
-    
 }
-.form-img  img {
+
+.form-img img {
     width: 31rem;
-    
 }
+
 .form {
     width: 50%;
     display: flex;
@@ -45,54 +46,60 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #fff;
+    background-color: #FFFFFF;
     padding: 3rem;
     border-radius: 0px 7px 7px 0px;
 }
+
 .cabeca {
     margin-bottom: 3em;
     display: flex;
     justify-content: space-between;
 }
+
 .login {
     display: flex;
     align-items: center;
-    
 }
+
 .login button {
     border: none;
-    background-color: #423acf;
+    background-color: #FF6600;
     padding: 0.4rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     color: white;
     font-weight: bold;
 }
+
 .login button:hover {
-    color: #423acf;
-    border: 2px solid #423acf;
+    color: #FF6600;
+    border: 2px solid #FF6600;
     background-color: #fff;
 }
 
 .cabeca h1 {
     color: #09072e;
 }
+
 .cabeca h1::after {
     content: '';
     display: block;
     width: 5rem;
     height: 0.3rem;
-    background-color: #4f48cc;
+    background-color: #FF8844;
     margin: 0 auto;
     position: absolute;
     border-radius: 10px;
 }
+
 .grupo_input {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0.3rem 0;
 }
+
 .caixa {
     display: flex;
     flex-direction: column;
@@ -104,16 +111,16 @@ body {
     padding: 0.8rem 1.2rem;
     border: none;
     border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
+    box-shadow: 1px 1px 6px #0000005d;
     font-size: 0.8rem;
 }
-/*-------------------------------*/
+
 .caixa input:hover {
     background-color: #eeeeee75;
 }
 
 .caixa input:focus-visible {
-    outline: 1px solid #6c63ff;
+    outline: 1px solid #FF6600;
 }
 
 .caixa label,
@@ -125,6 +132,21 @@ body {
 
 .caixa input::placeholder {
     color: #000000be;
+}
+.genero-input input[type="radio"] {
+    margin-right: 0.35rem;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid #004080; 
+    background-color: white; 
+}
+
+
+.genero-input input[type="radio"]:checked {
+    border-color: #FF6600; 
+    background-color: #FF6600; 
 }
 
 .genero-grupo {
@@ -148,6 +170,7 @@ body {
     font-weight: 600;
     color: #000000e5;
 }
+
 .input-wrapper {
     position: relative;
     display: inline-block;
@@ -166,11 +189,12 @@ body {
     background: transparent;
     cursor: pointer;
 }
+
 .continuar button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
-    background-color: #423acf;
+    background-color: #FF6600;
     padding: 0.62rem;
     border-radius: 20px;
     cursor: pointer;
@@ -180,14 +204,14 @@ body {
 }
 
 .material-icons-outlined {
-    color: #423acf;
+    color: #FF6600;
     font-size: 20px;
 }
 
 .continuar button:hover {
-    color: #423acf;
+    color: #FF6600;
     background-color: #fff;
-    border: 1px solid #423acf;
+    border: 1px solid #FF6600;
     padding: 0.56rem;
 }
 

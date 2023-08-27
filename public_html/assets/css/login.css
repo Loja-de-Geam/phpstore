@@ -9,13 +9,27 @@
   font-family: 'Inter', sans-serif;
 }
 
+/*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #004080
+Laranja Intenso: #FF6600
+Laranja Profundo: #FF8844
+Amarelo Vibrante: #FFCC00
+Verde Fresco: #00A859
+
+
+
+
+*/
+
 body {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EDE9D8;
+  background-color: #001F3F;
 }
 
 .container {
@@ -32,7 +46,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background-image: linear-gradient(to bottom, #80ffd4a9, #80ffd4a9, #80ffd4a9, #339473a9);
+  background-image: linear-gradient(to bottom, #002366, #004080);
   border-radius: 0px 7px 7px 0px;
 }
 
@@ -46,9 +60,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #FFFFFF;
   padding: 3rem;
-  border-radius: 7px;
+  border-radius: 7px 0 0 7px;
 }
 
 .cabeca {
@@ -66,7 +80,7 @@ body {
   display: block;
   width: 5rem;
   height: 0.3rem;
-  background-color: #4f48cc;
+  background-color: #FF8844;
   margin: 0 auto;
   position: absolute;
   border-radius: 10px;
@@ -74,7 +88,7 @@ body {
 
 .cadastro button {
   border: none;
-  background-color: #423acf;
+  background-color: #FF6600;
   padding: 0.6rem 1rem;
   border-radius: 20px;
   cursor: pointer;
@@ -84,9 +98,9 @@ body {
 }
 
 .cadastro button:hover {
-  color: #423acf;
+  color: #FF6600;
   background-color: #fff;
-  border: 2px solid #423acf;
+  border: 2px solid #FF6600;
   padding: 0.45rem;
 }
 
@@ -120,7 +134,7 @@ body {
 }
 
 .caixa input:focus-visible {
-  outline: 1px solid #6c63ff;
+  outline: 1px solid #FF6600;
 }
 
 .caixa label {
@@ -135,7 +149,7 @@ body {
 }
 
 .material-icons-outlined {
-  color: #423acf;
+  color: #FF6600;
   font-size: 20px;
 }
 
@@ -168,7 +182,7 @@ body {
 .entrar button {
   width: 100%;
   border: none;
-  background-color: #423acf;
+  background-color: #FF6600;
   padding: 0.62rem;
   border-radius: 20px;
   cursor: pointer;
@@ -179,15 +193,15 @@ body {
 }
 
 .entrar button:hover {
-  color: #423acf;
+  color: #FF6600;
   background-color: #fff;
-  border: 2px solid #423acf;
+  border: 2px solid #FF6600;
   padding: 0.5rem;
 }
 
 .entrar a {
   text-decoration: none;
-  color: #423acf;
+  color: #FF8844;
 }
 
 .suporte {
@@ -209,7 +223,7 @@ body {
 
   .form {
     width: 100%;
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 7px;
   }
 }
 
@@ -226,6 +240,6 @@ body {
 
   .form {
     width: 100%;
-    border-radius: 0px 0px 7px 7px;
+    border-radius: 7px ;
   }
 }
