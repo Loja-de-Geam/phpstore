@@ -33,8 +33,8 @@ if (!empty($_GET['search'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/inicio.css">
-    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
+    <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
     <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
@@ -45,7 +45,7 @@ if (!empty($_GET['search'])) {
         }
 
         .Vermelho2 {
-            background-image: url('public_html/assets/comida/marmita/LASANHA300x300.png');
+            /* background-image: url('public_html/assets/comida/marmita/LASANHA300x300.png'); */
             background-size: cover;
         }
 
@@ -94,6 +94,7 @@ if (!empty($_GET['search'])) {
                         search
                     </span>
                 </button>
+                <div class="auto-complete"></div>
                 <select name="tipo" id="tipo">
                     <option value="" selected disabled>...</option>
                     <option value="massa">Massa</option>
@@ -162,6 +163,9 @@ if (!empty($_GET['search'])) {
         } ?>
     </footer>
     <script src="public_html\assets\js\slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+    <script src="public_html\assets\js\pesquisas.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.bb-expandir');
