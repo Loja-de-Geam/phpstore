@@ -148,9 +148,10 @@ body {
   color: #000000be;
 }
 
-.material-icons-outlined {
+.eye {
   color: #FF6600;
-  font-size: 20px;
+  font-size: 30px;
+  margin: auto;
 }
 
 .input-wrapper {

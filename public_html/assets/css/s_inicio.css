@@ -99,6 +99,10 @@ header {
     font-weight: bold;
 }
 
+.botaoEC > i {
+    font-size: 1.8em;
+}
+
 .info-carrinho {
     display: flex;
 }
@@ -117,10 +121,11 @@ header {
     margin-left: 10px;
 }
 
-.carrinho .info-carrinho span {
+.carrinho .info-carrinho .span-carrinho {
     color: var(--cor_botao);
-    font-size: 2.8em;
+    font-size: 2.5em;
     transition: .8s;
+    margin-right: 5px;
 }
 
 .carrinho .info-carrinho .span-carrinho {
@@ -131,8 +136,9 @@ header {
     background-color: #ebebeb;
 }
 
-.carrinho:hover .info-carrinho > span {
-    font-size: 2.9em;
+.carrinho .info-carrinho > i {
+    font-size: 2.2em;
+    color: var(--cor_botao);
 }
 
 .bb-expandir {
@@ -162,7 +168,7 @@ header {
     box-shadow: 0px 0px 10px #0000006b;
 }
 
-.botaoEC:hover span {
+.botaoEC:hover i {
     color: var(--cor_botao);
 }
 
@@ -175,7 +181,7 @@ header {
     border-radius: 5px;
 }
 
-.usuario span {
+.usuario i {
     color: var(--cor_botao);
     font-size: 2.8em;
     transition: .8s;
@@ -185,7 +191,7 @@ header {
     background-color: #ebebeb;
 }
 
-.usuario:hover span {
+.usuario:hover i {
     font-size: 2.9em;
 }
 

@@ -17,6 +17,7 @@ $result->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title><?= APP_NAME ?> | Comidas cadastradas</title>
     <style>
         * {
@@ -53,9 +54,11 @@ $result->execute();
             border-bottom: 1px solid black;
             padding: 5px 25px 5px 25px;
         }
+
         a {
             text-decoration: none;
         }
+
         .btn-edit {
             font-size: 1.6em;
             border-radius: 5px;
@@ -63,9 +66,11 @@ $result->execute();
             cursor: pointer;
             color: white;
         }
+
         .edit {
             background-color: #2f00ffaa;
         }
+
         .delete {
             background-color: #f00a;
         }
@@ -94,15 +99,11 @@ $result->execute();
                             <td>R$<?= $data_menu["preco"] ?></td>
                             <td><?= $data_menu["descricao"] ?></td>
                             <td>
-                                <a href="?a=edit&?id=<?= $data_menu['id']?>">
-                                    <span class="material-symbols-outlined edit btn-edit">
-                                        edit
-                                    </span>
+                                <a href="?a=edit&?id=<?= $data_menu['id'] ?>">
+                                    <i class="bi bi-pencil-square btn-edit edit"></i>
                                 </a>
-                                <a href="?a=delete&?id=<?= $data_menu['id']?>">
-                                    <span class="material-symbols-outlined delete btn-edit">
-                                        delete_forever
-                                    </span>
+                                <a href="?a=delete&?id=<?= $data_menu['id'] ?>">
+                                    <i class="bi bi-trash btn-edit delete"></i>
                                 </a>
                             </td>
                         </tr>

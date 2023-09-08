@@ -33,9 +33,10 @@ if (!empty($_GET['search'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
-    <link rel="stylesheet" href="public_html/assets/css/style_inicio.css">
-    <link rel="stylesheet" href="public_html/assets/css/pesquisas.css">
+    <link rel="stylesheet" href="public_html/assets/css/s_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
     <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
     <style>
@@ -107,9 +108,7 @@ if (!empty($_GET['search'])) {
                 <div class="nav-item">
                     <abbr title="Logar">
                         <button onclick="window.location.href='./?a=login'" class="botaoEC">
-                            <span class="material-symbols-outlined">
-                                login
-                            </span>
+                            <i class="bi bi-person"></i>
                         </button>
                     </abbr>
                 </div>
@@ -117,9 +116,7 @@ if (!empty($_GET['search'])) {
                 <div>
                     <abbr title="Sair">
                         <button onclick="window.location.href='./?a=logout'" class="botaoEC">
-                            <span class="material-symbols-outlined">
-                                logout
-                            </span>
+                            <i class="bi bi-person-dash"></i>
                         </button>
                     </abbr>
                 </div>
@@ -128,9 +125,7 @@ if (!empty($_GET['search'])) {
                 <abbr title="Carrinho">
                     <button class="carrinho" onclick="carrinho()">
                         <div class="info-carrinho">
-                            <span class="material-symbols-outlined">
-                                local_mall
-                            </span>
+                            <i class="bi bi-bag"></i>
                             <div class="quant-preco">
                                 <span class="span-carrinho">
                                     R$0.00
