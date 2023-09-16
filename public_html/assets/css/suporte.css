@@ -2,14 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;600&display=swap');
 
+/*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #3498DB
+Roxo Intenso: #800080
+Roxo Profundo: #663399
+Roxo Claro: #9B59B6
+Azul Claro: #5E9DC8
+
+*/
 :root{
-    --cor_fundo1: #0000ce;
-    --cor_fundo2: #000041;
-    --cor_texto: #09072e;
-    --cor_menu: #fff;
-    --cor_texto_2: #1d134b;
-    --cor_botao: #1d134b;
-    --cor_botao_fundo: #423acf;
     --sombra_colorida: #6963e7;
     --padrao: 0px 8px 40px #00000046;
 }
@@ -21,7 +24,7 @@ body{
 main{
     width: 100vw;
     height: 100vh;
-    background-color: #EDE9D8;
+    background-image: linear-gradient(to bottom, #002366, #004080);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,7 +39,7 @@ main{
 }
 .imagem > h1{
     font-size: 2vw;
-    color: #423acf;
+    color: #fff;
 }
 .imagem > img{
     width: 35vw;
@@ -55,12 +58,12 @@ main{
     align-items: center;
     flex-direction: column;
     padding: 20px 25px;
-    background: var(--cor_menu);
+    background: #fff;
     border-radius: 17px;
     box-shadow: var(--padrao);
 }
 .conteudo > h1{
-    color: #09072e;
+    color: #001F3F;
     margin: 0px 0px 30px 0px;
 }
 .conteudo > h1::after {
@@ -68,7 +71,7 @@ main{
         display: block;
         width: 12rem;
         height: 0.4rem;
-        background-color: #4f48cc;
+        background-color: #800080;
         margin: 2px auto 0px auto;
         position: absolute;
         border-radius: 10px;
@@ -81,12 +84,12 @@ main{
     font-size: 1.1rem;
 }
 a{
-    color: #0000ce;
+    color: #663399;
     text-decoration: none;
     transition: .30s;
 }
 a:hover{
-    color: var(--cor_botao_fundo);
+    color: #9B59B6;
     font-weight: bold;
 }
 .problema{
@@ -110,10 +113,10 @@ a:hover{
     color: #000000be;
 }
 .problema > input:focus-visible {
-    outline: 1px solid #6c63ff;
+    outline: 1px solid #663399;
 }
 .problema > label{
-    color: var(--cor_texto_2);
+    color: #800080;
     margin-bottom: 10px;
     font-weight: bolder;
 }
@@ -126,15 +129,15 @@ a:hover{
     outline: none;
     font-weight: bold;
     letter-spacing: 2px;
-    color: white;
+    color: #fff;
     background: var(--cor_botao_fundo);
     box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
 }
 .botao:hover {
     cursor: pointer;
-    border: 1px solid var(--cor_botao_fundo);
-    background-color: white;
-    color: #423acf;
+    border: 1px solid #9B59B6;
+    background-color: #fff;
+    color: #800080;
     padding: 9px 0px;
 }
 

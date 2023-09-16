@@ -38,9 +38,7 @@
                             <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
                                 <i class="bi bi-eye-fill eye"></i>
                             </button>
-                            <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
-                                <i class="bi bi-eye-fill eye"></i>
-                            </button>
+                            <p><a  class="suporte" href="@">Esqueceu a senha?</a></p>
                         </div>
                     </div>
                 </div>
