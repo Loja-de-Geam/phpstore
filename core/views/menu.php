@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="public_html/assets/css/s_inicio.css">
+    <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
     <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
@@ -70,7 +71,7 @@
     </header>
     <main>
         <div class="container">
-            <?php include("src/comidas.php");?>
+            <?php include("src/pesquisa.php");?>
         </div>
     </main>
     <!--==============================================================================================-->

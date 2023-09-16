@@ -16,9 +16,11 @@
 
         }
 
-        public function loja()
+        public function menu()
         {
-            echo 'Loja!!!!!!!!!';
+            Store::Layout([
+                'menu'
+            ]);
         }
 
         public function cadastro()

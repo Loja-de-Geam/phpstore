@@ -6,6 +6,7 @@
     border: 1px solid rgba(131, 131, 131, 0.432);
     border-radius: 10px;
     margin: 20px;
+    box-shadow: 5px 7px 10px #2c2c2c33;
 }
 
 .img {
@@ -19,29 +20,27 @@
     border-radius: 10px 10px 0 0;
 }
 
-.img .saibamais {
+.conteudo {
+    margin: 5px 5px 0 5px;
+}
+
+.saibamais {
     border: none;
     width: 30px;
     height: 30px;
-    border-radius: 3px;
-    margin-left: 3px;
-    padding-top: 1px;
     background-color: transparent;
+    border-radius: 5px;
     transition: .8s;
 }
 
-.img .saibamais i {
-    color: #000;
-    text-align: center;
-    font-size: 2.5em;
+.saibamais:hover {
+    background-color: rgba(131, 131, 131, 0.212);
 }
 
-.img .saibamais:hover {
-    background-color: #ebebeb;
-}
-
-.conteudo {
-    margin: 35px 5px 0 5px;
+.saibamais i {
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
 }
 
 h3.nome {

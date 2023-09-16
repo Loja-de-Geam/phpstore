@@ -3,7 +3,7 @@
     // Coleção de rotas
     $rotas = [
         'inicio' => 'main@index',
-        'loja' => 'main@loja',
+        'menu' => 'main@menu',
         'cadastro' => 'main@cadastro',
         'login' => 'main@login',
         'suporte' => 'main@suporte',
