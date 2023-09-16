@@ -147,7 +147,6 @@ body {
 .eye {
   color: #800080;
   font-size: 30px;
-  margin: auto;
 }
 
 .input-wrapper {
@@ -156,12 +155,12 @@ body {
 }
 
 #idsenha {
-  padding-right: 35px;
+  padding-right: 30px;
 }
 
 #idmostrar-senha {
   position: absolute;
-  top: 55%;
+  top: 40%;
   right: 10px;
   transform: translateY(-50%);
   border: none;
