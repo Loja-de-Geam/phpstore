@@ -50,7 +50,7 @@
                         <div class="input-wrapper">
                             <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8" maxlength="60">
                             <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
-                                <i class="bi bi-eye eye"></i>
+                                <i class="bi bi-eye-fill eye"></i>
                             </button>
                         </div>
                     </div>
@@ -102,10 +102,10 @@
 
             if (senhaInput.type === "password") {
                 senhaInput.type = "text";
-                mostrarSenhaBtn.innerHTML = '<i class="bi bi-eye-slash eye"></i>';
+                mostrarSenhaBtn.innerHTML = '<i class="bi bi-eye-slash-fill eye"></i>';
             } else {
                 senhaInput.type = "password";
-                mostrarSenhaBtn.innerHTML = '<i class="bi bi-eye eye"></i>';
+                mostrarSenhaBtn.innerHTML = '<i class="bi bi-eye-fill eye"></i>';
             }
         }
     </script>
