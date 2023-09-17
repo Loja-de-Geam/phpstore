@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="..\public\assets\css\suporte.css">
     <link rel="shortcut icon" href="assets\images\logo\favicon.ico" type="image/x-icon">
     <style>
-      
+      /*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #3498DB
+Roxo Intenso: #800080
+Roxo Profundo: #663399
+Roxo Claro: #9B59B6
+Azul Claro: #5E9DC8
+*/
         :root{
             --cor_fundo1: #0000ce;
             --cor_fundo2: #000041;
@@ -26,33 +34,16 @@
             font-family: 'Noto Sans', sans-serif;
         }
         main {
+            background-image: linear-gradient(to bottom, #002366, #004080);
             width: 100vw;
             height: 100vh;
-            background-color: #EDE9D8;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-    
-        .imagem {
-            width: 50vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    
-        .imagem>h1 {
-            font-size: 2vw;
-            color: #423acf;
-        }
-    
-        .imagem>img {
-            width: 35vw;
         }
     
         .menu {
+            
             width: 50vw;
             height: 100vh;
             display: flex;
@@ -61,7 +52,7 @@
         }
     
         .conteudo {
-            width: 60%;
+            width: 90%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -73,21 +64,23 @@
         }
     
         .conteudo>h1 {
-            color: #09072e;
+            color: #001F3F;
             margin: 0px 0px 30px 0px;
         }
     
         .conteudo>h1::after {
             content: '';
             display: block;
-            width: 12rem;
+            width: 24rem;
             height: 0.4rem;
-            background-color: #4f48cc;
+            background-color: #663399;
             margin: 2px auto 0px auto;
             position: absolute;
             border-radius: 10px;
         }
         .conteudo p{
+            font-size: 1.1rem;
+            text-indent: 30px; 
             text-align: justify;
             margin: 0 0 1rem;
         }
@@ -153,17 +146,17 @@
             border-radius: 20px;
             outline: none;
             font-weight: bold;
-            letter-spacing: 2px;
-            color: white;
-            background: var(--cor_botao_fundo);
+            letter-spacing: 1px;
+            color: #fff;
+            background: #663399;
             box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
         }
     
         .botao:hover {
             cursor: pointer;
-            border: 1px solid var(--cor_botao_fundo);
-            background-color: white;
-            color: #423acf;
+            border: 1px solid #800080;
+            background-color:#fff;
+            color: #800080;
             padding: 9px 0px;
         }
     
@@ -201,10 +194,6 @@
 
 <body>
     <main>
-        <div class="imagem">
-            <h1>Como usar o site</h1>
-            <img src="public_html/assets/images/Façaoseucadastro.png" alt="Como usar o site">
-        </div>
         <div class="menu">
             <div class="conteudo">
                 <h1>Instruções de uso do site</h1>
@@ -218,7 +207,7 @@
                     Após concluir o cadastro, você terá acesso a todos os recursos e benefícios disponíveis em nossa plataforma. Bem-vindo à nossa comunidade! Estamos felizes em tê-lo 
                     conosco e esperamos que tenha uma ótima experiência conosco!
                 </p>
-                <button class="botao" onclick="window.location.href='./'"> voltar ao site</button>
+                <button class="botao" onclick="window.location.href='./?a=suporte'">Voltar</button>
             </div>
         </div>
     </main>

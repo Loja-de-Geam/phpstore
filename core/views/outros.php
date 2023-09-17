@@ -10,7 +10,16 @@
 
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;600&display=swap');
       
-      :root{
+      /*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #3498DB
+Roxo Intenso: #800080
+Roxo Profundo: #663399
+Roxo Claro: #9B59B6
+Azul Claro: #5E9DC8
+*/
+:root{
           --cor_fundo1: #0000ce;
           --cor_fundo2: #000041;
           --cor_texto: #09072e;
@@ -29,7 +38,7 @@
       main{
           width: 100vw;
           height: 100vh;
-          background-color: #EDE9D8;
+          background-image: linear-gradient(to bottom, #002366, #004080);;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -44,88 +53,87 @@
       }
       .imagem > h1{
           font-size: 2vw;
-          color: #423acf;
+          color: #fff;
       }
       .imagem > img{
           width: 35vw;
       }
       .menu{
           width: 50vw;
-          height: 100vh;
+          height: 90%;
           display: flex;
           justify-content: center;
           align-items: center;
       }
       .conteudo{
-          width: 70%;
+          width: 80%;
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
           padding: 20px 25px;
           background: var(--cor_menu);
-          border-radius: 13px;
+          border-radius: 17px;
           box-shadow: var(--padrao);
       }
       .conteudo > h1{
-          color: #09072e;
+          color: #001F3F;
           margin: 0px 0px 30px 0px;
       }
       .conteudo > h1::after {
               content: '';
               display: block;
-              width: 12rem;
+              width: 8rem;
               height: 0.4rem;
-              background-color: #4f48cc;
+              background-color: #663399;
               margin: 2px auto 0px auto;
               position: absolute;
               border-radius: 10px;
       }
-      .conteudo ul {
-          margin-bottom: 30px;
-      }
-      .pergunta{
-          color: var(--cor_texto_2);
-          font-size: 1.1rem;
-      }
-      a{
-          color: #0000ce;
-          text-decoration: none;
-          transition: .30s;
-      }
-      a:hover{
-          color: var(--cor_botao_fundo);
-          font-weight: bold;
-      }
       .problema{
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: center;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0.3rem 0;
       }
-      .problema > input{
-          width: 100%;
-          border: none;
-          border-radius: 10px;
-          padding: 12px;
-          font-size: 13pt;
-          outline: none;
-          box-sizing: border-box;
-          box-shadow: 1px 1px 6px #00000069;
+      .caixa {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+    width: 45%;
+        }
+      .caixa > input,textarea,select{
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px #0000005d;
+        font-size: 0.8rem;
       }
-      .problema > input::placeholder{
-          color: #000000be;
+      select {
+        appearance: none;
       }
-      .problema > input:focus-visible {
-          outline: 1px solid #6c63ff;
-      }
-      .problema > label{
-          color: var(--cor_texto_2);
-          margin-bottom: 10px;
-          font-weight: bolder;
-      }
-      .botao{
+        .caixa > input:hover, select:hover {
+    background-color: #eeeeee75;
+        }
+
+        .caixa input:focus-visible, textarea:focus-visible,select:focus-visible {
+            outline: 1px solid #9B59B6;
+        }
+
+        .caixa label{
+            font-weight: bolder;
+            color: #000000;
+        }
+
+        .caixa input::placeholder {
+            color: #000000be;
+        }
+
+      .botao, .voltar {
           width: 100%;
           padding: 10px 0px;
           margin-top: 15px;
@@ -133,18 +141,30 @@
           border-radius: 20px;
           outline: none;
           font-weight: bold;
-          letter-spacing: 2px;
-          color: white;
-          background: var(--cor_botao_fundo);
+          letter-spacing: 1px;
+          color: #fff;
+          background: #800080;
           box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
+          
       }
-      .botao:hover {
+      .voltar {
+        width: 30%;
+        background: #002366;
+      }
+      
+      .botao:hover, .voltar:hover {
           cursor: pointer;
-          border: 1px solid var(--cor_botao_fundo);
-          background-color: white;
-          color: #423acf;
+          border: 1px solid #9B59B6;
+          background-color: #fff;
+          color: #800080;
           padding: 9px 0px;
       }
+      .voltar:hover {
+        border: 1px solid #001F3F;
+        background-color: #fff;
+        color: #002366;
+    }
+
       
       @media only screen and (max-width: 950px){
           .conteudo{
@@ -180,24 +200,30 @@
         </div>
         <div class="menu">
             <div class="conteudo">
-                <h1>OUTROS PROBLEMAS/DUVIDAS</h1>
-                <div class="problema">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-            
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="titulo">Título do Problema/Duvida:</label>
-                    <input type="text" id="titulo" name="titulo" required><br>
-            
-                    <div class="problema">
-                        <label for="descricao">Descrição do problema/duvida:</label>
-                        <textarea id="descricao" name="descricao" rows="4" required></textarea><br>
+                <h1>Dúvidas</h1>
+                <for class="problema">
+                    <div class="caixa">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
-                    <label for="anexo">Anexar foto se for problema(Não obrigatorio):</label>
-                    <input type="file" id="anexo" name="anexo">
-                    <button class="botao">Informar problema</button>
+            
+                    <div class="caixa">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="caixa">
+                        <label for="titulo">Título da dúvida</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </div>
+            
+                    <div class="caixa">
+                        <label for="descricao">Descrição da dúvida</label>
+                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                    </div>
+
+                    <button class="botao">Informar dúvida</button>
+                    <button class="voltar" onclick="window.location.href='./?a=suporte'">Voltar</button>
                 </form>
             </div>
         </div>
