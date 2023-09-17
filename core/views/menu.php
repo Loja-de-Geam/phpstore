@@ -26,7 +26,7 @@
             <div class="nav-bar">
                 <nav>
                     <ul>
-                        <li class="itens"><a href="./?a=menu">Menu</a></li>
+                        <li class="itens marcado"><a href="./?a=menu">Menu</a></li>
                         <li class="itens"><a href="./?a=sobre">Quem somos</a></li>
                         <li class="itens"><a href="./?a=oquefazemos">O que fazemos</a></li>
                         <li class="itens"><a href="https://wa.me/558381958797" target="_blank">Fale Conosco</a></li>
@@ -71,14 +71,20 @@
     </header>
     <main>
         <div class="container">
-            <?php include("src/pesquisa.php");?>
+            <button class="filtro">Filtrar <i class="bi bi-filter"></i></button>
+            <?php if (!empty($_GET['filtro'])) {
+                echo 'existe oia';
+            } else {
+                include('src/pesquisa.php');
+            } ?>
         </div>
+
     </main>
     <!--==============================================================================================-->
     <footer>
-        <?php include("src/rodape.php");?>
+        <?php include("src/rodape.php"); ?>
     </footer>
-<!----------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------->
     <script src="public_html\assets\js\slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>

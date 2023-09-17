@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public_html\assets\css\s_inicio.css">
     <link rel="stylesheet" href="public_html\assets\css\sobre.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>O que fazemos</title>
 </head>
 <body>
-    <header>
+<header>
         <nav class="navegador">
-            <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="./" class="titulo">Fynder Foodie</a>
-            <ul class="nav">
-                <?php if(!isset($_SESSION['logado'])) {?>
-                    <li class="nav-item">
-                        <button onclick="window.location.href='./?a=login'" class="botaoEC">Entrar</button>
-                        <button onclick="window.location.href='./?a=cadastro'" class="botaoEC">Cadastrar</button>
-                    </li>
-                <?php }else {?>
-                    <li>
-                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">Sair</button>
-                    </li>
-                <?php }?>
-            </ul>
+            <abbr title="Fynder Food">
+                <a href="./" class="titulo">
+                    <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+                    <h3>Fynder Food</h3>
+                </a>
+            </abbr>
+            <div class="nav-bar">
+                <nav>
+                    <ul>
+                        <li class="itens"><a href="./?a=menu">Menu</a></li>
+                        <li class="itens"><a href="./?a=sobre">Quem somos</a></li>
+                        <li class="itens marcado"><a href="./?a=oquefazemos">O que fazemos</a></li>
+                        <li class="itens"><a href="https://wa.me/558381958797" target="_blank">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <?php if (!isset($_SESSION['logado'])) { ?>
+                <div class="nav-item">
+                    <abbr title="Logar">
+                        <button onclick="window.location.href='./?a=login'" class="botaoEC">
+                            <i class="bi bi-person"></i>
+                        </button>
+                    </abbr>
+                </div>
+            <?php } else { ?>
+                <div>
+                    <abbr title="Sair">
+                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">
+                            <i class="bi bi-person-dash"></i>
+                        </button>
+                    </abbr>
+                </div>
+            <?php } ?>
         </nav>
     </header>
     <main>

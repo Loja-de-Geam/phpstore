@@ -1,5 +1,28 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+.filtro {
+    position: relative;
+    top: -220px;
+    right: 120px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    background-color: #0000ce;
+    border-radius: 20px;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.filtro:hover {
+    background-color: #fff;
+    border: 1px solid #0000ce;
+    color: #0000ce;
+}
+
+/* Editando os produtos */
 .produto {
     width: 270px;
     height: 450px;
@@ -41,6 +64,8 @@
     width: 100%;
     height: 100%;
     font-size: 2em;
+    display: grid;
+    place-items: center;
 }
 
 h3.nome {

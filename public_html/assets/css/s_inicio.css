@@ -98,6 +98,15 @@ header {
     padding-bottom: 10px;
 }
 
+.nav-bar ul li.marcado a {
+    color: var(--cor_texto_2);
+    border-bottom: 2px solid var(--cor_texto_2);
+}
+
+.nav-bar ul li.marcado:hover a {
+    border-bottom: 2px solid var(--cor_texto_2);
+}
+
 .form-control {
     border: 1px solid var(--cor_botao);
     border-radius: 15px 0 0 15px;
@@ -257,20 +266,6 @@ main {
     align-items: center;
 }
 
-.Vermelho1,
-.Amarelo1,
-.Amarelo2,
-.Amarelo3,
-.Vermelho2,
-.Vermelho3 {
-    margin: 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 7px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.363);
-    background-position: center center;
-}
-
 .cinza {
     display: block;
     height: 400px;
@@ -417,47 +412,7 @@ main {
     transition: .8s;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.Vermelho1,
-.Vermelho2,
-.Vermelho3 {
-    display: inline-block;
-    height: 300px;
-    width: 300px;
-    margin-bottom: 20px;
-}
-
-.Amarelo1,
-.Amarelo2,
-.Amarelo3 {
-    display: inline-block;
-    height: 300px;
-    width: 600px;
-    margin-bottom: 20px;
-}
-
 /*DEPOIS EU AJEITO KSKSKSKSKSKKSKSKSKS*/
-
-.bb-expandir {
-    margin: 10px;
-}
-
-.expandir {
-    display: block;
-    width: 700px;
-    height: 500px;
-}
 
 footer {
     background-color: var(--cor_texto);

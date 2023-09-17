@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public_html\assets\css\s_inicio.css">
     <link rel="stylesheet" href="public_html\assets\css\sobre.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Sobre a Empresa</title>
 </head>
+
 <body>
     <header>
         <nav class="navegador">
-            <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
-            <a href="./" class="titulo">Fynder Foodie</a>
-            <ul class="nav">
-                <?php if(!isset($_SESSION['logado'])) {?>
-                    <li class="nav-item">
-                        <button onclick="window.location.href='./?a=login'" class="botaoEC">Entrar</button>
-                        <button onclick="window.location.href='./?a=cadastro'" class="botaoEC">Cadastrar</button>
-                    </li>
-                <?php }else {?>
-                    <li>
-                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">Sair</button>
-                    </li>
-                <?php }?>
-            </ul>
+            <abbr title="Fynder Food">
+                <a href="./" class="titulo">
+                    <img src="public_html/assets/images/logo/logo.png" alt="" width="50px" height="50px">
+                    <h3>Fynder Food</h3>
+                </a>
+            </abbr>
+            <div class="nav-bar">
+                <nav>
+                    <ul>
+                        <li class="itens"><a href="./?a=menu">Menu</a></li>
+                        <li class="itens marcado"><a href="./?a=sobre">Quem somos</a></li>
+                        <li class="itens"><a href="./?a=oquefazemos">O que fazemos</a></li>
+                        <li class="itens"><a href="https://wa.me/558381958797" target="_blank">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <?php if (!isset($_SESSION['logado'])) { ?>
+                <div class="nav-item">
+                    <abbr title="Logar">
+                        <button onclick="window.location.href='./?a=login'" class="botaoEC">
+                            <i class="bi bi-person"></i>
+                        </button>
+                    </abbr>
+                </div>
+            <?php } else { ?>
+                <div>
+                    <abbr title="Sair">
+                        <button onclick="window.location.href='./?a=logout'" class="botaoEC">
+                            <i class="bi bi-person-dash"></i>
+                        </button>
+                    </abbr>
+                </div>
+            <?php } ?>
         </nav>
     </header>
     <main>
@@ -43,8 +66,8 @@
 
             <h1>A Equipe</h1><br>
 
-            
-            
+
+
             <h2>Mateus - Mestre das Interfaces Experienciais e Especialista em Front-end</h2>
 
             <p>Mateus é um verdadeiro Mestre das Interfaces Experienciais, um estudante brilhante do IFPB - Campus Patos, cujo talento e paixão pelo design se destacam em cada projeto que ele cria. Com um olhar meticuloso para os detalhes e uma abordagem centrada no usuário, ele é um especialista em Front-end, utilizando suas habilidades em design e programação para criar interfaces incríveis e envolventes. Além de suas conquistas acadêmicas, Mateus também atua como monitor de programação, compartilhando seu conhecimento e orientando outros estudantes com dedicação e entusiasmo. </p>
@@ -56,7 +79,7 @@
         </div>
     </main>
     <!--==============================================================================================-->
-    
+
     <footer>
         <div class="rodape">
             <div class="boxs">
@@ -69,7 +92,7 @@
                     <li><a href="./?a=suporte">Suporte</a></li>
                 </ul>
             </div>
-            <div class="boxs"> 
+            <div class="boxs">
                 <h2>Sobre nós</h2> <br>
                 <ul>
                     <li><a href="./?a=sobre">Sobre a empresa</a></li>
@@ -89,4 +112,5 @@
         </div>
     </footer>
 </body>
+
 </html>
