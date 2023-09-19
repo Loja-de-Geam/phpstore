@@ -34,11 +34,15 @@
                     <div class="caixa">
                         <label for="senha">Senha</label>
                         <div class="input-wrapper">
-                            <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8">
-                            <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
-                                <i class="bi bi-eye-fill eye"></i>
-                            </button>
-                            <p><a  class="suporte" href="@">Esqueceu a senha?</a></p>
+                            <div class="input-senha">
+                                <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8">
+                                <div class="olho">
+                                    <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
+                                        <i class="bi bi-eye-fill eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p><a  class="suporte" href="">Esqueceu a senha?</a></p>
                         </div>
                     </div>
                 </div>

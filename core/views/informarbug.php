@@ -155,6 +155,10 @@ Azul Claro: #5E9DC8
         color: #002366;
     }
 
+    #descricaobug {
+        resize: none;
+    }
+
       
       @media only screen and (max-width: 950px){
           .conteudo{

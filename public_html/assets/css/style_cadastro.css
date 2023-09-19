@@ -79,11 +79,12 @@ body {
     cursor: pointer;
     color: white;
     font-weight: bold;
+    transition: all .8s ease;
 }
 
 .login button:hover {
     color: #800080;
-    border: 2px solid #9B59B6;
+    border: 1px solid #9B59B6;
     background-color: #fff;
 }
 
@@ -210,11 +211,14 @@ body {
     color: #fff;
     font-size: 0.93rem;
     font-weight: bolder;
+    transition: all .5s ease;
 }
 
 .eye {
     color: #800080;
     font-size: 25px;
+    display: grid;
+    place-items: center;
 }
 
 .continuar button:hover {

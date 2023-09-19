@@ -48,7 +48,7 @@ if (isset($_POST['enviar'])) {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #EDE9D8;
+            background-image: linear-gradient(to bottom, #002366, #004080);
         }
 
         .container {
@@ -86,7 +86,7 @@ if (isset($_POST['enviar'])) {
 
         .caixa input,
         .caixa textarea {
-            font-size: 0.8rem;
+            font-size: 1.5rem;
             padding: 0.8rem 1.2rem;
             border: none;
             border-radius: 10px;
@@ -103,9 +103,8 @@ if (isset($_POST['enviar'])) {
             outline: 1px solid #6c63ff;
         }
 
-        .caixa label,
-        .genero-titulo h5 {
-            font-size: 0.9rem;
+        .caixa label {
+            font-size: 2rem;
             margin-bottom: 1rem;
             font-weight: bolder;
             color: #000000;
@@ -137,7 +136,7 @@ if (isset($_POST['enviar'])) {
 
         .form h1 {
             margin-top: 0;
-            font-size: 24px;
+            font-size: 3rem;
             color: #09072e;
             margin-bottom: 3rem;
         }
@@ -172,19 +171,19 @@ if (isset($_POST['enviar'])) {
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="grupo_input">
                     <div class="caixa">
-                        <label for="nome" style="font-size: 18px;">Nome do produto</label>
+                        <label for="nome" >Nome do produto</label>
                         <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
                     </div>
                     <div class="caixa">
-                        <label for="descricao" style="font-size: 18px;">Descrição</label><br>
+                        <label for="descricao" >Descrição</label><br>
                         <textarea id="descricao" name="descricao" cols="30" rows="5" placeholder="Digite a descrição do produto" required></textarea>
                     </div>
                     <div class="caixa">
-                        <label for="foto" style="font-size: 18px;">Foto</label>
+                        <label for="foto" >Foto</label>
                         <input type="file" id="foto" name="foto" accept="image/*" required>
                     </div>
                     <div class="caixa">
-                        <label for="preco" style="font-size: 18px;">Preço</label>
+                        <label for="preco" >Preço</label>
                         <input type="number" id="preco" name="preco" step="0.01" placeholder="Digite o preço do produto" required>
                     </div>
                 </div>

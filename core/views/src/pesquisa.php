@@ -18,8 +18,8 @@ while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
                     </button>
                 </abbr>
                 <h3 class="nome"><?php echo $comida["nome"] ?></h3>
-                <p class="descricao"><?php echo $comida["descricao"] ?></p>
                 <p class="preco">R$<?php echo $comida['preco'] ?></p>
+                <p class="descricao"><?php echo $comida["descricao"] ?></p>
             </div>
             <div class="addCarrinho">
                 <button>

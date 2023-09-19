@@ -30,23 +30,23 @@
                 </div>
                 <div class="grupo_input">
                     <div class="caixa">
-                        <label for="nome">Primeiro nome</label>
+                        <label for="idnome">Primeiro nome</label>
                         <input type="text" name="nome" id="idnome" placeholder="Digite seu primeiro nome" required maxlength="200">
                     </div>
                     <div class="caixa">
-                        <label for="celular">Celular</label>
+                        <label for="idcelular">Celular</label>
                         <input type="tel" name="celular" id="idcelular" placeholder="(xx) xxxxx-xxxx" required>
                     </div>
                     <div class="caixa">
-                        <label for="email">E-mail</label>
+                        <label for="idemail">E-mail</label>
                         <input type="email" name="email" id="idemail" placeholder="Digite seu e-mail" required maxlength="50">
                     </div>
                     <div class="caixa">
-                        <label for="cpf">CPF</label>
+                        <label for="idcpf">CPF</label>
                         <input type="text" name="cpf" id="idcpf" placeholder="Digite seu CPF" required>
                     </div>
                     <div class="caixa">
-                        <label for="senha">Senha</label>
+                        <label for="idsenha">Senha</label>
                         <div class="input-wrapper">
                             <input type="password" name="senha" id="idsenha" placeholder="Digite sua senha" required minlength="8" maxlength="60">
                             <button type="button" id="idmostrar-senha" onclick="mostrarSenha()">
@@ -66,19 +66,19 @@
                     <div class="genero-grupo">
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idmasculino" value="mas">
-                            <label for="masculino">Masculino</label>
+                            <label for="idmasculino">Masculino</label>
                         </div>
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idfeminino" value="fem">
-                            <label for="feminino">Feminino</label>
+                            <label for="idfeminino">Feminino</label>
                         </div>
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idoutros" value="out">
-                            <label for="outros">Outros</label>
+                            <label for="idoutros">Outros</label>
                         </div>
                         <div class="genero-input">
                             <input type="radio" name="genero" id="idnone" checked>
-                            <label for="none">Prefiro não dizer</label>
+                            <label for="idnone">Prefiro não dizer</label>
                         </div>
                     </div>
                 </div>

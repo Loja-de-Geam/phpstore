@@ -16,7 +16,7 @@
     --cor_fundo2: #000041;
     --cor_texto: #030216;
     --cor_menu: #fff;
-    --cor_texto_2: #1d134b;
+    --cor_texto_2: #800080;
     --cor_botao: #2f00ff;
     --cor_botao_fundo: #423acf;
     --sombra_colorida: #6963e7;
@@ -26,7 +26,7 @@
 body,
 html {
     color: var(--cor_texto);
-    background-color: var(--sombra_colorida);
+    background-image: linear-gradient(to bottom, #002366, #004080);
     min-height: 100vh;
     /* Altura mínima da tela inteira */
     display: flex;

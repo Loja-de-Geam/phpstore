@@ -71,12 +71,21 @@
     </header>
     <main>
         <div class="container">
-            <button class="filtro">Filtrar <i class="bi bi-filter"></i></button>
-            <?php if (!empty($_GET['filtro'])) {
-                echo 'existe oia';
-            } else {
-                include('src/pesquisa.php');
-            } ?>
+            <div class="filtrar">
+                <!-- <button class='filtros'>
+                    Filtrar <i class="bi bi-filter"></i>
+                </button> -->
+                <button class="filtro">
+                    Filtrar <i class="bi bi-filter"></i>
+                </button>
+            </div>
+            <div class="prod">
+                <?php if (!empty($_GET['filtro'])) {
+                    echo 'existe oia';
+                } else {
+                    include('src/pesquisa.php');
+                } ?>
+            </div>
         </div>
 
     </main>

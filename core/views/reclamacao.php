@@ -159,6 +159,9 @@ Azul Claro: #5E9DC8
         background-color: #fff;
         color: #002366;
     }
+    #descricao {
+        resize: none;
+    }
       @media only screen and (max-width: 950px){
           .conteudo{
               width: 85%;
