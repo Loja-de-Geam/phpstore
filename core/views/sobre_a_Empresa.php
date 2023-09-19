@@ -52,8 +52,28 @@
     </header>
     <main>
         <div class="container">
-            <h1>Teste</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias dolor unde magni quia earum distinctio quae assumenda illum dolores quo fugiat reiciendis tenetur rerum corporis nisi vero, neque explicabo. Amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora ea eligendi suscipit reiciendis aut incidunt quia. Adipisci voluptatem tempora magni doloremque, similique velit officia consectetur ut perspiciatis voluptatibus sapiente?</p>
+            <h1>Sobre o site</h1>
+            <p>O Fynder Food é um site experimental de delivery desenvolvido pela equipe composta por Gabriel Kleber da Silva Batista, Mateus Soares da Rocha Cordeiro e Nafanael Pereira Alves. Este projeto oferece uma experiência abrangente aos usuários, permitindo que eles realizem diversas ações, incluindo:</p>
+
+<p>Cadastro e Login: Os usuários podem se registrar no site criando uma conta pessoal e fazer login para acessar suas informações e histórico de pedidos.</p>
+
+<p>Suporte e Tutoriais: O site disponibiliza um suporte dedicado que inclui tutoriais e formulários para melhorar a experiência do usuário, garantindo que todos possam utilizar o serviço de maneira eficaz.</p>
+
+<p>Pesquisa e Compra de Produtos: A principal funcionalidade do Fynder Food é permitir que os usuários pesquisem uma variedade de produtos disponíveis e façam pedidos para entrega. Isso torna mais fácil e conveniente para os clientes encontrarem e adquirirem os itens desejados.</p>
+
+<p style="font-weight: bolder;">Além disso, o site foi construído com as seguintes linguagens:</p>
+
+<p>HTML (HyperText Markup Language): O HTML é uma linguagem fundamental da web e é usada para estruturar o conteúdo da página, definindo a hierarquia dos elementos e seus significados.</p>
+
+<p>CSS (Cascading Style Sheets): O CSS é responsável por controlar a apresentação visual do site, permitindo que os desenvolvedores personalizem a aparência e o layout dos elementos HTML.</p>
+
+<p>SQL (Structured Query Language): O SQL é a linguagem padrão para interagir com bancos de dados relacionais. Ele é usado para armazenar, recuperar, atualizar e gerenciar os dados dos usuários, pedidos e produtos no banco de dados da Fynder Food.</p>
+
+<p>JavaScript: JavaScript é uma linguagem de programação amplamente utilizada no desenvolvimento web. Ela é realizada no navegador do usuário e permite aprimorar a interatividade e a funcionalidade das páginas da web. No contexto do Fynder Food, o JavaScript pode ser usado para criar recursos dinâmicos, como atualização em tempo real de informações.</p>
+
+<p>PHP (Hypertext Preprocessor): PHP é uma linguagem de script do lado do servidor usada para criar aplicativos web dinâmicos. No caso do Fynder Food, o PHP pode ser utilizado para processar solicitações do cliente, interagir com o banco de dados, como cálculos de preços e gestão de pedidos.</p>
+
+
         </div>
     </main>
     <!--==============================================================================================-->
