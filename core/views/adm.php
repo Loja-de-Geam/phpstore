@@ -86,7 +86,7 @@ if (isset($_POST['enviar'])) {
 
         .caixa input,
         .caixa textarea {
-            font-size: 1.5rem;
+            font-size: 0.8rem;
             padding: 0.8rem 1.2rem;
             border: none;
             border-radius: 10px;
@@ -104,8 +104,8 @@ if (isset($_POST['enviar'])) {
         }
 
         .caixa label {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 10px;
             font-weight: bolder;
             color: #000000;
         }
@@ -175,7 +175,7 @@ if (isset($_POST['enviar'])) {
                         <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
                     </div>
                     <div class="caixa">
-                        <label for="descricao" >Descrição</label><br>
+                        <label for="descricao" >Descrição</label>
                         <textarea id="descricao" name="descricao" cols="30" rows="5" placeholder="Digite a descrição do produto" required></textarea>
                     </div>
                     <div class="caixa">

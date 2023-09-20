@@ -30,7 +30,7 @@ $result->execute();
         main {
             width: 100vw;
             height: 100vh;
-            background-color: #EDE9D8;
+            background-image: linear-gradient(to bottom, #002366, #004080);
         }
 
         .conteiner {
@@ -42,17 +42,17 @@ $result->execute();
 
         table {
             border-collapse: collapse;
-            width: 98%;
+            width: 80%;
             max-width: 1500px;
             text-align: center;
-            border: 1px solid black;
-            background-color: #fffc;
+            
+            background-color: #fff;
+            box-shadow: 0px 8px 40px #000000b4;
         }
 
-        table th,
-        td {
+        table th,td {
             border-bottom: 1px solid black;
-            padding: 5px 25px 5px 25px;
+            padding: 8px 25px 8px 25px;
         }
 
         a {
@@ -61,8 +61,8 @@ $result->execute();
 
         .btn-edit {
             font-size: 1.6em;
-            border-radius: 5px;
-            padding: 3px;
+            border-radius: 50%;
+            padding: 5px;
             cursor: pointer;
             color: white;
         }
@@ -74,6 +74,29 @@ $result->execute();
         .delete {
             background-color: #f00a;
         }
+        tbody > tr:nth-child(odd) { 
+            background-color: #dff0ff;
+        }
+        .voltar {
+          font-size: 15px;
+          width: 20%;
+          padding: 10px 0px;
+          margin-top: 15px;
+          border: 3px solid #fff;
+          border-radius: 20px;
+          outline: none;
+          font-weight: bold;
+          letter-spacing: 1px;
+          color: #fff;
+          background: #3498DB;
+          box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
+          
+      }
+      .voltar:hover {
+          cursor: pointer;
+          background-color: transparent;
+          color: #fff;
+      }
     </style>
 </head>
 
@@ -84,7 +107,7 @@ $result->execute();
             <table>
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>Preço</th>
                         <th>Descrição</th>
@@ -110,6 +133,7 @@ $result->execute();
                     <?php } ?>
                 </tbody>
             </table>
+            <button class="voltar" onclick="window.location.href='./?a=adm'">Voltar</button>
         </div>
     </main>
 
