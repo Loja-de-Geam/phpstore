@@ -21,7 +21,6 @@
     background-color: #fff;
     border: 1px solid #0000ce;
     color: #0000ce;
-    box-shadow: 0 0 15px #0000ce;
 }
 
 /* Editando os produtos */
@@ -123,5 +122,38 @@ p.preco {
 .addCarrinho button:hover {
     background-color: #fff;
     color: #2f00ff;
-    box-shadow: 0 0 20px #0000ce;
+}
+
+.paginas {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 30px;
+}
+
+.paginas .opc {
+    display: flex;
+}
+
+.paginas .opc a {
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 1px solid #2f00ff;
+    border-radius: 10px;
+    background-color: #2f00ff;
+    color: #fff;
+    font-weight: bolder;
+    transition: .8s;
+}
+
+.paginas .opc a:hover {
+    background-color: #fff;
+    border: 1px solid #0000ce;
+    color: #0000ce;
+}
+
+.paginas .opc p {
+    font-size: 1.3em;
+    margin: 8px;
 }

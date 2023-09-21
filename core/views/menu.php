@@ -72,9 +72,6 @@
     <main>
         <div class="container">
             <div class="filtrar">
-                <!-- <button class='filtros'>
-                    Filtrar <i class="bi bi-filter"></i>
-                </button> -->
                 <button class="filtro">
                     Filtrar <i class="bi bi-filter"></i>
                 </button>
@@ -85,6 +82,23 @@
                 } else {
                     include('src/pesquisa.php');
                 } ?>
+            </div>
+            <div class="paginas">
+                <div class="opc">
+                    <a href="?a=menu&pagina=1">Primeira</a>
+                    <a href="?a=menu&pagina=<?php if ($pagina - 1 == 0) {
+                                                echo $pagina = 1;
+                                            } else {
+                                                echo $pagina - 1;
+                                            } ?>"><i class="bi bi-arrow-bar-left"></i></a>
+                    <p><?= $pagina ?></p>
+                    <a href="?a=menu&pagina=<?php if ($pagina == $paginas) {
+                                                echo $paginas;
+                                            } else {
+                                                echo $pagina + 1;
+                                            } ?>"><i class="bi bi-arrow-bar-right"></i></a>
+                    <a href="?a=menu&pagina=<?= $paginas ?>">Última</a>
+                </div>
             </div>
         </div>
 

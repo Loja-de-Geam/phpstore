@@ -12,6 +12,8 @@
     // Vendo se o usuario vai se cadastrar
     if (!isset($_SESSION['logado']) && isset($_POST['cadastrar'])) {
 
+        require_once('../config.php');
+
         // Acesso ao BD
         $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 

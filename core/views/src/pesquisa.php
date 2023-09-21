@@ -1,7 +1,20 @@
 <?php
 $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
-$query = "SELECT * FROM menu";
+$pagina = 1;
+$limite = 6;
+
+$registros = $gestor->query("SELECT COUNT(id) count FROM menu ")->fetch()["count"];
+
+$paginas = ceil($registros / $limite);
+
+if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
+    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+}
+
+$inicio = ($pagina * $limite) - $limite;
+
+$query = "SELECT * FROM menu ORDER BY id LIMIT $inicio, $limite";
 $result = $gestor->prepare($query);
 $result->execute();
 while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {

@@ -1,3 +1,9 @@
+<?php 
+    if(isset($_SESSION['logado'])) {
+        header('Location: ./');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

@@ -4,10 +4,22 @@ if (!isset($_SESSION['adm'])) {
 }
 
 $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
-$query = "SELECT * FROM menu";
+
+$pagina = 1;
+$limite = 5;
+
+$registros = $gestor->query("SELECT COUNT(id) count FROM menu ")->fetch()["count"];
+
+$paginas = ceil($registros / $limite);
+
+if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
+    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+}
+
+$inicio = ($pagina * $limite) - $limite;
+$query = "SELECT * FROM menu ORDER BY id LIMIT $inicio, $limite";
 $result = $gestor->prepare($query);
 $result->execute();
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -45,12 +57,13 @@ $result->execute();
             width: 80%;
             max-width: 1500px;
             text-align: center;
-            
+
             background-color: #fff;
             box-shadow: 0px 8px 40px #000000b4;
         }
 
-        table th,td {
+        table th,
+        td {
             border-bottom: 1px solid black;
             padding: 8px 25px 8px 25px;
         }
@@ -74,29 +87,66 @@ $result->execute();
         .delete {
             background-color: #f00a;
         }
-        tbody > tr:nth-child(odd) { 
+
+        tbody>tr:nth-child(odd) {
             background-color: #dff0ff;
         }
+
+        .paginas {
+            display: flex;
+        }
+
+        .paginas a {
+            text-decoration: none;
+            background-color: #fff;
+            border: 3px solid #fff;
+            margin: 0 10px;
+            color: black;
+            padding: 10px 20px;
+            background-color: #3498DB;
+            border-radius: 20px;
+            outline: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+            background: #3498DB;
+            box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
+            transition: all .3s ease;
+        }
+
+        .paginas a:hover {
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        .paginas p {
+            margin: 8px;
+            font-size: 1.4em;
+        }
+
         .voltar {
-          font-size: 15px;
-          width: 20%;
-          padding: 10px 0px;
-          margin-top: 15px;
-          border: 3px solid #fff;
-          border-radius: 20px;
-          outline: none;
-          font-weight: bold;
-          letter-spacing: 1px;
-          color: #fff;
-          background: #3498DB;
-          box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
-          
-      }
-      .voltar:hover {
-          cursor: pointer;
-          background-color: transparent;
-          color: #fff;
-      }
+            font-size: 15px;
+            width: 20%;
+            padding: 10px 0px;
+            margin-top: 15px;
+            border: 3px solid #fff;
+            border-radius: 20px;
+            outline: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+            background: #3498DB;
+            box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
+            transition: all .3s ease;
+
+        }
+
+        .voltar:hover {
+            cursor: pointer;
+            background-color: transparent;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -133,6 +183,21 @@ $result->execute();
                     <?php } ?>
                 </tbody>
             </table>
+            <div class="paginas">
+                <a href="?a=comidas&pagina=1">Primeira</a>
+                <a href="?a=comidas&pagina=<?php if ($pagina - 1 == 0) {
+                                                echo $pagina = 1;
+                                            } else {
+                                                echo $pagina - 1;
+                                            } ?>"><i class="bi bi-arrow-bar-left"></i></a>
+                <p><?= $pagina ?></p>
+                <a href="?a=comidas&pagina=<?php if ($pagina == $paginas) {
+                                                echo $paginas;
+                                            } else {
+                                                echo $pagina + 1;
+                                            } ?>"><i class="bi bi-arrow-bar-right"></i></a>
+                <a href="?a=comidas&pagina=<?= $paginas?>">Última</a>
+            </div>
             <button class="voltar" onclick="window.location.href='./?a=adm'">Voltar</button>
         </div>
     </main>
