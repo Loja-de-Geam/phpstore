@@ -16,6 +16,7 @@
         'erro' => 'main@erro',
         'logout' => 'main@logout',
         'adm' => 'main@adm',
+        'cadastroComidas' => 'main@cadComidas',
         'edit' => 'main@edit',
         'delete' => 'main@delete',
         'comidas' => 'main@comidas'

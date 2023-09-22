@@ -165,7 +165,35 @@ if (isset($_POST['enviar'])) {
 </head>
 
 <body>
-    
+    <div class="container">
+        <div class="form">
+            <h1>Cadastro de produtos</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="grupo_input">
+                    <div class="caixa">
+                        <label for="nome" >Nome do produto</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
+                    </div>
+                    <div class="caixa">
+                        <label for="descricao" >Descrição</label>
+                        <textarea id="descricao" name="descricao" cols="30" rows="5" placeholder="Digite a descrição do produto" required></textarea>
+                    </div>
+                    <div class="caixa">
+                        <label for="foto" >Foto</label>
+                        <input type="file" id="foto" name="foto" accept="image/*" required>
+                    </div>
+                    <div class="caixa">
+                        <label for="preco" >Preço</label>
+                        <input type="number" id="preco" name="preco" step="0.01" placeholder="Digite o preço do produto" required>
+                    </div>
+                </div>
+                <div class="adicionar">
+                    <button type="submit" name="enviar">Adicionar</button>
+                </div>
+            </form>
+            <a href="./?a=comidas" class="link_comidas">Comidas</a>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -146,6 +146,32 @@ header {
     font-size: 1.8em;
 }
 
+.adm {
+    margin: 5px 10px;
+    background-color: #423acf;
+    padding: .7rem;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    transition: all .8s ease;
+}
+
+.adm i {
+    display: grid;
+    place-items: center;
+    color: #fff;
+}
+
+.adm:hover {
+    border: 1px solid #423acf;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #0000006b;
+}
+
+.adm:hover i {
+    color: #423acf;
+}
+
 .info-carrinho {
     display: flex;
 }

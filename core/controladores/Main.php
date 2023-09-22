@@ -131,6 +131,15 @@
 
         }
 
+        public function cadComidas()
+        {
+
+            Store::Layout([
+                'cadComidas'
+            ]);
+
+        }
+
         public function edit()
         {
 

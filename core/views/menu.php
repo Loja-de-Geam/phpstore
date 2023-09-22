@@ -50,6 +50,13 @@
                     </abbr>
                 </div>
             <?php } ?>
+            <?php if (isset($_SESSION['adm'])) { ?>
+                <abbr title="admin">
+                    <a href="?a=adm" class="adm">
+                        <i class="bi bi-plus-circle"></i>
+                    </a>
+                </abbr>
+            <?php } ?>
             <div>
                 <abbr title="Carrinho">
                     <button class="carrinho" onclick="carrinho()">
