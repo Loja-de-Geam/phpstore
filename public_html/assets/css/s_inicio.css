@@ -220,14 +220,14 @@ header {
     background-color: transparent;
     cursor: pointer;
     padding: 3px;
-    transition: .8s;
-    border-radius: 50px;
+    transition: .4s;
+    border-radius: 50%;
 }
 
 .usuario i {
     color: var(--cor_botao);
     font-size: 2.8em;
-    transition: .8s;
+    transition: .4s;
 }
 
 .usuario:hover {
