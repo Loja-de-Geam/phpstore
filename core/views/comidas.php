@@ -172,10 +172,10 @@ $result->execute();
                             <td>R$<?= $data_menu["preco"] ?></td>
                             <td><?= $data_menu["descricao"] ?></td>
                             <td>
-                                <a href="?a=edit&?id=<?= $data_menu['id'] ?>">
+                                <a href="?a=edit&id=<?= $data_menu['id'] ?>">
                                     <i class="bi bi-pencil-square btn-edit edit"></i>
                                 </a>
-                                <a href="?a=delete&?id=<?= $data_menu['id'] ?>">
+                                <a href="?a=delete&id=<?= $data_menu['id'] ?>">
                                     <i class="bi bi-trash btn-edit delete"></i>
                                 </a>
                             </td>
@@ -184,19 +184,21 @@ $result->execute();
                 </tbody>
             </table>
             <div class="paginas">
-                <a href="?a=comidas&pagina=1">Primeira</a>
-                <a href="?a=comidas&pagina=<?php if ($pagina - 1 == 0) {
+                <?php if ($pagina > 1) { ?>
+                    <a href="?a=comidas&pagina=1">Primeira</a>
+                    <a href="?a=comidas&pagina=<?php if ($pagina - 1 == 0) {
                                                 echo $pagina = 1;
                                             } else {
                                                 echo $pagina - 1;
-                                            } ?>"><i class="bi bi-arrow-bar-left"></i></a>
+                                            } ?>"><i class="bi bi-arrow-bar-left"></i></a><?php } ?>
                 <p><?= $pagina ?></p>
-                <a href="?a=comidas&pagina=<?php if ($pagina == $paginas) {
+                <?php if ($pagina < $paginas) { ?>
+                    <a href="?a=comidas&pagina=<?php if ($pagina == $paginas) {
                                                 echo $paginas;
                                             } else {
                                                 echo $pagina + 1;
                                             } ?>"><i class="bi bi-arrow-bar-right"></i></a>
-                <a href="?a=comidas&pagina=<?= $paginas?>">Última</a>
+                    <a href="?a=comidas&pagina=<?= $paginas ?>">Última</a><?php } ?>
             </div>
             <button class="voltar" onclick="window.location.href='./?a=adm'">Voltar</button>
         </div>
