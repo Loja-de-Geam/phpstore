@@ -34,6 +34,16 @@ if (isset($_POST['enviar'])) {
         @charset "UTF-8";
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        /*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #3498DB
+Roxo Intenso: #800080
+Roxo Profundo: #663399
+Roxo Claro: #9B59B6
+Azul Claro: #5E9DC8
+
+*/
 
         * {
             padding: 0;
@@ -52,8 +62,8 @@ if (isset($_POST['enviar'])) {
         }
 
         .container {
-            width: 50%;
-            height: 80vh;
+            width: 60%;
+            height: 90vh;
             display: flex;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
             border-radius: 7px;
@@ -63,96 +73,47 @@ if (isset($_POST['enviar'])) {
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            
             background-color: #fff;
             padding: 3rem;
             border-radius: 7px;
         }
 
-        .grupo_input {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 0.3rem 0;
-        }
+        
 
-        .caixa {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1.1rem;
-        }
-
-        .caixa input,
-        .caixa textarea {
-            font-size: 0.8rem;
-            padding: 0.8rem 1.2rem;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 1px 1px 6px #0000001c;
-        }
-
-        .caixa input:hover,
-        .caixa textarea:hover {
-            background-color: #eeeeee75;
-        }
-
-        .caixa input:focus-visible,
-        .caixa textarea:focus-visible {
-            outline: 1px solid #6c63ff;
-        }
-
-        .caixa label {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            font-weight: bolder;
-            color: #000000;
-        }
-
-        .caixa input::placeholder {
-            color: #000000be;
-        }
-
-        .adicionar button {
-            width: 100%;
-            margin-top: 2.5rem;
-            border: none;
-            background-color: #423acf;
-            padding: 0.62rem;
+        .voltar {
+            font-size: 15px;
+            width: 30%;
+            padding: 10px 0px;
+            margin-top: 15px;
+            border: 3px solid #800080;
             border-radius: 20px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 0.93rem;
-            font-weight: bolder;
+            outline: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #800080;
+            background: #fff;
+            box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
+            transition: all .3s ease;
+
         }
 
-        .adicionar button:hover {
-            color: #423acf;
-            background-color: #fff;
-            border: 1px solid #423acf;
-            padding: 0.56rem;
+        .voltar:hover {
+            border-color: #004080;
+            cursor: pointer;
+            background-color: transparent;
+            color: #800080;
         }
 
         .form h1 {
+            text-align: center;
             margin-top: 0;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #09072e;
             margin-bottom: 3rem;
         }
-
-        .link_comidas {
-            color: #000;
-            text-decoration: none;
-            padding-top: 5px;
-            font-size: 1.19em;
-            transition: .8s;
-        }
-
-        .link_comidas:hover {
-            color: #423acf;
-            font-weight: bold;
-            text-decoration: underline;
+        ul > li {
+            list-style-type: none;
         }
 
         @media screen and (max-width: 768px) {
@@ -163,9 +124,15 @@ if (isset($_POST['enviar'])) {
         }
     </style>
 </head>
-
 <body>
-    
+    <div class="container">
+        <div class="form">
+            <h1>Painel administrativo</h1>
+            <ul>
+                <li><button class="voltar" onclick="window.location.href='./?a=cadComidas'">Cadastrar produto</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=comidas'">Ver lista de produtos</button></li>
+            </ul>
+        </div>
+    </div>
 </body>
-
 </html>
