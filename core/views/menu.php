@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="public_html/assets/css/s_inicio.css">
     <link rel="stylesheet" href="public_html/assets/css/pesquisa.css">
+    <link rel="stylesheet" href="public_html/assets/css/filtro.css">
     <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
@@ -79,7 +80,7 @@
     <main>
         <div class="container">
             <div class="filtrar">
-                <button class="filtro">
+                <button class="filtro" onclick="filtro()">
                     Filtrar <i class="bi bi-filter"></i>
                 </button>
             </div>
@@ -121,6 +122,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <script src="public_html\assets\js\pesquisas.js"></script>
+    <?php include('src/filtro.php')?>
+    <script src="public_html\assets\js\filtro.js"></script>
     <?php include('src/carrinho.php') ?>
     <script src="public_html\assets\js\carrinho.js"></script>
 </body>
