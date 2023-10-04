@@ -3,18 +3,30 @@ $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . "
 
 $maior_preco = $gestor->query("SELECT MAX(preco) AS maior FROM menu")->fetch()["maior"];
 $menor_preco = $gestor->query("SELECT MIN(preco) AS menor FROM menu")->fetch()["menor"];
+
+$tipo = $gestor->query('SELECT * FROM tipo');
 ?>
 <div id="filtro-janela">
-    <div class="tela-filtro">
-        <div class="titulo">
-            <h2>Filtro de produtos</h2>
+    <form action="" method="post">
+        <div class="tela-filtro">
+            <div class="titulo">
+                <h2>Filtro de produtos</h2>
+            </div>
+            <div class="preco-maximo">
+                <h3>Preço maximo: </h3>
+                <h4>R$<span id="span"><?= $maior_preco ?></span></h4>
+                <input type="range" name="preco-maximo" id="precoMax" min="<?= $menor_preco ?>" max="<?= $maior_preco ?>" value="<?= $maior_preco ?>" step=".1">
+            </div>
+            <div class="tags">
+                <?php while ($tags = $tipo->fetch(PDO::FETCH_ASSOC)) { ?>
+                    <div>
+                        <input type="checkbox" name="tags[]" id="<?= $tags['id'] ?>" class="tags-input" value="<?= $tags['id'] ?>" checked>
+                        <label for="<?= $tags['id'] ?>" class="tags-label"><?= $tags["tipo"] ?></label>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
-        <div class="preco-maximo">
-            <h3>Preço maximo: </h3>
-            <h4>R$<span id="span"><?= $maior_preco ?></span></h4>
-            <input type="range" name="preco-maximo" id="precoMax" min="<?= $menor_preco ?>" max="<?= $maior_preco ?>" value="<?= $maior_preco ?>" step=".1">
-        </div>
-    </div>
+    </form>
 </div>
 
 <script>

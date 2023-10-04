@@ -60,3 +60,42 @@
 .abrir .tela-filtro {
     animation: abrir-fil .7s;
 }
+
+.tela-filtro > .tags {
+    width: 100%;
+    padding: 30px;
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-auto-rows: 50px;
+    gap: 1.5em;
+    grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+}
+
+.tela-filtro > .tags > div > input[type=checkbox] {
+    display: none;
+}
+
+.tela-filtro > .tags > div > input[type=checkbox]:checked ~ label {
+    background-color: #800080;
+    width: 150px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.tela-filtro > .tags > div > label {
+    background-color: #fff;
+    border: 1px solid #800080;
+    width: 150px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    text-align: center;
+    color: #800080;
+    border-radius: 20px;
+    transition: .5s;
+}
