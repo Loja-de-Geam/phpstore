@@ -7,7 +7,7 @@ $menor_preco = $gestor->query("SELECT MIN(preco) AS menor FROM menu")->fetch()["
 $tipo = $gestor->query('SELECT * FROM tipo');
 ?>
 <div id="filtro-janela">
-    <form action="" method="post">
+    <form action="?a=menu" method="post">
         <div class="tela-filtro">
             <div class="titulo">
                 <h2>Filtro de produtos</h2>
@@ -24,6 +24,9 @@ $tipo = $gestor->query('SELECT * FROM tipo');
                         <label for="<?= $tags['id'] ?>" class="tags-label"><?= $tags["tipo"] ?></label>
                     </div>
                 <?php } ?>
+            </div>
+            <div class="btn-sub">
+                <button onclick="window.location = '?a=menu&filtrar';">Filtrar</button>
             </div>
         </div>
     </form>

@@ -85,8 +85,8 @@
                 </button>
             </div>
             <div class="prod">
-                <?php if (!empty($_GET['filtro'])) {
-                    echo 'existe oia';
+                <?php if (isset($_POST['preco-maximo']) && isset($_POST['tags'])) {
+                    include('src/pesq_fil.php');
                 } else {
                     include('src/pesquisa.php');
                 } ?>
