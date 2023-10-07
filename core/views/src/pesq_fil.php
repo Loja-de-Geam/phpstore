@@ -6,12 +6,10 @@ $precoMax = $_POST['preco-maximo'];
 $categoria = $_POST['tags'];
 
 $pagina = 1;
-$limite = 2;
-$registros = 0;
+$limite = 6;
 
-foreach ($categoria as $key) {
-    $registros += $gestor->query("SELECT COUNT(menu.id) count FROM menu, tipo, menutipo WHERE menu.preco <= $precoMax AND menutipo.id_menu = menu.id AND menutipo.id_tipo = tipo.id AND tipo.id = $key")->fetch()["count"];
-}
+$registros = $gestor->query("SELECT COUNT(menu.id) count FROM menu")->fetch()["count"];
+
 
 $paginas = ceil($registros / $limite);
 
@@ -20,11 +18,31 @@ if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas
 }
 
 $inicio = ($pagina * $limite) - $limite;
+
+$id_comida = [];
 foreach ($categoria as $key) {
-    $query = "SELECT menu.* FROM menu, tipo, menutipo WHERE menu.preco <= $precoMax AND menutipo.id_menu = menu.id AND menutipo.id_tipo = tipo.id AND tipo.id = $key ORDER BY menu.id LIMIT $inicio, $limite";
-    $result = $gestor->prepare($query);
-    $result->execute();
-    while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
+    $result = $gestor->query("SELECT menu.id FROM menu, tipo, menutipo WHERE menu.preco <= $precoMax AND menutipo.id_menu = menu.id AND menutipo.id_tipo = tipo.id AND tipo.id = $key");
+
+    foreach ($result as $id) {
+        if (!in_array($id, $id_comida)) {
+            array_push($id_comida, $id);
+        }
+    }
+}
+$comidas = [];
+foreach ($id_comida as $key) {
+    foreach ($key as $id_com) {
+        if (!in_array($id_com, $comidas)) {
+            array_push($comidas, $id_com);
+        }
+    }
+}
+sort($comidas, SORT_NATURAL);
+foreach ($comidas as $comida) {
+    $query_com = "SELECT * FROM menu WHERE id = $comida";
+    $result_query = $gestor->prepare($query_com);
+    $result_query->execute();
+    while ($comida = $result_query->fetch(PDO::FETCH_ASSOC)) {
 ?>
         <div>
             <div class="produto">

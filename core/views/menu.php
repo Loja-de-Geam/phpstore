@@ -91,25 +91,7 @@
                     include('src/pesquisa.php');
                 } ?>
             </div>
-            <div class="paginas">
-                <div class="opc">
-                    <?php if ($pagina > 1) { ?>
-                        <a href="?a=menu&pagina=1">Primeira</a>
-                        <a href="?a=menu&pagina=<?php if ($pagina - 1 == 0) {
-                                                    echo $pagina = 1;
-                                                } else {
-                                                    echo $pagina - 1;
-                                                } ?>"><i class="bi bi-arrow-bar-left"></i></a><?php } ?>
-                    <p><?= $pagina ?></p>
-                    <?php if ($pagina < $paginas) { ?>
-                        <a href="?a=menu&pagina=<?php if ($pagina == $paginas) {
-                                                    echo $paginas;
-                                                } else {
-                                                    echo $pagina + 1;
-                                                } ?>"><i class="bi bi-arrow-bar-right"></i></a>
-                        <a href="?a=menu&pagina=<?= $paginas ?>">Última</a><?php } ?>
-                </div>
-            </div>
+            
         </div>
 
     </main>

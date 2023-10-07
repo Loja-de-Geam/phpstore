@@ -154,4 +154,4 @@ insert into menutipo values (1, 1),
 							(20, 3);
 							
                         
-insert into adm values (null, 'adm', 'admGG@gmail.com', 'adm1234');
+insert into adm values (null, 'adm', 'admGG@gmail.com', 'adm12345');
