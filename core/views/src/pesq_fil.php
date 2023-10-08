@@ -1,15 +1,14 @@
 <?php
 $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
-$precoMax = $_POST['preco-maximo'];
+$precoMax = $_SESSION['preco-maximo'];
 
-$categoria = $_POST['tags'];
+$categoria = $_SESSION['tags'];
 
 $pagina = 1;
 $limite = 6;
 
 $registros = $gestor->query("SELECT COUNT(menu.id) count FROM menu")->fetch()["count"];
-
 
 $paginas = ceil($registros / $limite);
 
@@ -38,7 +37,27 @@ foreach ($id_comida as $key) {
     }
 }
 sort($comidas, SORT_NATURAL);
-foreach ($comidas as $comida) {
+$fil_comidas = [];
+for ($i = 1; $i < ($paginas + 1); $i++) {
+    $com_temp = [];
+    for ($j = (($i * $limite) - $limite); $j < ($limite * $i); $j++) {
+        if (isset($comidas[$j])) {
+            array_push($com_temp, $comidas[$j]);
+        }
+    }
+    array_push($fil_comidas, $com_temp);
+}
+
+$paginas = 0;
+foreach ($fil_comidas as $qwert) {
+    if(count($qwert) != 0) {
+        $paginas += 1;
+    }
+}
+if($paginas == 0) {
+    include('sem_registro.php');
+}
+foreach ($fil_comidas[$pagina - 1] as $comida) {
     $query_com = "SELECT * FROM menu WHERE id = $comida";
     $result_query = $gestor->prepare($query_com);
     $result_query->execute();
@@ -70,3 +89,23 @@ foreach ($comidas as $comida) {
     }
 }
 ?>
+
+<div class="paginas">
+    <div class="opc">
+        <?php if ($pagina > 1) { ?>
+            <a href="?a=menu&filtro&pagina=1">Primeira</a>
+            <a href="?a=menu&filtro&pagina=<?php if ($pagina - 1 == 0) {
+                                                echo $pagina = 1;
+                                            } else {
+                                                echo $pagina - 1;
+                                            } ?>"><i class="bi bi-arrow-bar-left"></i></a><?php } ?>
+        <p><?= $pagina ?></p>
+        <?php if ($pagina < $paginas) { ?>
+            <a href="?a=menu&filtro&pagina=<?php if ($pagina == $paginas) {
+                                                echo $paginas;
+                                            } else {
+                                                echo $pagina + 1;
+                                            } ?>"><i class="bi bi-arrow-bar-right"></i></a>
+            <a href="?a=menu&filtro&pagina=<?= $paginas ?>">Última</a><?php } ?>
+    </div>
+</div>

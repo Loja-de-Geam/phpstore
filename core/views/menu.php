@@ -1,3 +1,14 @@
+<?php
+if (isset($_POST['preco-maximo'])) {
+    $_SESSION['preco-maximo'] = $_POST['preco-maximo'];
+}
+if (isset($_POST['tags'])) {
+    $_SESSION['tags'] = $_POST['tags'];
+} else {
+    $_SESSION['tags'] = false;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -85,13 +96,16 @@
                 </button>
             </div>
             <div class="prod">
-                <?php if (isset($_POST['preco-maximo']) && isset($_POST['tags'])) {
+                <?php if (isset($_SESSION['preco-maximo']) && isset($_SESSION['tags']) && isset($_GET['filtro']) && $_SESSION['tags'] != false) {
                     include('src/pesq_fil.php');
+                } elseif (isset($_SESSION['preco-maximo']) && isset($_GET['filtro']) && $_SESSION['tags'] == false) {
+                    include('src/sem_registro.php');
                 } else {
                     include('src/pesquisa.php');
-                } ?>
+                }
+                ?>
             </div>
-            
+
         </div>
 
     </main>
@@ -104,7 +118,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <script src="public_html\assets\js\pesquisas.js"></script>
-    <?php include('src/filtro.php')?>
+    <?php include('src/filtro.php') ?>
     <script src="public_html\assets\js\filtro.js"></script>
     <?php include('src/carrinho.php') ?>
     <script src="public_html\assets\js\carrinho.js"></script>

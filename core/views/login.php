@@ -58,8 +58,8 @@
                 </div>
             </form>
         </div>
-        <div class="form-img">
-            <img src="public_html\assets\images\login.svg" alt="">
+        <div class="form-img">800080
+            <img src="public_html\assets\images\login.svg" alt="login">
         </div>
     </div>
     <script>
