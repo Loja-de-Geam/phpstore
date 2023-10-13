@@ -13,15 +13,15 @@ $tipo = $gestor->query('SELECT * FROM tipo');
                 <h2>Filtro de produtos</h2>
             </div>
             <div class="preco-maximo">
-                <h3>Preço maximo: </h3>
-                <h4>R$<span id="span"><?= $maior_preco ?></span></h4>
+                <h3>Preço máximo</h3>
+                <h4>R$ <span id="span"><?= $maior_preco ?></span> reais</h4>
                 <input type="range" name="preco-maximo" id="precoMax" min="<?= $menor_preco ?>" max="<?= $maior_preco ?>" value="<?= $maior_preco ?>" step=".1">
             </div>
             <div class="tags">
                 <?php while ($tags = $tipo->fetch(PDO::FETCH_ASSOC)) { ?>
                     <div>
-                        <input type="checkbox" name="tags[]" id="<?= $tags['id'] ?>" class="tags-input" value="<?= $tags['id'] ?>" checked>
-                        <label for="<?= $tags['id'] ?>" class="tags-label"><?= $tags["tipo"] ?></label>
+                        <input type="checkbox" name="tags[]" id="<?= $tags['id'] ?>" class="tags-input" value="<?= $tags['id'] ?>" checked> 
+                        <label for="<?= $tags['id'] ?>" class="tags-label"><?= $tags["tipo"] ?></label> 
                     </div>
                 <?php } ?>
             </div>
