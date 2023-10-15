@@ -135,9 +135,7 @@
 }
 
 .preco {
-    width: 60%;
-    background: linear-gradient(to right,#bbb5d3 100%); 
-    
+    background: linear-gradient(to right,#bbb5d3 100%);  
     height: 20px;
     transition: 450ms ease-in;
     appearance: none;
