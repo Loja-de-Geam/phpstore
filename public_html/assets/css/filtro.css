@@ -42,6 +42,7 @@
 }
 
 .tela-filtro>.preco-maximo>input {
+    margin-top: 10px;
     width: 100%;
 }
 
@@ -63,7 +64,7 @@
 
 .tela-filtro>.tags {
     width: 100%;
-    height: calc(100% - 16% - 183px);
+    height: calc(100% - 16% - 193px);
     padding: 30px;
     display: flex;
     overflow: auto;
@@ -134,8 +135,9 @@
     padding: 0.6rem 1rem;
 }
 
-.preco {
-    background: linear-gradient(to right,#bbb5d3 100%);  
+.preco-maximo > input.preco {
+    /* background: linear-gradient(to right,#bbb5d3 100%);*/
+    background-color: #9dceee;
     height: 20px;
     transition: 450ms ease-in;
     appearance: none;

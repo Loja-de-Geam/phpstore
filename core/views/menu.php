@@ -4,7 +4,7 @@ if (isset($_POST['preco-maximo'])) {
 }
 if (isset($_POST['tags'])) {
     $_SESSION['tags'] = $_POST['tags'];
-} else {
+} else if(!isset($_SESSION['tags'])) {
     $_SESSION['tags'] = false;
 }
 ?>
