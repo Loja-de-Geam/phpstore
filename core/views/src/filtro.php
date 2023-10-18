@@ -33,11 +33,19 @@ $tipo = $gestor->query('SELECT * FROM tipo');
 </div>
 
 <script>
+    
     const valor_span = document.querySelector('#span');
     const valor_input = document.querySelector('#precoMax');
 
-    valor_input.oninput = (() => {
+    valor_input.oninput = function() {
         let value = valor_input.value;
         valor_span.textContent = value;
-    })
+
+        var percentage = (this.value - this.min) / (this.max - this.min) * 100;
+        this.style.background = 'linear-gradient(to right, #800080 0%, #3498DB ' + percentage + '%, #9dceee ' + percentage + '%, #9dceee 100%)';
+    }
 </script>
+
+    
+</script>
+
