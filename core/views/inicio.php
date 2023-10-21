@@ -322,10 +322,8 @@ Azul Claro: #5E9DC8
         <?php include("src/rodape.php"); ?>
     </footer>
     <!----------------------------------------------------------------------------------------->
-    <script src="public_html\assets\js\slider.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
-    <script src="public_html\assets\js\pesquisas.js"></script>
     <?php include('src/carrinho.php') ?>
     <script src="public_html\assets\js\carrinho.js"></script>
 </body>

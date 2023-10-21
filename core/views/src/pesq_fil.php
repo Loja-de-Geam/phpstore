@@ -50,11 +50,11 @@ for ($i = 1; $i < ($paginas + 1); $i++) {
 
 $paginas = 0;
 foreach ($fil_comidas as $qwert) {
-    if(count($qwert) != 0) {
+    if (count($qwert) != 0) {
         $paginas += 1;
     }
 }
-if($paginas == 0) {
+if ($paginas == 0) {
     include('sem_registro.php');
 }
 foreach ($fil_comidas[$pagina - 1] as $comida) {
@@ -68,20 +68,15 @@ foreach ($fil_comidas[$pagina - 1] as $comida) {
                 <div class="img">
                     <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
                 </div>
-                <div class="conteudo">
-                    <abbr title="Saiba Mais">
-                        <button class="saibamais">
-                            <i class="bi bi-plus"></i>
-                        </button>
-                    </abbr>
-                    <h3 class="nome"><?php echo $comida["nome"] ?></h3>
-                    <p class="preco">R$<?php echo $comida['preco'] ?></p>
-                    <p class="descricao"><?php echo $comida["descricao"] ?></p>
-                </div>
-                <div class="addCarrinho">
-                    <button>
-                        ADICIONAR
+                <div class="prod-mais">
+                    <button onclick="saibaMais(<?= $comida['id']?>)">
+                        <i class="bi bi-plus"></i>
                     </button>
+                </div>
+                <div class="conteudo">
+                    <h3 class="nome"><?= $comida['nome'] ?></h3>
+                    <p class="preco">R$<?= $comida['preco'] ?></p>
+                    <p class="descricao"><?= $comida['descricao'] ?></p>
                 </div>
             </div>
         </div>
