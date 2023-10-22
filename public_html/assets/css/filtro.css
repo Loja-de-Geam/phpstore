@@ -136,16 +136,16 @@
 }
 
 .preco-maximo > input.preco {
-    /* background: linear-gradient(to right,#bbb5d3 100%);*/
-    background-color: linear-gradient(to right, #800080, #3498DB);
+    background: linear-gradient(to right, #800080, #3498DB);
     height: 20px;
     transition: 450ms ease-in;
     appearance: none;
     border-radius: 25px;
-    box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
-    -webkit-box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
-    -moz-box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
+    box-shadow: 2px 8px 13px -3px rgba(126, 114, 114, 0.75);
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(126, 114, 114, 0.75);
+    -moz-box-shadow: 2px 8px 13px -3px rgba(126, 114, 114, 0.75);
 }
+
 
 .preco::-webkit-slider-thumb {
     cursor: pointer;
@@ -158,4 +158,17 @@
     box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
     -webkit-box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
     -moz-box-shadow: 2px 8px 13px -3px rgb(126,114,114,0.75);
+}
+.tela-filtro .tags div input[type=checkbox] + label::before {
+    content: "\2713"; 
+    font-weight: bold;
+    font-size: 24px;
+    color: #3498DB; 
+}
+
+.tela-filtro .tags div input[type=checkbox]:checked + label::before {
+    content: "\2717"; 
+    font-weight: bold;
+    font-size: 24px;
+    color: #800080; 
 }
