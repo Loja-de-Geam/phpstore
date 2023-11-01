@@ -141,10 +141,11 @@ if(isset($_POST['update'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $desc = $_POST['descricao'];
+    $data = date('Y/m/d');
 
     if (isset($_GET['id'])) {
         $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-        $sql_update = "UPDATE menu SET nome='$nome', descricao='$desc', preco=$preco WHERE id=$id";
+        $sql_update = "UPDATE menu SET nome='$nome', descricao='$desc', preco=$preco WHERE id=$id, data_adicionamento_modificacao = $data";
 
         $result = $gestor->query($sql_update);
     }

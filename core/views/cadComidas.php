@@ -11,11 +11,12 @@ if (isset($_POST['enviar'])) {
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
+    $data = date('Y/m/d');
     $img = $_FILES['foto']["name"];
 
     move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
 
-    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img')");
+    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img', $data)");
 }
 
 ?>

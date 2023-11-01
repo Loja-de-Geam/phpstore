@@ -18,7 +18,7 @@
         $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
         // Preparação do comando
-        $comando = $gestor->prepare("INSERT INTO usuarios VALUES (NULL, :nome, :telefone, :email, :cpf, :senha, :genero)");
+        $comando = $gestor->prepare("INSERT INTO usuarios VALUES (NULL, :nome, :telefone, :email, :cpf, :senha, :genero, :data)");
 
         // Execução do comando
         $comando->execute(
@@ -29,7 +29,8 @@
                 ':email' => $_POST['email'],
                 ':cpf' => $_POST['cpf'],
                 ':senha' => $_POST['senha'],
-                ':genero' => $_POST['genero']
+                ':genero' => $_POST['genero'],
+                ':data' => date('Y/m/d')
             ]
 
         );

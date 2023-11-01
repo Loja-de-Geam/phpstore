@@ -3,21 +3,6 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-if (isset($_POST['enviar'])) {
-
-    // Acessa o BD
-    $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
-
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $preco = $_POST['preco'];
-    $img = $_FILES['foto']["name"];
-
-    move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
-
-    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img')");
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -73,13 +58,13 @@ Azul Claro: #5E9DC8
             width: 100%;
             display: flex;
             flex-direction: column;
-            
+
             background-color: #fff;
             padding: 3rem;
             border-radius: 7px;
         }
 
-        
+
 
         .voltar {
             font-size: 15px;
@@ -112,7 +97,8 @@ Azul Claro: #5E9DC8
             color: #09072e;
             margin-bottom: 3rem;
         }
-        ul > li {
+
+        ul>li {
             list-style-type: none;
         }
 
@@ -124,6 +110,7 @@ Azul Claro: #5E9DC8
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="form">
@@ -135,4 +122,5 @@ Azul Claro: #5E9DC8
         </div>
     </div>
 </body>
+
 </html>
