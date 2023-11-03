@@ -63,23 +63,26 @@ foreach ($fil_comidas[$pagina - 1] as $comida) {
     $result_query->execute();
     while ($comida = $result_query->fetch(PDO::FETCH_ASSOC)) {
 ?>
-        <div>
-            <div class="produto">
-                <div class="img">
-                    <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
-                </div>
-                <div class="prod-mais">
-                    <button onclick="saibaMais(); carregarMais(<?= $comida['id']?>)">
-                        <i class="bi bi-plus"></i>
-                    </button>
-                </div>
-                <div class="conteudo">
-                    <h3 class="nome"><?= $comida['nome'] ?></h3>
-                    <p class="preco">R$<?= $comida['preco'] ?></p>
-                    <p class="descricao"><?= $comida['descricao'] ?></p>
+        <form action="" id="form-saibaMais">
+            <input type="hidden" name="id" value="<?= $comida['id']?>">
+            <div>
+                <div class="produto">
+                    <div class="img">
+                        <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
+                    </div>
+                    <div class="prod-mais">
+                        <button onclick="saibaMais()">
+                            <i class="bi bi-plus"></i>
+                        </button>
+                    </div>
+                    <div class="conteudo">
+                        <h3 class="nome"><?= $comida['nome'] ?></h3>
+                        <p class="preco">R$<?= $comida['preco'] ?></p>
+                        <p class="descricao"><?= $comida['descricao'] ?></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
 <?php
     }
 }
