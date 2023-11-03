@@ -25,7 +25,7 @@ while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
                 <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
             </div>
             <div class="prod-mais">
-                <button onclick="saibaMais(<?= $comida['id']?>)">
+                <button onclick="saibaMais(); carregarMais(<?= $comida['id']?>)">
                     <i class="bi bi-plus"></i>
                 </button>
             </div>

@@ -20,8 +20,13 @@ $tipo = $gestor->query('SELECT * FROM tipo');
             <div class="tags">
                 <?php while ($tags = $tipo->fetch(PDO::FETCH_ASSOC)) { ?>
                     <div>
-                        <input type="checkbox" name="tags[]" id="<?= $tags['id'] ?>" class="tags-input" value="<?= $tags['id'] ?>" checked> 
-                        <label for="<?= $tags['id'] ?>" class="tags-label"><?= $tags["tipo"] ?></label>
+                        <input type="checkbox" name="tags[]" id="<?= $tags['id'] ?>" class="tags-input" value="<?= $tags['id'] ?>" checked>
+                        <label for="<?= $tags['id'] ?>" class="tags-label">
+                            <abbr title="Desmarcar">
+                                <i class="bi bi-x"></i>
+                            </abbr>
+                            <?= $tags["tipo"] ?>
+                        </label>
                     </div>
                 <?php } ?>
             </div>

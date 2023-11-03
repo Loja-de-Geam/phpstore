@@ -1,4 +1,4 @@
-function saibaMais(id = 1) {
+function saibaMais() {
     const saibaMais = document.getElementById('saiba-mais');
     saibaMais.classList.add('abrir');
 

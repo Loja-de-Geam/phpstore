@@ -89,6 +89,25 @@
     transition: 0.5s;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.tela-filtro > .tags > div > label i {
+    display: none;
+}
+
+.tela-filtro > .tags > div > input[type=checkbox]:checked + label  i {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    color: #030216;
+    background-color: #fff;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.342);
 }
 
 .btn-sub {
@@ -150,20 +169,21 @@
     display: flex;
     align-items: center;
 }
-.tela-filtro > .tags > div > label::before {
+
+/* .tela-filtro > .tags > div > label::before {
     content: "\2713"; 
     font-weight: bold;
     font-size: 24px;
     color: #800080;
     margin-right: 10px;
-}
+} */
 
 .tela-filtro > .tags > div > input[type=checkbox]:checked + label {
     background-color: #800080;
     color: white;
 }
 
-.tela-filtro > .tags > div > input[type=checkbox]:checked + label::before {
+/* .tela-filtro > .tags > div > input[type=checkbox]:checked + label::before {
     content: "\2717"; 
     color: white;
-}
+} */
