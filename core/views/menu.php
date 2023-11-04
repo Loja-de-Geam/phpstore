@@ -119,6 +119,7 @@ if (isset($_POST['tags'])) {
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <?php include('src/saibaMais.php')?>
     <script src="public_html\assets\js\saibaMais.js"></script>
+    <script src="public_html\assets\js\addCarrinho.js"></script>
     <?php include('src/filtro.php') ?>
     <script src="public_html\assets\js\filtro.js"></script>
     <?php include('src/carrinho.php') ?>

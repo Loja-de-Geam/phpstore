@@ -16,6 +16,7 @@ $resultado->execute(
 if (($resultado->rowCount() == 1) && ($resultado)) {
     while ($produtos = $resultado->fetch(PDO::FETCH_ASSOC)) {
         $dados[] = [
+            "id" => $produtos['id'],
             "nome" => $produtos['nome'],
             "descricao" => $produtos['descricao'],
             "preco" => $produtos['preco'],
@@ -33,6 +34,7 @@ if (($resultado->rowCount() == 1) && ($resultado)) {
 
     while ($produtos = $resultado->fetch(PDO::FETCH_ASSOC)) {
         $dados[] = [
+            "id" => $produtos['id'],
             "nome" => $produtos['nome'],
             "descricao" => $produtos['descricao'],
             "preco" => $produtos['preco'],
