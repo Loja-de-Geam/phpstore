@@ -19,26 +19,23 @@ $result = $gestor->prepare($query);
 $result->execute();
 while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 ?>
-    <form action="" id="form-saibaMais">
-        <input type="hidden" name="id" value="<?= $comida['id'] ?>">
-        <div>
-            <div class="produto">
-                <div class="img">
-                    <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
-                </div>
-                <div class="prod-mais">
-                    <button onclick="saibaMais()">
-                        <i class="bi bi-plus"></i>
-                    </button>
-                </div>
-                <div class="conteudo">
-                    <h3 class="nome"><?= $comida['nome'] ?></h3>
-                    <p class="preco">R$<?= $comida['preco'] ?></p>
-                    <p class="descricao"><?= $comida['descricao'] ?></p>
-                </div>
+    <div>
+        <div class="produto">
+            <div class="img">
+                <img src="public_html\assets\images\comidas\<?php echo $comida['img'] ?>" alt="<?php echo $comida["nome"] ?>">
+            </div>
+            <div class="prod-mais">
+                <button onclick="saibaMais(<?= $comida['id']?>)">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+            <div class="conteudo">
+                <h3 class="nome"><?= $comida['nome'] ?></h3>
+                <p class="preco">R$<?= $comida['preco'] ?></p>
+                <p class="descricao"><?= $comida['descricao'] ?></p>
             </div>
         </div>
-    </form>
+    </div>
 <?php } ?>
 
 <div class="paginas">
@@ -60,30 +57,3 @@ while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
             <a href="?a=menu&pagina=<?= $paginas ?>">Última</a><?php } ?>
     </div>
 </div>
-
-<script>
-    function saibaMais() {
-        const form = document.getElementById('form-saibaMais')
-        form.addEventListener('submit', async (ev) => {
-            ev.preventDefault()
-
-            const formData = new FormData(form)
-            const dados = Object.fromEntries(formData)
-            console.log(data)
-            const envio = await fetch('./', {
-                method: 'POST',
-                mode: 'cors',
-                body: dados,
-
-            })
-        })
-        const saibaMais = document.getElementById('saiba-mais')
-        saibaMais.classList.add('abrir')
-
-        saibaMais.addEventListener('click', (e) => {
-            if (e.target.id == 'saiba-mais') {
-                saibaMais.classList.remove('abrir')
-            }
-        });
-    }
-</script>
