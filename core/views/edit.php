@@ -141,7 +141,7 @@ if(isset($_POST['update'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $desc = $_POST['descricao'];
-    $data = date('Y/m/d');
+    $data = date('Y-d-m');
 
     if (isset($_GET['id'])) {
         $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);

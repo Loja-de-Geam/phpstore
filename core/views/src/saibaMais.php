@@ -8,10 +8,10 @@
             <p class="descricao" id="descricao-produto-saiba-mais"></p>
             <p class="preco" id="preco-produto-saiba-mais"></p>
             <div class="add-carrinho">
-                <button id="butao-produto-carrinho" onclick="addCarrinho(this.value)">
-                    Adicionar ao carrinho
+                <button class="btn-add-car" id="butao-produto-carrinho" onclick="addCarrinho(this.value)">
+                    <i class="bi bi-cart2"></i>
                 </button>
             </div>
         </div>
     </div>
-</div>
+</div>  

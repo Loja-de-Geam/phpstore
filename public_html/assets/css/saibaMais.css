@@ -20,6 +20,7 @@
     border-radius: 20px;
     background-color: white;
     display: flex;
+    position: relative;
 }
 
 #saiba-mais .itens .img {
@@ -55,4 +56,28 @@
     text-align: start;
     color: #2f00ff;
     margin: 20px 0;
+}
+
+.btn-add-car {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background-color: #2f00ff;
+    border: 1px solid #2f00ff;
+    color: #fff;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.btn-add-car:hover {
+    color: #2f00ff;
+    background-color: #fff;
+}
+
+.btn-add-car i {
+    display: grid;
+    align-items: center;
 }

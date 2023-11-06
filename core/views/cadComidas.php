@@ -11,7 +11,7 @@ if (isset($_POST['enviar'])) {
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
-    $data = date('Y/m/d');
+    $data = date('Y-d-m');
     $img = $_FILES['foto']["name"];
 
     move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
@@ -176,9 +176,13 @@ if (isset($_POST['enviar'])) {
                         <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
                     </div>
                     <div class="caixa">
-                        <label for="descricao" >Descrição</label>
-                        <textarea id="descricao" name="descricao" cols="30" rows="5" placeholder="Digite a descrição do produto" required></textarea>
+                        <label for="descricao" >Descrição Curta</label>
+                        <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição curta" maxlength="50">
                     </div>
+                    <!-- <div class="caixa">
+                        <label for="descricao" >Descrição Longa</label>
+                        <textarea name="des-longa" id="desc-longa" cols="30" rows="10"></textarea>
+                    </div> -->
                     <div class="caixa">
                         <label for="foto" >Foto</label>
                         <input type="file" id="foto" name="foto" accept="image/*" required>
