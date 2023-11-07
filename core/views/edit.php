@@ -52,6 +52,7 @@ if (!isset($_SESSION['adm'])) {
             font-size: 0.8rem;
             padding: 0.8rem 1.2rem;
             border: none;
+            resize: none;
             border-radius: 10px;
             box-shadow: 1px 1px 6px #000000aa;
         }
@@ -120,8 +121,12 @@ if (!isset($_SESSION['adm'])) {
                     <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do produto" required>
                 </div>
                 <div class="caixa">
-                    <label for="descricao">Descrição </label><br>
-                    <textarea id="descricao" name="descricao" cols="30" rows="5" placeholder="Descrição do produto" required></textarea>
+                    <label for="descricao">Descrição Curta</label><br>
+                    <input type="text" name="descricao" id="descricao" maxlength="50">
+                </div>
+                <div class="caixa">
+                    <label for="descricao">Descrição para o "Saiba Mais"</label><br>
+                    <textarea name="descricao_saiba_mais" id="descricao_saiba_mais" cols="30" rows="10"></textarea>
                 </div>
                 <div class="caixa">
                     <button name="update">Enviar</button>
@@ -141,11 +146,12 @@ if(isset($_POST['update'])) {
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $desc = $_POST['descricao'];
-    $data = date('Y-d-m');
+    $descricao_saiba_mais = $_POST['descricao_saiba_mais'];
+    $data = date('Y-m-d');
 
     if (isset($_GET['id'])) {
         $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-        $sql_update = "UPDATE menu SET nome='$nome', descricao='$desc', preco=$preco WHERE id=$id, data_adicionamento_modificacao = $data";
+        $sql_update = "UPDATE menu SET nome='$nome', descricao='$desc', descricao_saiba_mais='$descricao_saiba_mais', preco=$preco, data_adicionamento_modificacao='$data' WHERE id=$id";
 
         $result = $gestor->query($sql_update);
     }

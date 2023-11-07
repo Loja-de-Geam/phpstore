@@ -10,13 +10,14 @@ if (isset($_POST['enviar'])) {
 
     $nome = $_POST['nome'];
     $descricao = $_POST['descricao'];
+    $descricao_saiba_mais = $_POST['descricao_saiba_mais'];
     $preco = $_POST['preco'];
-    $data = date('Y-d-m');
+    $data = date('Y-m-d');
     $img = $_FILES['foto']["name"];
 
     move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
 
-    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', $preco, '$img', $data)");
+    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', '$descricao_saiba_mais', $preco, '$img', '$data')");
 }
 
 ?>
@@ -53,8 +54,8 @@ if (isset($_POST['enviar'])) {
         }
 
         .container {
-            width: 50%;
-            height: 80vh;
+            width: 60%;
+            height: 85vh;
             display: flex;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
             border-radius: 7px;
@@ -90,6 +91,7 @@ if (isset($_POST['enviar'])) {
             font-size: 0.8rem;
             padding: 0.8rem 1.2rem;
             border: none;
+            resize: none;
             border-radius: 10px;
             box-shadow: 1px 1px 6px #0000001c;
         }
@@ -179,10 +181,10 @@ if (isset($_POST['enviar'])) {
                         <label for="descricao" >Descrição Curta</label>
                         <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição curta" maxlength="50">
                     </div>
-                    <!-- <div class="caixa">
-                        <label for="descricao" >Descrição Longa</label>
-                        <textarea name="des-longa" id="desc-longa" cols="30" rows="10"></textarea>
-                    </div> -->
+                    <div class="caixa">
+                        <label for="descricao" >Descrição Para o "Saiba Mais"</label>
+                        <textarea name="descricao_saiba_mais" id="descricao_saiba_mais" cols="30" rows="10"></textarea>
+                    </div>
                     <div class="caixa">
                         <label for="foto" >Foto</label>
                         <input type="file" id="foto" name="foto" accept="image/*" required>

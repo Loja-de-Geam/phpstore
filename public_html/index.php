@@ -30,7 +30,7 @@
                 ':cpf' => $_POST['cpf'],
                 ':senha' => $_POST['senha'],
                 ':genero' => $_POST['genero'],
-                ':data' => date('Y-d-m')
+                ':data' => date('Y-m-d')
             ]
 
         );

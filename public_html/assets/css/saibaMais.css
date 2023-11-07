@@ -40,11 +40,13 @@
     min-height: 100%;
     border-radius: 0 20px 20px 0;
     padding: 20px;
+    position: relative;
 }
 
 #saiba-mais .itens .produ h2.nome {
     text-align: center;
     margin-bottom: 10px;
+    text-transform: capitalize;
 }
 
 #saiba-mais .itens .produ p.descricao {
@@ -53,9 +55,12 @@
 }
 
 #saiba-mais .itens .produ p.preco {
-    text-align: start;
     color: #2f00ff;
-    margin: 20px 0;
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 500;
+    bottom: 30px;
+    left: 18px;
 }
 
 .btn-add-car {

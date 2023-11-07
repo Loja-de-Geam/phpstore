@@ -75,7 +75,7 @@ foreach ($fil_comidas[$pagina - 1] as $comida) {
                 </div>
                 <div class="conteudo">
                     <h3 class="nome"><?= $comida['nome'] ?></h3>
-                    <p class="preco">R$<?= $comida['preco'] ?></p>
+                    <p class="preco">R$<?= number_format($comida['preco'], 2, '.', '') ?></p>
                     <p class="descricao"><?= $comida['descricao'] ?></p>
                 </div>
             </div>

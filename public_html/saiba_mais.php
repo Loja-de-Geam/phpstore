@@ -18,7 +18,7 @@ if (($resultado->rowCount() == 1) && ($resultado)) {
         $dados[] = [
             "id" => $produtos['id'],
             "nome" => $produtos['nome'],
-            "descricao" => $produtos['descricao'],
+            "descricao" => $produtos['descricao_saiba_mais'],
             "preco" => $produtos['preco'],
             "img" => $produtos['img'],
         ];
@@ -36,7 +36,7 @@ if (($resultado->rowCount() == 1) && ($resultado)) {
         $dados[] = [
             "id" => $produtos['id'],
             "nome" => $produtos['nome'],
-            "descricao" => $produtos['descricao'],
+            "descricao" => $produtos['descricao_saiba_mais'],
             "preco" => $produtos['preco'],
             "img" => $produtos['img'],
         ];

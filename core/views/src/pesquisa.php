@@ -31,7 +31,7 @@ while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
             </div>
             <div class="conteudo">
                 <h3 class="nome"><?= $comida['nome'] ?></h3>
-                <p class="preco">R$<?= $comida['preco'] ?></p>
+                <p class="preco">R$<?= number_format($comida['preco'], 2, '.', '') ?></p>
                 <p class="descricao"><?= $comida['descricao'] ?></p>
             </div>
         </div>
