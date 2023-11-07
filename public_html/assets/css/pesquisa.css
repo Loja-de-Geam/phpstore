@@ -9,18 +9,27 @@
     border: none;
     width: 150px;
     height: 40px;
-    background-color: #0000ce;
+    background-color: #663399;
     border-radius: 20px;
     color: #fff;
     font-size: large;
     cursor: pointer;
     transition: .8s;
 }
+/*
+Azul Muito Escuro: #001F3F
+Azul Escuro Profundo: #002366
+Azul Médio: #3498DB
+Roxo Intenso: #800080
+Roxo Profundo: #663399
+Roxo Claro: #9B59B6
+Azul Claro: #5E9DC8
 
+*/
 .filtro:hover {
     background-color: #fff;
-    border: 1px solid #0000ce;
-    color: #0000ce;
+    border: 1px solid #663399;
+    color: #663399;
 }
 
 /* Editando os produtos */

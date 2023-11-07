@@ -50,7 +50,8 @@
 }
 
 #saiba-mais .itens .produ p.descricao {
-    text-align: start;
+    text-align: justify;
+    text-indent: 3rem;
     margin-top: 20px;
 }
 

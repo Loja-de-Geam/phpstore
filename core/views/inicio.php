@@ -326,6 +326,6 @@ Azul Claro: #5E9DC8
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <?php include('src/carrinho.php') ?>
     <script src="public_html\assets\js\carrinho.js"></script>
+    <script src="public_html\assets\js\slider.js"></script>
 </body>
-
 </html>
