@@ -139,9 +139,9 @@ if (!isset($_SESSION['adm'])) {
 
 </html>
 
-<?php 
+<?php
 
-if(isset($_POST['update'])) {
+if (isset($_POST['update'])) {
     $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];

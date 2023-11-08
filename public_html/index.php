@@ -36,6 +36,7 @@
         );
 
         $_SESSION['logado'] = true;
+        $_SESSION['email'] = $_POST['email'];
 
         // Redirecionamento para a página inicial
         // header('Location: ./');
@@ -68,6 +69,7 @@
         if ($comando->rowCount() == 1) {
 
             $_SESSION['logado'] = true;
+            $_SESSION['email'] = $_POST['email'];
 
             // Redirecionamento para a página inicial
             header('Location: ./');
@@ -101,6 +103,7 @@
 
             $_SESSION['logado'] = true;
             $_SESSION['adm'] = true;
+            $_SESSION['email'] = $_POST['email'];
 
             // Redirecionamento para a página inicial
             header('Location: ./');

@@ -24,7 +24,7 @@ CREATE TABLE tipo (
 CREATE TABLE menu (
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
-    descricao varchar(50) NOT NULL,
+    descricao VARCHAR(50) NOT NULL,
     descricao_saiba_mais TEXT NOT NULL,
     preco FLOAT(5 , 2 ) NOT NULL,
     img TEXT NOT NULL,
@@ -43,13 +43,13 @@ CREATE TABLE menutipo (
 );
 
 CREATE TABLE pedido (
-    id INT NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    id_cliente INT NOT NULL,
     id_produto INT NOT NULL,
-    quant_prod INT NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    data_pedido DATE NOT NULL,
-    PRIMARY KEY (id , email , id_produto),
-    FOREIGN KEY (id)
+    estado ENUM('carrinho', 'comprado') DEFAULT('carrinho') NOT NULL,
+    data_pedido DATETIME NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_cliente)
         REFERENCES usuarios (id),
     FOREIGN KEY (id_produto)
         REFERENCES menu (id)

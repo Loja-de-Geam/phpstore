@@ -94,7 +94,7 @@ if (isset($_POST['enviar'])) {
             resize: none;
             border-radius: 10px;
             box-shadow: 1px 1px 6px #0000007c;
-            
+
         }
 
         .caixa input:hover,
@@ -175,26 +175,26 @@ if (isset($_POST['enviar'])) {
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="grupo_input">
                     <div class="caixa">
-                        <label for="nome" >Nome do produto</label>
+                        <label for="nome">Nome do produto</label>
                         <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
                     </div>
                     <div class="caixa">
-                        <label for="descricao" >Descrição Curta</label>
+                        <label for="descricao">Descrição Curta</label>
                         <input type="text" name="descricao" id="descricao" placeholder="Digite a descrição curta" maxlength="50">
                     </div>
                     <div class="caixa">
-                        <label for="preco" >Preço</label>
+                        <label for="preco">Preço</label>
                         <input type="number" id="preco" name="preco" step="0.01" placeholder="Digite o preço do produto" required>
                     </div>
                     <div class="caixa">
-                        <label for="descricao" >Descrição Para o "Saiba Mais"</label>
+                        <label for="descricao">Descrição Para o "Saiba Mais"</label>
                         <textarea name="descricao_saiba_mais" id="descricao_saiba_mais" cols="30" rows="10"></textarea>
                     </div>
                     <div class="caixa">
-                        <label for="foto" >Foto</label>
+                        <label for="foto">Foto</label>
                         <input type="file" id="foto" name="foto" accept="image/*" required>
                     </div>
-                    
+
                 </div>
                 <div class="adicionar">
                     <button type="submit" name="enviar">Adicionar</button>

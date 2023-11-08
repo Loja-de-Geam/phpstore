@@ -8,10 +8,16 @@
             <p class="descricao" id="descricao-produto-saiba-mais"></p>
             <p class="preco" id="preco-produto-saiba-mais"></p>
             <div class="add-carrinho">
-                <?php if (isset($_SESSION['logado']) && $_SESSION['logado'] == true) { ?>
+                <?php if (isset($_SESSION['logado']) && $_SESSION['logado'] == true && !isset($_SESSION['adm'])) { ?>
                     <abbr title="Adicione ao carrinho">
                         <button class="btn-add-car" id="butao-produto-carrinho" onclick="addCarrinho(this.value)">
                             <i class="bi bi-cart2"></i>
+                        </button>
+                    </abbr>
+                <?php } elseif(isset($_SESSION['adm']) && $_SESSION['adm'] == true) { ?>
+                    <abbr title="Administrador não pode realizar compras, por favor faça logout">
+                        <button class="btn-add-car" id="butao-produto-carrinho" onclick="window.location.href='./?a=logout'" class="botaoEC">
+                            <i class="bi bi-person-dash"></i>
                         </button>
                     </abbr>
                 <?php } else { ?>
