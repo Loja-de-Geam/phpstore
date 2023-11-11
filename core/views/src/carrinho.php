@@ -2,6 +2,11 @@
     <div class="carrinho-comp">
         <h2 class="car">Carrinho</h2>
         <div class="prod">
+            <abbr title="Remover do Carrinho">
+                <button class="btn-remove">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </abbr>
             <div class="aparencia-prod">
                 <img src="public_html\assets\images\comidas\lagosta.jpeg" alt="nome do produto" class="img-prod-car">
                 <h3 class="nome-prod">Nome do produto</h3>

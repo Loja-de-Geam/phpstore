@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200" />
     <link rel="stylesheet" href="public_html/assets/css/s_inicio.css">
     <link rel="stylesheet" href="public_html/assets/css/carrinho.css">
+    <link rel="stylesheet" href="public_html/assets/css/saibaMais.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>Início</title>
@@ -97,6 +98,8 @@ Azul Claro: #5E9DC8
             font-weight: bold;
             border-radius: 5px;
             transition: 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .prato .cta-button:hover {
@@ -223,35 +226,7 @@ Azul Claro: #5E9DC8
             <h2>Pratos em Destaque</h2>
         </div>
         <section class="pratos-container">
-            <div class="prato">
-                <div class="imagem">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBequyUXvALfzWSa-vOUbGWWhM9lNSAIQzcA&usqp=CAU" alt="Nome do Prato 1">
-                </div>
-                <div class="informacoes">
-                    <h3>Nome do Prato 1</h3>
-                    <p>Descrição curta do prato. Lorem ipsum dolor sit amet...</p>
-                </div>
-                <div class="preco-acao">
-                    <span class="preco">R$ 15.99</span>
-                    <a href="#" class="cta-button">Ver mais</a>
-                </div>
-            </div>
-
-            <div class="prato">
-                <div class="imagem">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBequyUXvALfzWSa-vOUbGWWhM9lNSAIQzcA&usqp=CAU" alt="Nome do Prato 2">
-                </div>
-                <div class="informacoes">
-                    <h3>Nome do Prato 2</h3>
-                    <p>Descrição curta do prato. Lorem ipsum dolor sit amet...</p>
-                </div>
-                <div class="preco-acao">
-                    <span class="preco">R$ 18.99</span>
-                    <a href="#" class="cta-button">Ver mais</a>
-                </div>
-            </div>
-            </div>
-
+            <?php include("src/pratosDestaque.php");?>
         </section>
         <section>
 
@@ -325,6 +300,9 @@ Azul Claro: #5E9DC8
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <?php include('src/carrinho.php') ?>
+    <?php include('src/saibaMais.php')?>
+    <script src="public_html\assets\js\saibaMais.js"></script>
+    <script src="public_html\assets\js\addCarrinho.js"></script>
     <script src="public_html\assets\js\carrinho.js"></script>
     <script src="public_html\assets\js\slider.js"></script>
 </body>

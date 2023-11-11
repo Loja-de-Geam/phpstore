@@ -22,19 +22,23 @@
 
 .janela-modal.abrir {
     display: flex;
-    animation: abrirmodal 0.7s ease-out;
+}
+
+.janela-modal.abrir > .carrinho-comp {
+    animation: abrirmodal .4s ease-out;
 }
 
 .carrinho-comp {
     border-radius: 15px;
     width: 40%;
-    min-width: 450px;
-    max-height: 80vh;
+    min-width: 600px;
+    max-height: 90vh;
     background-color: #fff;
-    padding: 30px;
+    padding: 0 30px;
     float: right;
     overflow: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .carrinho-comp::-webkit-scrollbar {
@@ -43,6 +47,7 @@
 
 h2.car {
     border-bottom: 2px solid #b8b8b88c;
+    padding-top: 30px;
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
@@ -50,14 +55,36 @@ h2.car {
 .prod {
     border-bottom: 2px solid #b8b8b88c;
     padding: 20px 0;
+    margin-bottom: 20px;
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s;
 }
 
-.prod:hover {
-    background-color: #f5f5f5;
+.prod .btn-remove {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    background-color: #ee1233;
+    padding: 10px;
+    border: 1px  solid #ee1233;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.08rem;
+    transition: .6s;
+}
+
+.prod .btn-remove > i {
+    display: flex;
+    align-items: center;
+    place-items: center;
+}
+
+.prod .btn-remove:hover {
+    background-color: #fff;
+    color: #ee1233;
 }
 
 .aparencia-prod {
@@ -73,6 +100,7 @@ h2.car {
 
 h3.nome-prod {
     margin-bottom: 5px;
+    text-align: center;
 }
 
 p.desc-car {
@@ -81,7 +109,7 @@ p.desc-car {
     margin-top: 5px;
     font-size: 14px;
     margin-bottom: 5px;
-    max-width: 300px;
+    max-width: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
     height: 100px;
@@ -92,9 +120,14 @@ p.desc-car {
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    padding-bottom: 30px;
+    position: absolute;
+    position: sticky;
+    background-color: #fff;
+    bottom: 0;
 }
 
-.finalizar-comp > button {
+.finalizar-comp button {
     margin-left: 0;
     border: none;
     background-color: #423acf;
@@ -108,7 +141,7 @@ p.desc-car {
     margin-top: 10px;
 }
 
-.finalizar-comp > button:hover {
+.finalizar-comp button:hover {
     color: #423acf;
     border: 1px solid #423acf;
     background-color: #fff;
@@ -118,7 +151,7 @@ p.desc-car {
 @keyframes abrirmodal {
     from {
         opacity: 0;
-        transform: translate3d(100%, 0, 0);
+        transform: translate3d(0, -50%, 0);
     }
     to {
         opacity: 1;

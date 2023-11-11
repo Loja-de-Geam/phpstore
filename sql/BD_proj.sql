@@ -109,7 +109,8 @@ CREATE TABLE relato_bugs (
     status_relato VARCHAR(20) DEFAULT 'Aberto'
 );
 
-insert into usuarios values (null, 'Fulano da Silva', '(12) 34567-8900', 'fulano@gmail.com', '987.654.321-00', 'QWERTYUIOP1234', 'mas', '2023-11-1');
+insert into usuarios values (null, 'Fulano da Silva', '(12) 34567-8900', 'fulano@gmail.com', '987.654.321-00', 'QWERTYUIOP1234', 'mas', '2023-11-1'),
+							(null, 'Mateus Soares', '(83) 98125-3579', 'mateus@gmail.com', '987.654.321-00', 'mateus123', 'mas', '2023-11-11');
 
 insert into tipo values (null, 'Massas', '2023-11-1'),
 						(null, 'Bebidas Geladas', '2023-11-1'),
@@ -164,3 +165,19 @@ insert into menutipo values (1, 1),
 							
                         
 insert into adm values (null, 'adm', 'admGG@gmail.com', 'adm12345', '2023-11-1');
+
+insert into pedido values (null, 1, 9, "comprado", '2023-11-11 15:30:20'),
+						  (null, 1, 9, "comprado", '2023-11-11 15:30:20'),
+                          (null, 1, 8, "comprado", '2023-11-11 15:30:20'),
+                          (null, 1, 5, "comprado", '2023-11-11 15:30:20'),
+                          (null, 1, 1, "comprado", '2023-11-11 15:30:20'),
+                          (null, 1, 1, "comprado", '2023-11-11 15:30:20'),
+                          (null, 1, 1, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 1, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 9, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 5, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 6, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 20, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 2, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 1, "comprado", '2023-11-11 15:30:20'),
+                          (null, 2, 9, "comprado", '2023-11-11 15:30:20');
