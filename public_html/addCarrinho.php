@@ -1,32 +1,18 @@
 <?php 
 
-require('../config.php');
+header('Content-Type: application/json');
+$gestor = new PDO("mysql:host=" . 'localhost' . ";dbname=" . 'fynderfood' . ";charset=utf8", 'root', '');
 
-$id_comp = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);   
+$email_u = $_POST['email'];
+$id_prod = $_POST['id'];
+$data = date('Y-m-d H:i:s');
 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
-
-$email_cli = 'gabrielkleber54321n@gmail.com';
-$id_cli = $gestor->query("SELECT id FROM usuarios WHERE email='$email_cli'")->fetch(PDO::FETCH_ASSOC);
-
-$data_pedido = date('Y-m-d H:i:s');
-
-$insert_pedido = $gestor->prepare("INSERT INTO pedido VALUES(NULL, :id_cli, :id_comp, NULL, :data_pedido)");
-$insert_pedido->execute(
-    [
-        ':id_cli' => $id_cli,
-        ':id_comp' => $id_comp,
-        ':data_pedido' => $data_pedido
-    ]
-);
-
-if($insert_pedido) {
-    $resp[] = 'OK';
-} else {
-    $resp[] = 'Nada OK';
-}
-$resp = 'oi';
-
-echo json_encode($resp);
-
-?>
+$con = $gestor->query("SELECT id FROM usuarios WHERE email='$email_u'")->fetchAll(PDO::FETCH_ASSOC);
+$id_u = $con[0]['id'];
+$ins = $gestor->prepare("INSERT INTO pedido VALUES(NULL, :user, :pro, 'carrinho', :da)");
+$ins->execute([
+    ':user' => $id_u,
+    ':pro' => $id_prod,
+    ':da' => $data
+]);
+echo json_encode($id_u);

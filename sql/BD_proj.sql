@@ -110,7 +110,7 @@ CREATE TABLE relato_bugs (
 );
 
 insert into usuarios values (null, 'Fulano da Silva', '(12) 34567-8900', 'fulano@gmail.com', '987.654.321-00', 'QWERTYUIOP1234', 'mas', '2023-11-1'),
-							(null, 'Mateus Soares', '(83) 98125-3579', 'mateus@gmail.com', '987.654.321-00', 'mateus123', 'mas', '2023-11-11');
+							(null, 'Mateus Soares', '(83) 98125-3579', 'mateus@gmail.com', '987.654.321-01', 'mateus123', 'mas', '2023-11-11');
 
 insert into tipo values (null, 'Massas', '2023-11-1'),
 						(null, 'Bebidas Geladas', '2023-11-1'),

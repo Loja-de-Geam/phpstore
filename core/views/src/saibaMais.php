@@ -8,9 +8,10 @@
             <p class="descricao" id="descricao-produto-saiba-mais"></p>
             <p class="preco" id="preco-produto-saiba-mais"></p>
             <div class="add-carrinho">
+                <input type="hidden" name="email" id="email_u" value="<?= $_SESSION['email']?>">
                 <?php if (isset($_SESSION['logado']) && $_SESSION['logado'] == true && !isset($_SESSION['adm'])) { ?>
                     <abbr title="Adicione ao carrinho">
-                        <button class="btn-add-car" id="butao-produto-carrinho" onclick="addCarrinho(this.value)">
+                        <button class="btn-add-car" id="butao-produto-carrinho">
                             <i class="bi bi-cart2"></i>
                         </button>
                     </abbr>
