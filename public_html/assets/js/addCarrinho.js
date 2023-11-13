@@ -10,5 +10,6 @@ $('.btn-add-car').click(function(e) {
         dataType: 'json'
     }).done(function(result) {
         console.log(result)
+        itensCarrinho()
     });
 })

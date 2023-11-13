@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="public_html/assets/css/saibaMais.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="public_html/assets/js/itensCarrinho.js"></script>
     <title>Início</title>
     <style>
         /*
@@ -298,7 +300,6 @@ Azul Claro: #5E9DC8
     </footer>
     <!----------------------------------------------------------------------------------------->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <?php include('src/carrinho.php') ?>
     <?php include('src/saibaMais.php')?>
