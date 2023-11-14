@@ -52,7 +52,7 @@ h2.car {
     padding-bottom: 10px;
 }
 
-.prod {
+.prod-carrinho {
     border-bottom: 2px solid #b8b8b88c;
     padding: 20px 0;
     margin-bottom: 20px;
@@ -63,7 +63,7 @@ h2.car {
     transition: background-color 0.3s;
 }
 
-.prod .btn-remove {
+.prod-carrinho .btn-remove {
     position: absolute;
     top: 0px;
     right: 5px;
@@ -76,15 +76,21 @@ h2.car {
     transition: .6s;
 }
 
-.prod .btn-remove > i {
+.prod-carrinho .btn-remove > i {
     display: flex;
     align-items: center;
     place-items: center;
 }
 
-.prod .btn-remove:hover {
+.prod-carrinho .btn-remove:hover {
     background-color: #fff;
     color: #ee1233;
+}
+
+.sem-itens {
+    display: grid;
+    place-items: center;
+    height: 100px;
 }
 
 .aparencia-prod {

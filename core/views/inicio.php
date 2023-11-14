@@ -207,11 +207,11 @@ Azul Claro: #5E9DC8
                         <div class="info-carrinho">
                             <i class="bi bi-bag"></i>
                             <div class="quant-preco">
-                                <span class="span-carrinho">
+                                <span class="span-carrinho span-carrinho-preco">
                                     R$0.00
                                 </span><br>
-                                <span class="span-carrinho">
-                                    0
+                                <span class="span-carrinho span-carrinho-quantidade">
+                                    0 itens
                                 </span>
                             </div>
                         </div>
@@ -305,6 +305,7 @@ Azul Claro: #5E9DC8
     <?php include('src/saibaMais.php')?>
     <script src="public_html\assets\js\saibaMais.js"></script>
     <script src="public_html\assets\js\addCarrinho.js"></script>
+    <script src="public_html\assets\js\removeCarrinho.js"></script>
     <script src="public_html\assets\js\carrinho.js"></script>
     <script src="public_html\assets\js\slider.js"></script>
 </body>
