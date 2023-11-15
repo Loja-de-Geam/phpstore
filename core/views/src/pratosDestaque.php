@@ -26,3 +26,5 @@ while($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 <?php 
 }
 ?>
+
+

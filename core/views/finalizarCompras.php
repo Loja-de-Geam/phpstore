@@ -45,7 +45,11 @@
                     </div>
                 </div>
             </div>
-            <div class="botao_f"><button id="payment-button" onclick="processPayment()">Finalizar</button></div>
+            <div class="botao_f">
+                <button id="payment-button" onclick="processPayment()">Finalizar</button>
+                <p style="text-align: center;"><a href="./?a=menu">Voltar</a></p>
+            </div>
+            
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
