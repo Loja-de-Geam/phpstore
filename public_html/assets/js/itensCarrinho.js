@@ -1,6 +1,10 @@
 function itensCarrinho() {
     $(function (e) {
-        var email_u = document.querySelector('.email_u').value;
+        try {
+            var email_u = document.querySelector('.email_u').value;
+        } catch (error) {
+            var email_u = '';
+        }
         var itensCarrinho = document.querySelector('.itens-carrinho');
         var valorTotal = document.querySelector('.total');
         var miniPreco = document.querySelector('.span-carrinho-preco');

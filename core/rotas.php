@@ -19,7 +19,8 @@
         'cadComidas' => 'main@cadComidas',
         'edit' => 'main@edit',
         'delete' => 'main@delete',
-        'comidas' => 'main@comidas'
+        'comidas' => 'main@comidas',
+        'finalizarCompras' => 'main@finalizarCompras'
     ];
 
     // Ação por defeito

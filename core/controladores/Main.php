@@ -166,6 +166,14 @@
             ]);
 
         }
+        public function finalizarCompras()
+        {
+
+            Store::Layout([
+                'finalizarCompras'
+            ]);
+
+        }
 
     }
 
