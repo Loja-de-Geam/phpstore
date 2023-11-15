@@ -1,28 +1,10 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
-    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
-    <title>Formulário de Produto</title>
     <style>
-        @charset "UTF-8";
-
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        /*
-Azul Muito Escuro: #001F3F
-Azul Escuro Profundo: #002366
-Azul Médio: #3498DB
-Roxo Intenso: #800080
-Roxo Profundo: #663399
-Roxo Claro: #9B59B6
-Azul Claro: #5E9DC8
-
-*/
-
         * {
             padding: 0;
             margin: 0;
@@ -36,81 +18,102 @@ Azul Claro: #5E9DC8
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: linear-gradient(to bottom, #002366, #004080);
+            background-color: #001F3F;
         }
 
         .container {
-            width: 60%;
-            height: 90vh;
-            display: flex;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
-            border-radius: 7px;
-        }
-
-        .form {
-            width: 100%;
+            width: 50%;
+            height: 50vh;
             display: flex;
             flex-direction: column;
-            
-            background-color: #fff;
+            align-items: center;
+            background-color: #FFFFFF;
             padding: 3rem;
             border-radius: 7px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
         }
 
-        
-
-        .voltar {
-            font-size: 15px;
-            width: 30%;
-            padding: 10px 0px;
-            margin-top: 15px;
-            border: 3px solid #800080;
-            border-radius: 20px;
-            outline: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: #800080;
-            background: #fff;
-            box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
-            transition: all .3s ease;
-
+        .toggle-container {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            pointer-events: none;
         }
 
-        .voltar:hover {
-            border-color: #004080;
+        .toggle-container input {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: all;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             cursor: pointer;
-            background-color: transparent;
-            color: #800080;
+            background-color: #808080;
+            transition: 0.4s;
+            pointer-events: none;
         }
 
-        .form h1 {
+        .slider::before {
+            content: "";
+            position: absolute;
+            height: 24px;
+            width: 24px;
+            left: 8px;
+            bottom: 8px;
+            background-color: #fff;
+            transition: 0.2s;
+            pointer-events: none;
+        }
+
+        .slider::after {
+            position: absolute;
+            content: "Via Pix";
+            height: 24px;
+            width: 80px;
             text-align: center;
-            margin-top: 0;
-            font-size: 2.5rem;
-            color: #09072e;
-            margin-bottom: 3rem;
-        }
-        ul > li {
-            list-style-type: none;
+            line-height: 24px;
+            right: 10px;
+            bottom: 6px;
+            transition: 0.2s;
+            pointer-events: none;
+            color: #fff;
         }
 
-        @media screen and (max-width: 768px) {
-            .container {
-                width: 100%;
-                height: 100%;
-            }
+        input:checked + .slider {
+            background-color: #2196f3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(40px);
+        }
+
+        input:checked + .slider:after {
+            content: "Via Cartão";
+            left: 8px;
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="form">
-            <h1>Painel administrativo</h1>
-            <ul>
-                <li><button class="voltar" onclick="window.location.href='./?a=cadComidas'">Cadastrar produto</button></li>
-                <li> <button class="voltar" onclick="window.location.href='./?a=comidas'">Ver lista de produtos</button></li>
-            </ul>
-        </div>
+        <label class="toggle-container">
+            <input type="checkbox" />
+            <div class="slider round"></div>
+        </label>
     </div>
 </body>
 </html>
