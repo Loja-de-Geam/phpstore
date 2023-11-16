@@ -48,6 +48,10 @@ body {
     width: 31rem;
 }
 
+#codigoQR {
+    width: 250px;
+}
+
 .finalizar {
     width: 50%;
     display: flex;
@@ -90,6 +94,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#pix-details {
+    text-align: center;
 }
 
 #pix-details, #card-details {

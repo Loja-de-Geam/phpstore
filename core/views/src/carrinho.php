@@ -9,6 +9,6 @@
         <div class="finalizar-comp">
             <h3 class="total">Total a pagar: R$0.00</h3>
             <button id="finalizar-compra" onclick="window.location.href='./?a=finalizarCompras'">Finalizar compra</button>
-        </div>
+        </div>  
     </div>
 </div>

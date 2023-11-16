@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+
 <body>
     <div class="container">
         <div class="form-img">
@@ -23,15 +25,18 @@
                 </div>
             </div>
             <div class="forma_pagamento">
-            <div class="formas">
-        <button value="0" onclick="formaPagamentoSwitch(this)" class="selected"v>Via Pix</button>
-        <button value="1" onclick="formaPagamentoSwitch(this)">Via Cartão</button>
-    </div>
-                
+                <div class="formas">
+                    <button value="0" onclick="formaPagamentoSwitch(this)" class="selected">Via Pix</button>
+                    <button value="1" onclick="formaPagamentoSwitch(this)">Via Cartão</button>
+                </div>
+
                 <div class="detalhes">
                     <div id="pix-details">
                         <h3>Utilize a câmera para escanear o QR Code</h3>
-                        <!-- Inclua aqui o código ou imagem do QR Code para o Pix -->
+                        <img src="public_html\assets\images\QR.png" alt="código QR" id="codigoQR">
+                        <div class="botao_f">
+                            <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
+                        </div>
                     </div>
                     <div id="card-details">
                         <form action="" class="form-cartao">
@@ -41,29 +46,30 @@
                             <input type="text" id="card-expiry" placeholder="Nome do banco" required>
                             <label for="card-cvv">CVV</label>
                             <input type="text" id="card-cvv" placeholder="XXX" required>
+                            <div class="botao_f">
+                                <button id="payment-button" onclick="processPayment()" for="form-cartao">Finalizar</button>
+                                <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="botao_f">
-                <button id="payment-button" onclick="processPayment()">Finalizar</button>
-                <p style="text-align: center;"><a href="./?a=menu">Voltar</a></p>
-            </div>
-            
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <script>
         $('#card-number').mask('0000 0000 0000 000');
-            $('#card-cvv').mask('000', {
-                reverse: true
-            });
-        
-         window.onload = function() {
-        formaPagamentoSwitch(document.querySelector('.formas button.selected'));
+        $('#card-cvv').mask('000', {
+            reverse: true
+        });
+
+        window.onload = function() {
+            formaPagamentoSwitch(document.querySelector('.formas button.selected'));
         };
-        function formaPagamentoSwitch(button) { 
+
+        function formaPagamentoSwitch(button) {
             const buttons = document.querySelectorAll('.formas button');
             buttons.forEach(btn => btn.classList.remove('selected'));
 
@@ -92,8 +98,8 @@
         function processPayment() {
             alert('Pagamento processado com sucesso!');
         }
-
     </script>
 
 </body>
+
 </html>
