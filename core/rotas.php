@@ -17,6 +17,8 @@
         'logout' => 'main@logout',
         'adm' => 'main@adm',
         'cadComidas' => 'main@cadComidas',
+        'cadTipo' => 'main@cadTipo',
+        'cadMenuTipo' => 'main@cadMenuTipo',
         'edit' => 'main@edit',
         'delete' => 'main@delete',
         'comidas' => 'main@comidas',

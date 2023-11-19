@@ -8,7 +8,10 @@ if (isset($_POST['enviar'])) {
     // Acessa o BD
     $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
+    $email = $_SESSION['email'];
+
     $nome = $_POST['nome'];
+    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
     $descricao = $_POST['descricao'];
     $descricao_saiba_mais = $_POST['descricao_saiba_mais'];
     $preco = $_POST['preco'];
@@ -17,7 +20,7 @@ if (isset($_POST['enviar'])) {
 
     move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
 
-    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, '$nome', '$descricao', '$descricao_saiba_mais', $preco, '$img', '$data')");
+    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, $id_adm, '$nome', '$descricao', '$descricao_saiba_mais', $preco, '$img', '$data')");
 }
 
 ?>
@@ -200,7 +203,7 @@ if (isset($_POST['enviar'])) {
                     <button type="submit" name="enviar">Adicionar</button>
                 </div>
             </form>
-            <a href="./?a=comidas" class="link_comidas">Comidas</a>
+            <a href="./?a=adm" class="link_comidas">ADM</a>
         </div>
     </div>
 </body>

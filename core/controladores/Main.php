@@ -140,6 +140,24 @@
 
         }
 
+        public function cadTipo()
+        {
+
+            Store::Layout([
+                'cadTipo'
+            ]);
+
+        }
+
+        public function cadMenuTipo()
+        {
+
+            Store::Layout([
+                'cadMenuTipo'
+            ]);
+
+        }
+
         public function edit()
         {
 

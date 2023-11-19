@@ -118,6 +118,8 @@ Azul Claro: #5E9DC8
             <ul>
                 <li><button class="voltar" onclick="window.location.href='./?a=cadComidas'">Cadastrar produto</button></li>
                 <li> <button class="voltar" onclick="window.location.href='./?a=comidas'">Ver lista de produtos</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=cadTipo'">Cadastrar Tipo</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=cadMenuTipo'">Cadastrar Menu e Tipo</button></li>
             </ul>
         </div>
     </div>

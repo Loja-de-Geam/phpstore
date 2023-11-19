@@ -8,7 +8,6 @@ function removeCarrinho(id) {
             dataType: 'json'
         }).done(function(result) {
             itensCarrinho()
-            console.log(result)
         })
     })
 }

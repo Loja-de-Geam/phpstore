@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['logado'])) {
+    header('Location: ./?a=login');
+}
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$email = $_SESSION['email'];
+$preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -11,6 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -34,9 +43,6 @@
                     <div id="pix-details">
                         <h3>Utilize a câmera para escanear o QR Code</h3>
                         <img src="public_html\assets\images\QR.png" alt="código QR" id="codigoQR">
-                        <div class="botao_f">
-                            <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
-                        </div>
                     </div>
                     <div id="card-details">
                         <form action="" class="form-cartao">
@@ -46,12 +52,13 @@
                             <input type="text" id="card-expiry" placeholder="Nome do banco" required>
                             <label for="card-cvv">CVV</label>
                             <input type="text" id="card-cvv" placeholder="XXX" required>
-                            <div class="botao_f">
-                                <button id="payment-button" onclick="processPayment()" for="form-cartao">Finalizar</button>
-                                <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
-                            </div>
                         </form>
                     </div>
+                </div>
+                <div class="botao_f">
+                    <p>R$<?= number_format($preco, 2, '.', '')?></p>
+                    <button id="payment-button" onclick="processPayment(this.value)" value="<?= $_SESSION['email'] ?>">Finalizar</button>
+                    <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
                 </div>
             </div>
 
@@ -95,8 +102,19 @@
             }
         }
 
-        function processPayment() {
-            alert('Pagamento processado com sucesso!');
+        function processPayment(email) {
+            var email_u = email;
+            $.ajax({
+                url: './public_html/finalizar.php',
+                method: 'POST',
+                data: {
+                    email: email_u
+                },
+                dataType: 'json'
+            }).done(function(result) {
+                alert(result)
+                window.location.href='./'
+            });
         }
     </script>
 

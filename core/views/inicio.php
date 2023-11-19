@@ -228,7 +228,7 @@ Azul Claro: #5E9DC8
             <h2>Pratos em Destaque</h2>
         </div>
         <section class="pratos-container">
-            <?php include("src/pratosDestaque.php");?>
+            <?php include("src/pratosDestaque.php"); ?>
         </section>
         <section>
 
@@ -302,11 +302,12 @@ Azul Claro: #5E9DC8
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
     <?php include('src/carrinho.php') ?>
-    <?php include('src/saibaMais.php')?>
+    <?php include('src/saibaMais.php') ?>
     <script src="public_html\assets\js\saibaMais.js"></script>
     <script src="public_html\assets\js\addCarrinho.js"></script>
     <script src="public_html\assets\js\removeCarrinho.js"></script>
     <script src="public_html\assets\js\carrinho.js"></script>
     <script src="public_html\assets\js\slider.js"></script>
 </body>
+
 </html>

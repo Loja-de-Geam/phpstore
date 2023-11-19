@@ -197,7 +197,7 @@ Azul Claro: #5E9DC8
         <div class="menu">
             <div class="conteudo">
                 <h1>Formulário de reclamação</h1>
-                <form class="problema">
+                <form class="problema" action="" method="POST">
                     <div class="caixa">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" required>
@@ -220,7 +220,7 @@ Azul Claro: #5E9DC8
                         <input type="file" id="anexo" name="anexo">
                     </div>
                     
-                    <button class="botao">Enviar Reclamação</button>
+                    <button class="botao" name="envio">Enviar Reclamação</button>
                     <button class="voltar" onclick="window.location.href='./?a=suporte'">Voltar</button>
                 </form>
             </div>
@@ -229,3 +229,16 @@ Azul Claro: #5E9DC8
  
 </body>
 </html>
+
+<?php 
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+if(isset($_POST['envio'])) {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $descricao = $_POST['descricao'];
+    $data = date('Y-m-d');
+    $query = "INSERT INTO formulario_de_reclamacao VALUES(NULL, '$nome', '$email', '$telefone', '$descricao', '$data', 'Aberto')";
+    $gestor->query($query);
+}
+?>

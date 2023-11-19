@@ -36,10 +36,14 @@ function itensCarrinho() {
                         miniQuant.innerHTML = quantidade + ' itens'
                     }
                 } else {
+                    miniQuant.innerHTML = '0 itens'
+                    miniPreco.innerHTML = 'R$0.00'
                     itensCarrinho.innerHTML = ""
                     itensCarrinho.innerHTML += '<div class="sem-itens"><h3>Adicione itens ao carrinho</h3></div>'
                 }
             } else {
+                miniQuant.innerHTML = '0 itens'
+                miniPreco.innerHTML = 'R$0.00'
                 itensCarrinho.innerHTML = ""
                 itensCarrinho.innerHTML += '<div class="sem-itens"><h3>Adicione itens ao carrinho</h3></div>'
             }

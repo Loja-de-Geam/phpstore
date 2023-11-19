@@ -237,7 +237,7 @@ Azul Claro: #5E9DC8
         <div class="menu">
             <div class="conteudo">
                 <h1>Dúvidas</h1>
-                <for class="problema">
+                <form class="problema" action="" method="POST">
                     <div class="caixa">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" required>
@@ -258,9 +258,9 @@ Azul Claro: #5E9DC8
                         <textarea id="descricao" name="descricao" rows="4" required></textarea>
                     </div>
 
-                    <button class="botao">Informar dúvida</button>
+                    <button class="botao" name="envio">Informar dúvida</button>
                     <button class="voltar" onclick="window.location.href='./?a=suporte'">Voltar</button>
-                    </form>
+                </form>
             </div>
         </div>
     </main>
@@ -268,3 +268,16 @@ Azul Claro: #5E9DC8
 </body>
 
 </html>
+
+<?php 
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+if(isset($_POST['envio'])) {
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $titulo = $_POST['titulo'];
+    $descricao = $_POST['descricao'];
+    $data = date('Y-m-d');
+    $query = "INSERT INTO outros_problemas VALUES(NULL, '$nome', '$email', '$titulo', '$descricao', '$data', 'Aberto')";
+    $gestor->query($query);
+}
+?>

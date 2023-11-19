@@ -39,7 +39,7 @@
         $_SESSION['email'] = $_POST['email'];
 
         // Redirecionamento para a página inicial
-        // header('Location: ./');
+        echo "<script>window.location.href='./'</script>";
 
     }
 

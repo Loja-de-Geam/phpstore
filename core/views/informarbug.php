@@ -195,7 +195,7 @@ Azul Claro: #5E9DC8
         <div class="menu">
             <div class="conteudo">
                 <h1>Relatos de problemas</h1>
-                <form class="problema">
+                <form class="problema" action="" method="POST">
                     <div class="caixa">
                         <label for="nomebug">Título do problema</label>
                         <input type="text" id="nomebug" name="nomebug" required><br>
@@ -235,7 +235,7 @@ Azul Claro: #5E9DC8
                         <label for="anexo">Anexar Captura de tela</label>
                         <input type="file" id="anexo" name="anexo" accept="image/*">
                     </div>
-                    <button class="botao">Enviar relato</button>
+                    <button class="botao" name="envio">Enviar relato</button>
                     <button class="voltar" onclick="window.location.href='./?a=suporte'">Voltar</button>
                 </form>
             </div>
@@ -244,3 +244,15 @@ Azul Claro: #5E9DC8
  
 </body>
 </html>
+
+<?php 
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+if(isset($_POST['envio'])) {
+    $titulo = $_POST['nomebug'];
+    $categoria = $_POST['categoria'];
+    $descricao = $_POST['descricaobug'];
+    $data = date('Y-m-d');
+    $query = "INSERT INTO relato_bugs VALUES(NULL, '$titulo', '$categoria', '$descricao', '$data', 'Aberto')";
+    $gestor->query($query);
+}
+?>
