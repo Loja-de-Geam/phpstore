@@ -158,6 +158,42 @@
 
         }
 
+        public function menuTipo()
+        {
+
+            Store::Layout([
+                'menuTipo'
+            ]);
+
+        }
+
+        public function deleteMenuTipo()
+        {
+
+            Store::Layout([
+                'deleteMenuTipo'
+            ]);
+
+        }
+        
+        public function tipo()
+        {
+
+            Store::Layout([
+                'tipo'
+            ]);
+
+        }
+
+        public function deleteTipo()
+        {
+
+            Store::Layout([
+                'deleteTipo'
+            ]);
+
+        }
+
         public function edit()
         {
 

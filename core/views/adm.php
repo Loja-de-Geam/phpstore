@@ -6,7 +6,7 @@ if (!isset($_SESSION['adm'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -120,6 +120,8 @@ Azul Claro: #5E9DC8
                 <li> <button class="voltar" onclick="window.location.href='./?a=comidas'">Ver lista de produtos</button></li>
                 <li> <button class="voltar" onclick="window.location.href='./?a=cadTipo'">Cadastrar Tipo</button></li>
                 <li> <button class="voltar" onclick="window.location.href='./?a=cadMenuTipo'">Cadastrar Menu e Tipo</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=menuTipo'">Ver lista menu e Tipo</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=tipo'">Ver lista Tipo</button></li>
             </ul>
         </div>
     </div>

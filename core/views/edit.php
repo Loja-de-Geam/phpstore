@@ -2,6 +2,9 @@
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
+$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+$comida_id = $gestor->query("SELECT * FROM menu WHERE id=$id");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,9 +17,9 @@ if (!isset($_SESSION['adm'])) {
     <style>
         @charset "UTF-8";
 
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-        
-            * {
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
@@ -52,7 +55,7 @@ if (!isset($_SESSION['adm'])) {
             border-radius: 7px;
         }
 
-        
+
 
         .grupo_input {
             display: flex;
@@ -132,6 +135,7 @@ if (!isset($_SESSION['adm'])) {
             font-weight: bold;
             text-decoration: underline;
         }
+
         .form h1 {
             margin-top: 0;
             font-size: 3rem;
@@ -142,38 +146,40 @@ if (!isset($_SESSION['adm'])) {
 </head>
 
 <body>
-    
+
     <div class="conteiner">
         <div class="form">
             <h1>Editar</h1>
-            <form action="" method="post">
-            
-                <div class="grupo_input">
-                    <div class="caixa">
-                        <label for="nome">Nome </label>
-                        <input type="text" name="nome" id="nome" placeholder="Nome do produto" required>
+            <?php while ($resultado = $comida_id->fetch(PDO::FETCH_ASSOC)) { ?>
+                <form action="" method="post">
+
+                    <div class="grupo_input">
+                        <div class="caixa">
+                            <label for="nome">Nome </label>
+                            <input type="text" name="nome" id="nome" placeholder="Nome do produto" required value="<?= $resultado['nome'] ?>">
+                        </div>
+                        <div class="caixa">
+                            <label for="preco">Preço </label>
+                            <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do produto" required value="<?= number_format($resultado['preco'], 2, '.', '') ?>">
+                        </div>
+                        <div class="caixa">
+                            <label for="descricao">Descrição Curta</label>
+                            <input type="text" name="descricao" id="descricao" maxlength="50" placeholder="Descrição curta" value="<?= $resultado['descricao'] ?>">
+                        </div>
+                        <div class="caixa">
+                            <label for="descricao">Descrição para o "Saiba Mais"</label><br>
+                            <textarea name="descricao_saiba_mais" id="descricao_saiba_mais" cols="30" rows="10" value="<?= $resultado['descricao_saiba_mais'] ?>"></textarea>
+                        </div>
                     </div>
-                    <div class="caixa">
-                        <label for="preco">Preço </label>
-                        <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do produto" required>
-                    </div>
-                    <div class="caixa">
-                        <label for="descricao">Descrição Curta</label>
-                        <input type="text" name="descricao" id="descricao" maxlength="50" placeholder="Descrição curta">
-                    </div>
-                    <div class="caixa">
-                        <label for="descricao">Descrição para o "Saiba Mais"</label><br>
-                        <textarea name="descricao_saiba_mais" id="descricao_saiba_mais" cols="30" rows="10"></textarea>
-                    </div>
-                </div>
-                <div class="enviar">
+                    <div class="enviar">
                         <button name="update">Enviar</button>
                     </div>
-            </form>
+                </form>
+            <?php } ?>
             <a class="voltar" onclick="window.location.href='./?a=comidas'">Voltar</a>
         </div>
     </div>
-    
+
 </body>
 
 </html>
@@ -181,7 +187,8 @@ if (!isset($_SESSION['adm'])) {
 <?php
 
 if (isset($_POST['update'])) {
-    $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+    $email = $_SESSION['email'];
+    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     $desc = $_POST['descricao'];
@@ -189,13 +196,12 @@ if (isset($_POST['update'])) {
     $data = date('Y-m-d');
 
     if (isset($_GET['id'])) {
-        $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-        $sql_update = "UPDATE menu SET nome='$nome', descricao='$desc', descricao_saiba_mais='$descricao_saiba_mais', preco=$preco, data_adicionamento_modificacao='$data' WHERE id=$id";
+        $sql_update = "UPDATE menu SET id_adm=$id_adm, nome='$nome', descricao='$desc', descricao_saiba_mais='$descricao_saiba_mais', preco=$preco, data_adicionamento_modificacao='$data' WHERE id=$id";
 
         $result = $gestor->query($sql_update);
     }
 
-    header('Location: ./?a=comidas');
+    echo "<script>window.location.href='./?a=comidas'</script>";
 }
 
 ?>

@@ -48,10 +48,11 @@ CREATE TABLE menu (
 );
 
 CREATE TABLE menutipo (
+	id INT NOT NULL AUTO_INCREMENT,
     id_menu INT NOT NULL,
     id_tipo INT NOT NULL,
     id_adm INT NOT NULL,
-    PRIMARY KEY (id_menu , id_tipo),
+    PRIMARY KEY (id, id_menu , id_tipo),
     FOREIGN KEY (id_menu)
         REFERENCES menu (id),
     FOREIGN KEY (id_tipo)
@@ -136,27 +137,27 @@ insert into menu values (null, 1, 'lasanha de frango', 'lasanha de frango', 'A L
                         (null, 1,'Pizza Vegana', 'Pizza com ingredientes veganos', 'A Pizza Vegana é uma ode à criatividade e à diversidade de sabores da culinária vegetal. Esta versão vegana da pizza tradicional celebra os ingredientes à base de plantas de forma vibrante e deliciosa, proporcionando uma experiência culinária que é ao mesmo tempo saudável e saborosa. A base da pizza é uma fina camada de massa de pizza vegana, preparada com ingredientes como farinha integral, água, fermento e azeite de oliva. A massa é habilmente preparada e assada até atingir a textura perfeita: crocante por fora e macia por dentro.', '53.00', 'pizza_vegana.jpg', '2023-11-1'),
                         (null, 1,'Cocada baiana', 'Cocada baiana', 'A base da Cocada Baiana é o coco fresco ralado, cuidadosamente preparado para criar uma textura desfiada e suculenta. O coco é cozido com açúcar em fogo baixo, permitindo que os sabores se misturem e criem uma mistura espessa e caramelizada.', '3.50', 'cocada.jpg', '2023-11-1');
                         
-insert into menutipo values (1, 1, 1),
-							(2, 6, 1),
-							(3, 3, 1),
-							(4, 3, 1),
-							(5, 3, 1),
-							(6, 4, 1),
-							(7, 4, 1),
-							(8, 4, 1),
-							(9, 4, 1),
-							(10, 3, 1),
-							(11, 1, 1),
-                            (11, 6, 1),
-							(12, 4, 1),
-							(13, 4, 1),
-							(14, 3, 1),
-							(15, 3, 1),
-							(16, 4, 1),
-							(17, 4, 1),
-							(18, 4, 1),
-							(19, 4, 1),
-							(20, 3, 1);
+insert into menutipo values (NULL, 1, 1, 1),
+							(NULL, 2, 6, 1),
+							(NULL, 3, 3, 1),
+							(NULL, 4, 3, 1),
+							(NULL, 5, 3, 1),
+							(NULL, 6, 4, 1),
+							(NULL, 7, 4, 1),
+							(NULL, 8, 4, 1),
+							(NULL, 9, 4, 1),
+							(NULL, 10, 3, 1),
+							(NULL, 11, 1, 1),
+                            (NULL, 11, 6, 1),
+							(NULL, 12, 4, 1),
+							(NULL, 13, 4, 1),
+							(NULL, 14, 3, 1),
+							(NULL, 15, 3, 1),
+							(NULL, 16, 4, 1),
+							(NULL, 17, 4, 1),
+							(NULL, 18, 4, 1),
+							(NULL, 19, 4, 1),
+							(NULL, 20, 3, 1);
 							
 
 insert into pedido values (null, 1, 9, "comprado", '2023-11-11 15:30:20'),
