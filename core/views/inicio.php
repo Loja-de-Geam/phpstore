@@ -55,7 +55,7 @@ Azul Claro: #5E9DC8
         }
 
         .prato .imagem img {
-            max-width: 100%;
+            height: 300px;
             border-radius: 5px;
         }
 
