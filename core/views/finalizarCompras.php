@@ -25,7 +25,7 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
 <body>
     <div class="container">
         <div class="form-img">
-            <img src="public_html\assets\images\cadastro.svg" alt="">
+        <img src="public_html\assets\images\pagamento.svg" alt="">
         </div>
         <div class="finalizar">
             <div class="cabeca">
@@ -33,7 +33,18 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
                     <h1>Finalizar compra</h1>
                 </div>
             </div>
-            <div class="forma_pagamento">
+            <div id="endereco">
+                <h2>Informe o endereço de entrega</h2>
+                <form id="endereco-form">
+                    <label for="endereco">Endereço de Entrega</label>
+                    <input type="text" id="endereco" name="endereco" required>
+
+                    <div class="botao_f">
+                        <button type="button" class="continuar" onclick="showPaymentButton()">Continuar</button>
+                    </div>
+                </form>
+            </div>
+            <div id="forma_pagamento" style="display: none;">
                 <div class="formas">
                     <button value="0" onclick="formaPagamentoSwitch(this)" class="selected">Via Pix</button>
                     <button value="1" onclick="formaPagamentoSwitch(this)">Via Cartão</button>
@@ -50,8 +61,6 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
                             <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
                             <label for="card-expiry">Banco</label>
                             <input type="text" id="card-expiry" placeholder="Nome do banco" required>
-                            <label for="card-cvv">CVV</label>
-                            <input type="text" id="card-cvv" placeholder="XXX" required>
                         </form>
                     </div>
                 </div>
@@ -102,6 +111,13 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
             }
         }
 
+        function showPaymentButton() {
+            const endereco = document.getElementById("endereco");
+            const formas_pagamento = document.getElementById("forma_pagamento");
+            endereco.style.display = 'none';
+            formas_pagamento.style.display = 'block';
+            
+        }
         function processPayment(email) {
             var email_u = email;
             $.ajax({
