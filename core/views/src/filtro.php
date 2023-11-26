@@ -14,7 +14,7 @@ $tipo = $gestor->query('SELECT * FROM tipo');
             </div>
             <div class="preco-maximo">
                 <h3>Preço máximo</h3>
-                <h4>R$ <span id="span"><?= $maior_preco ?></span></h4>
+                <h4>R$ <span id="span"><?= number_format($maior_preco, 2, '.', '') ?></span></h4>
                 <input type="range" name="preco-maximo" id="precoMax" class="preco" min="<?= $menor_preco ?>" max="<?= $maior_preco ?>" value="<?= $maior_preco ?>" step=".1">
             </div>
             <div class="tags">
