@@ -38,7 +38,6 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
                 <form id="endereco-form">
                     <label for="endereco">Endereço de Entrega</label>
                     <input type="text" id="endereco" name="endereco" required>
-
                     <div class="botao_f">
                         <button type="button" class="continuar" onclick="showPaymentButton()">Continuar</button>
                     </div>

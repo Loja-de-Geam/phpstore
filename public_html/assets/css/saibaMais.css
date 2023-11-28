@@ -69,8 +69,8 @@
     position: absolute;
     right: 20px;
     bottom: 20px;
-    background-color: #2f00ff;
-    border: 1px solid #2f00ff;
+    background-color: #800080;;
+    border: 1px solid #800080;;
     color: #fff;
     font-size: 2rem;
     padding: 10px;
@@ -80,7 +80,7 @@
 }
 
 .btn-add-car:hover {
-    color: #2f00ff;
+    color: #800080;;
     background-color: #fff;
 }
 
