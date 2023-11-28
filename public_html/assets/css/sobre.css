@@ -1,19 +1,65 @@
-.container h1 {
-    font-size: 32px;
-    color: var(--cor_texto_2); 
-    margin-bottom: 50px; 
-  }
-
-.container h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    color: var(--cor_texto_2); 
+.container > .cabecario {
+    width: 80%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.container p {
+.container > .cabecario >  h1 {
+    font-size: 3rem;
+    color: var(--cor_texto_2); 
+    margin-bottom: 50px; 
+}
+
+.container > .cabecario > h1::after {
+    content: '';
+    display: block;
+    width: 16rem;
+    height: 0.7rem;
+    background: linear-gradient(to right, #800080, #3498DB);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+  
+.texto {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+.container > .texto >  h2 {
+    font-size: 2rem;
+    color: var(--cor_texto_2); 
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+
+.container > .texto > h2::after {
+    content: '';
+    display: block;
+    width: 40rem;
+    height: 0.7rem;
+    background: linear-gradient(to right, #800080, #3498DB);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.container > .texto > p {
     color: #000;
     font-size: 18px;
     text-indent: 40px;
-    margin-bottom: 20px;
+    padding: 0px 80px 20px 80px;
     text-align: justify;
+}
+.container > .texto > p > span {
+    font-weight: bolder;
+    color: #800080;
+
+}
+
+.container > .cabecario > img {
+    width: 200px;
+    float: right;
 }

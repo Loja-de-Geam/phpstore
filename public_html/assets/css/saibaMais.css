@@ -44,6 +44,7 @@
 }
 
 #saiba-mais .itens .produ h2.nome {
+    color: #800080;
     text-align: center;
     margin-bottom: 10px;
     text-transform: capitalize;
@@ -56,7 +57,7 @@
 }
 
 #saiba-mais .itens .produ p.preco {
-    color: #2f00ff;
+    color: #800080;
     position: absolute;
     font-size: 1.6rem;
     font-weight: 500;

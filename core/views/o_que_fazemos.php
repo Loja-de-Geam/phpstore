@@ -47,21 +47,26 @@
                 </div>
             <?php } ?>
         </nav>
+        <style>
+            .container > .cabecario > h1::after {
+                width: 18rem;
+            }
+        </style>
     </header>
     <main>
         <div class="container">
-            <h1>O que Fazemos - O Fynder Foodie</h1>
-            <p>O Fynder Foodie é uma inovadora solução de entrega de refeições através da internet, projetada para trazer praticidade e satisfação aos amantes da boa comida. Disponível em uma ampla gama de dispositivos eletrônicos, desde smartphones e smartwatches a laptops e tablets, estamos aqui para tornar mais fácil do que nunca para os usuários encontrarem deliciosas opções de alimentação acessíveis, onde quer que estejam.</p>
-
-            <p>Com a nossa presença multiplataforma, oferecemos aos usuários a conveniência de acessar o Fynder Foodie em qualquer dispositivo de sua preferência. Seja no conforto de casa, no escritório ou em movimento, basta alguns cliques para explorar um universo de sabores e escolher entre uma variedade de restaurantes e cardápios.</p>
-
-            <p>Nossa plataforma intuitiva e fácil de usar permite que os usuários naveguem por uma seleção diversificada de restaurantes e estabelecimentos parceiros. Com uma interface amigável, recursos de busca avançados e filtros personalizáveis, o Fynder Foodie ajuda a encontrar exatamente o que você deseja, seja uma pizza quentinha, um prato gourmet ou opções veganas e saudáveis.</p>
-
-            <p>Além disso, valorizamos a experiência do usuário, fornecendo informações detalhadas sobre os estabelecimentos, como avaliações, horários de funcionamento, opções de entrega e promoções especiais. Queremos garantir que cada pedido seja uma experiência satisfatória, desde o momento da escolha até a entrega do prato à sua porta.</p>
-
-            <p>Acreditamos que a comida é mais do que apenas uma necessidade - é uma forma de expressão cultural e prazer. Por isso, buscamos parcerias com restaurantes renomados e locais exclusivos, para oferecer aos nossos usuários uma ampla variedade de opções gastronômicas. Seja para uma refeição rápida e prática ou para uma ocasião especial, o Fynder Foodie está aqui para atender a todos os gostos e preferências.</p>
-
-            <p>Estamos comprometidos em fornecer um serviço de entrega confiável e eficiente. Trabalhamos em estreita colaboração com nossos restaurantes parceiros para garantir que cada refeição seja preparada com cuidado e entregue de forma segura e pontual. Nosso objetivo é superar as expectativas dos clientes, garantindo uma experiência de entrega excepcional.</p>
+        <div class="cabecario">
+                <h1>O que fazemos</h1>
+                <img src="public_html/assets/images/logo/logo.png" alt="">
+            </div>
+            <div class="texto">
+                <p>O Fynder Foodie é uma inovadora solução de entrega de refeições através da internet, projetada para trazer praticidade e satisfação aos amantes da boa comida. Disponível em uma ampla gama de dispositivos eletrônicos, desde smartphones e smartwatches a laptops e tablets, estamos aqui para tornar mais fácil do que nunca para os usuários encontrarem deliciosas opções de alimentação acessíveis, onde quer que estejam.</p>
+                <p>Com a nossa presença multiplataforma, oferecemos aos usuários a conveniência de acessar o Fynder Foodie em qualquer dispositivo de sua preferência. Seja no conforto de casa, no escritório ou em movimento, basta alguns cliques para explorar um universo de sabores e escolher entre uma variedade de restaurantes e cardápios.</p>
+                <p>Nossa plataforma intuitiva e fácil de usar permite que os usuários naveguem por uma seleção diversificada de restaurantes e estabelecimentos parceiros. Com uma interface amigável, recursos de busca avançados e filtros personalizáveis, o Fynder Foodie ajuda a encontrar exatamente o que você deseja, seja uma pizza quentinha, um prato gourmet ou opções veganas e saudáveis.</p>
+                <p>Além disso, valorizamos a experiência do usuário, fornecendo informações detalhadas sobre os estabelecimentos, como avaliações, horários de funcionamento, opções de entrega e promoções especiais. Queremos garantir que cada pedido seja uma experiência satisfatória, desde o momento da escolha até a entrega do prato à sua porta.</p>
+                <p>Acreditamos que a comida é mais do que apenas uma necessidade - é uma forma de expressão cultural e prazer. Por isso, buscamos parcerias com restaurantes renomados e locais exclusivos, para oferecer aos nossos usuários uma ampla variedade de opções gastronômicas. Seja para uma refeição rápida e prática ou para uma ocasião especial, o Fynder Foodie está aqui para atender a todos os gostos e preferências.</p>
+                <p>Estamos comprometidos em fornecer um serviço de entrega confiável e eficiente. Trabalhamos em estreita colaboração com nossos restaurantes parceiros para garantir que cada refeição seja preparada com cuidado e entregue de forma segura e pontual. Nosso objetivo é superar as expectativas dos clientes, garantindo uma experiência de entrega excepcional.</p>
+            </div>
 
         </div>
     </main>
