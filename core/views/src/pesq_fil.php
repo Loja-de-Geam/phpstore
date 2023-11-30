@@ -1,5 +1,5 @@
 <?php
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 
 $precoMax = $_SESSION['preco-maximo'];
 

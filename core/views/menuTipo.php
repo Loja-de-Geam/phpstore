@@ -3,8 +3,7 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
-
+$gestor = $GLOBALS['gestor'];
 $pagina = 1;
 $limite = 5;
 
@@ -167,7 +166,7 @@ $result->execute();
                             <td><?= $tipagem['nome'] ?></td>
                             <td><?= $tipagem['tipo'] ?></td>
                             <td>
-                                <a href="?a=deletetipo&id=<?= $tipagem['id'] ?>">
+                                <a href="?a=deleteMenuTipo&id=<?= $tipagem['id'] ?>">
                                     <i class="bi bi-trash btn-edit delete"></i>
                                 </a>
                             </td>

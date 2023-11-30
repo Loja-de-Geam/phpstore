@@ -1,13 +1,16 @@
 <?php 
 
-    define('APP_NAME', 'Fynder foodie');
+    define('APP_NAME', 'Fynder Food');
     define('APP_VERSION', '1.0.0');
 
     // Banco de Dados MYSQL
-    define('MYSQL_SERVER', 'localhost');
-    define('MYSQL_DATABASE', 'fynderfood');
-    define('MYSQL_USER', 'root');
-    define('MYSQL_PASS', '');
-    define('MYSQL_CHARSET', 'utf8');
+    $host = 'localhost';
+    $dataBase = 'fynderfood';
+    $user = 'root';
+    $pass = '';
+    $charset = 'utf8';
+
+    $gestor = new PDO("mysql:host=" . $host . ";dbname=" . $dataBase . ";charset=utf8", $user, $pass);
+    $GLOBALS['gestor'] = $gestor;
 
 ?>

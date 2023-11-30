@@ -1,5 +1,5 @@
 <?php
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 
 $maior_preco = $gestor->query("SELECT MAX(preco) AS maior FROM menu")->fetch()["maior"];
 $menor_preco = $gestor->query("SELECT MIN(preco) AS menor FROM menu")->fetch()["menor"];

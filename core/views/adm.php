@@ -58,21 +58,20 @@ Azul Claro: #5E9DC8
             width: 100%;
             display: flex;
             flex-direction: column;
-
             background-color: #fff;
             padding: 3rem;
             border-radius: 7px;
+            position: relative;
         }
-
-
 
         .voltar {
             font-size: 15px;
-            width: 30%;
-            padding: 10px 0px;
+            width: auto;
+            padding: 10px 5px;
             margin-top: 15px;
-            border: 3px solid #800080;
-            border-radius: 20px;
+            margin-right: 20px;
+            border: 2px solid #800080;
+            border-radius: 10px;
             outline: none;
             font-weight: bold;
             letter-spacing: 1px;
@@ -80,7 +79,6 @@ Azul Claro: #5E9DC8
             background: #fff;
             box-shadow: 0px 10px 40px -12px var(--sombra_colorida);
             transition: all .3s ease;
-
         }
 
         .voltar:hover {
@@ -97,9 +95,29 @@ Azul Claro: #5E9DC8
             color: #09072e;
             margin-bottom: 3rem;
         }
+        
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
         ul>li {
             list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #800080;
+            position: absolute;
+            bottom: 20px;
+            right: 50%;
+            transform: translate(50%);
+            transition: .8s;
+        }
+
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
         }
 
         @media screen and (max-width: 768px) {
@@ -118,11 +136,14 @@ Azul Claro: #5E9DC8
             <ul>
                 <li><button class="voltar" onclick="window.location.href='./?a=cadComidas'">Cadastrar produto</button></li>
                 <li> <button class="voltar" onclick="window.location.href='./?a=comidas'">Ver lista de produtos</button></li>
+                
                 <li> <button class="voltar" onclick="window.location.href='./?a=cadTipo'">Cadastrar Tipo</button></li>
+                <li> <button class="voltar" onclick="window.location.href='./?a=tipo'">Ver lista Tipo</button></li>
+
                 <li> <button class="voltar" onclick="window.location.href='./?a=cadMenuTipo'">Cadastrar Menu e Tipo</button></li>
                 <li> <button class="voltar" onclick="window.location.href='./?a=menuTipo'">Ver lista menu e Tipo</button></li>
-                <li> <button class="voltar" onclick="window.location.href='./?a=tipo'">Ver lista Tipo</button></li>
             </ul>
+            <a href="./">Voltar para o site</a>
         </div>
     </div>
 </body>

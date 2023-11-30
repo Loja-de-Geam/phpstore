@@ -1,6 +1,7 @@
 <?php 
 header('Content-Type: application/json');
-$gestor = new PDO("mysql:host=" . 'localhost' . ";dbname=" . 'fynderfood' . ";charset=utf8", 'root', '');
+require('../config.php');
+$gestor = $GLOBALS['gestor'];
 
 $email = $_POST['email'];
 $result = $gestor->query("SELECT id FROM usuarios WHERE email='$email'");

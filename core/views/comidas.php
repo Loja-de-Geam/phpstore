@@ -3,7 +3,7 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 
 $pagina = 1;
 $limite = 5;

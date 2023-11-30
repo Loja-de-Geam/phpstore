@@ -1,6 +1,7 @@
 <?php 
 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
+
 $query = "SELECT menu.* FROM pedido, menu WHERE menu.id=pedido.id_produto GROUP BY id_produto ORDER BY count(id_produto) DESC LIMIT 2;";
 
 $result = $gestor->prepare($query);

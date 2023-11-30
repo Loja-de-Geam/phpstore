@@ -231,7 +231,7 @@ Azul Claro: #5E9DC8
 </html>
 
 <?php 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 if(isset($_POST['envio'])) {
     $nome = $_POST['nome'];
     $email = $_POST['email'];

@@ -3,13 +3,13 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 if (isset($_POST['enviar'])) {
     $email = $_SESSION['email'];
     $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
     $id_menu = $_POST['com'];
     $id_tipo = $_POST['tipo'];
-    $gestor->query("INSERT INTO menutipo VALUES($id_menu, $id_tipo, $id_adm)");
+    $gestor->query("INSERT INTO menutipo VALUES(NULL, $id_menu, $id_tipo, $id_adm)");
 }
 ?>
 <!DOCTYPE html>

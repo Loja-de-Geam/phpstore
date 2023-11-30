@@ -3,8 +3,8 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
+$gestor = $GLOBALS['gestor'];
 if(isset($_POST['enviar'])) {
-    $gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
 
     $email = $_SESSION['email'];
     $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];

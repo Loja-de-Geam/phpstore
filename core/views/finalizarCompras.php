@@ -2,7 +2,8 @@
 if (!isset($_SESSION['logado'])) {
     header('Location: ./?a=login');
 }
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+
+$gestor = $GLOBALS['gestor'];
 $email = $_SESSION['email'];
 $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
 ?>

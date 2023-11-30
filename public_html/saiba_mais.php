@@ -3,8 +3,7 @@
 require('../config.php');
 
 $id = filter_input(INPUT_GET, 'id', FILTER_DEFAULT);
-
-$gestor = new PDO("mysql:host=" . MYSQL_SERVER . ";dbname=" . MYSQL_DATABASE . ";charset=utf8", MYSQL_USER, MYSQL_PASS);
+$gestor = $GLOBALS['gestor'];
 $query = "SELECT * FROM menu WHERE id = :id LIMIT 1";
 $resultado = $gestor->prepare($query);
 $resultado->execute(
