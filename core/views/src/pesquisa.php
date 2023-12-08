@@ -1,22 +1,10 @@
 <?php
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 
-$pagina = 1;
-$limite = 6;
-
-$registros = $gestor->query("SELECT COUNT(id) count FROM menu ")->fetch()["count"];
-
-$paginas = ceil($registros / $limite);
-
-if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-}
-
-$inicio = ($pagina * $limite) - $limite;
-
-$query = "SELECT * FROM menu ORDER BY id LIMIT $inicio, $limite";
-$result = $gestor->prepare($query);
-$result->execute();
+$data = new DataBase();
+$result = $data->paginacaoDinamica('menu', 6);
+$pagina = $data->getPagina();
+$paginas = $data->getPaginaFinal(6);
 while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 ?>
     <div>

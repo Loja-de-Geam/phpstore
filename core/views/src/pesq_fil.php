@@ -8,7 +8,7 @@ $categoria = $_SESSION['tags'];
 $pagina = 1;
 $limite = 6;
 
-$registros = $gestor->query("SELECT COUNT(menu.id) count FROM menu")->fetch()["count"];
+$registros = $gestor->query("SELECT * FROM countidmenu")->fetch()["count"];
 
 $paginas = ceil($registros / $limite);
 

@@ -7,7 +7,7 @@ $gestor = $GLOBALS['gestor'];
 $pagina = 1;
 $limite = 5;
 
-$registros = $gestor->query("SELECT COUNT(id) count FROM tipo")->fetch()["count"];
+$registros = $gestor->query("SELECT * FROM countidtipo")->fetch()["count"];
 
 $paginas = ceil($registros / $limite);
 

@@ -3,23 +3,12 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 
-$pagina = 1;
-$limite = 5;
-
-$registros = $gestor->query("SELECT COUNT(id) count FROM menu ")->fetch()["count"];
-
-$paginas = ceil($registros / $limite);
-
-if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-}
-
-$inicio = ($pagina * $limite) - $limite;
-$query = "SELECT * FROM menu ORDER BY id LIMIT $inicio, $limite";
-$result = $gestor->prepare($query);
-$result->execute();
+$data = new DataBase();
+$result = $data->paginacaoDinamica('menu', 6);
+$pagina = $data->getPagina();
+$paginas = $data->getPaginaFinal();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,7 +19,7 @@ $result->execute();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title><?= APP_NAME ?> | Comidas cadastradas</title>
+    <title>Comidas cadastradas</title>
     <style>
         * {
             padding: 0;

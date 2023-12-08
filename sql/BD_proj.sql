@@ -103,6 +103,15 @@ CREATE TABLE relato_bugs (
     status_relato VARCHAR(20) DEFAULT 'Aberto'
 );
 
+CREATE VIEW countidmenu AS
+    SELECT COUNT(id) count FROM menu;
+
+CREATE VIEW countidmenutipo AS
+    SELECT COUNT(id_menu) count FROM menutipo;
+    
+CREATE VIEW countipo AS
+    SELECT COUNT(id) count FROM tipo;
+
 insert into adm values (null, 'adm', 'admGG@gmail.com', 'adm12345', '2023-11-1');
 
 insert into usuarios values (null, 'Fulano da Silva', '(12) 34567-8900', 'fulano@gmail.com', '987.654.321-00', 'QWERTYUIOP1234', 'mas', '2023-11-1'),
