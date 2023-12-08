@@ -1,8 +1,8 @@
 <?php
 $gestor = $GLOBALS['gestor'];
 
-$maior_preco = $gestor->query("SELECT MAX(preco) AS maior FROM menu")->fetch()["maior"];
-$menor_preco = $gestor->query("SELECT MIN(preco) AS menor FROM menu")->fetch()["menor"];
+$maior_preco = $gestor->query("SELECT FORMAT(MAX(preco),2) AS maior FROM menu")->fetch()["maior"];
+$menor_preco = $gestor->query("SELECT FORMAT(MIN(preco),2) AS menor FROM menu")->fetch()["menor"];
 
 $tipo = $gestor->query('SELECT * FROM tipo');
 ?>
@@ -38,16 +38,15 @@ $tipo = $gestor->query('SELECT * FROM tipo');
 </div>
 
 <script>
-    
     const valor_span = document.querySelector('#span');
     const valor_input = document.querySelector('#precoMax');
 
     valor_input.oninput = function() {
-        let value = valor_input.value;
+        let value = parseFloat(valor_input.value).toFixed(2);
         valor_span.textContent = value;
 
+        // Mantenha os valores não formatados para a manipulação do controle deslizante
         var percentage = (this.value - this.min) / (this.max - this.min) * 100;
         this.style.background = 'linear-gradient(to right, #800080 0%, #3498DB ' + percentage + '%, #9dceee ' + percentage + '%, #9dceee 100%)';
     }
 </script>
-

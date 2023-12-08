@@ -190,7 +190,6 @@ input {
     box-shadow: 1px 1px 6px #0000005d;
     font-size: 0.8rem;
 }
-
 input:hover {
     background-color: #eeeeee75;
 }
@@ -208,3 +207,4 @@ label {
 input::placeholder {
     color: #000000be;
 }
+
