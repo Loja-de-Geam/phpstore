@@ -16,7 +16,7 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
     <title>Finalização</title>
-    <link rel="stylesheet" href="public_html\assets\css\style_final.css">
+    <link rel="stylesheet" href="public_html\assets\css\finalizar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -24,27 +24,34 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
 </head>
 
 <body>
-    <div class="container">
+    <div id="container">
         <div class="form-img">
-        <img src="public_html\assets\images\pagamento.svg" alt="">
+            <img src="public_html\assets\images\pagamento.svg" alt="">
         </div>
-        <div class="finalizar">
+        <div id="finalizar1">
             <div class="cabeca">
                 <div class="titulo">
                     <h1>Finalizar compra</h1>
                 </div>
             </div>
-            <div id="endereco">
+            <div class="endereco">
                 <h2>Informe o endereço de entrega</h2>
                 <form id="endereco-form">
                     <label for="endereco">Endereço de Entrega</label>
                     <input type="text" id="endereco" name="endereco" required>
-                    <div class="botao_f">
-                        <button type="button" class="continuar" onclick="showPaymentButton()">Continuar</button>
-                    </div>
                 </form>
             </div>
-            <div id="forma_pagamento" style="display: none;">
+            <div class="botao_f">
+                <button type="button" class="continuar" onclick="showPaymentButton()">Continuar</button>
+            </div>
+        </div>
+        <div id="finalizar2" style="display: none;">
+            <div class="cabeca">
+                <div class="titulo">
+                    <h1>Finalizar compra</h1>
+                </div>
+            </div>
+            <div id="forma_pagamento">
                 <div class="formas">
                     <button value="0" onclick="formaPagamentoSwitch(this)" class="selected">Via Pix</button>
                     <button value="1" onclick="formaPagamentoSwitch(this)">Via Cartão</button>
@@ -67,7 +74,7 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
                 <div class="botao_f">
                     <p>R$<?= number_format($preco, 2, '.', '')?></p>
                     <button id="payment-button" onclick="processPayment(this.value)" value="<?= $_SESSION['email'] ?>">Finalizar</button>
-                    <p style="text-align: center;"><a href="./?a=menu">Voltar para o menu</a></p>
+                    
                 </div>
             </div>
 
@@ -112,10 +119,10 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
         }
 
         function showPaymentButton() {
-            const endereco = document.getElementById("endereco");
-            const formas_pagamento = document.getElementById("forma_pagamento");
-            endereco.style.display = 'none';
-            formas_pagamento.style.display = 'block';
+            const co1 = document.getElementById("finalizar1");
+            const co2 = document.getElementById("finalizar2");
+            co1.style.display = 'none';
+            co2.style.display = 'block';
             
         }
         function processPayment(email) {
@@ -135,5 +142,4 @@ $preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pe
     </script>
 
 </body>
-
 </html>

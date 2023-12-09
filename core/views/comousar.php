@@ -73,7 +73,7 @@ Azul Claro: #5E9DC8
             display: block;
             width: 24rem;
             height: 0.4rem;
-            background-color: #663399;
+            background: linear-gradient(to right, #800080, #3498DB);
             margin: 2px auto 0px auto;
             position: absolute;
             border-radius: 10px;
