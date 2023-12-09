@@ -117,8 +117,14 @@ CREATE VIEW countidmenu AS
 CREATE VIEW countidmenutipo AS
     SELECT COUNT(id_menu) count FROM menutipo;
     
-CREATE VIEW countipo AS
+CREATE VIEW countidtipo AS
     SELECT COUNT(id) count FROM tipo;
+    
+CREATE VIEW viewmenu AS
+    SELECT * FROM menu;
+    
+CREATE VIEW viewtipo AS
+    SELECT * FROM tipo;
     
 -- Fim view
 
@@ -158,6 +164,13 @@ DELIMITER |
 	CREATE PROCEDURE addpedido(IN idcliente INT, IN idproduto INT, IN estado ENUM('carrinho', 'comprado'), IN data_pedido DATETIME)
     BEGIN
 		INSERT INTO pedido VALUES(null, idcliente, idproduto, estado, data_pedido);
+	END
+|
+
+DELIMITER |
+	CREATE PROCEDURE addinformabug(IN titulo VARCHAR(90), IN categoria VARCHAR(50), IN descricao TEXT, IN data_relato DATE)
+    BEGIN
+		INSERT INTO relato_bugs VALUES(NULL, titulo, categoria, descricao, data_relato, 'Aberto');
 	END
 |
 
