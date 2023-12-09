@@ -1,17 +1,14 @@
-<?php 
+<?php
+
+
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 if(isset($_POST['enviar'])) {
-
-    $email = $_SESSION['email'];
-    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
-    $tipo = $_POST['tipo'];
-    $data = date('Y-m-d');
-
-    $gestor->query("INSERT INTO tipo VALUES(NULL, $id_adm, '$tipo', '$data');");
+    $data = new DataBase();
+    $data->addTipo($_POST['tipo']);
 }
 ?>
 <!DOCTYPE html>

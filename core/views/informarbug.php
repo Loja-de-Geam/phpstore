@@ -245,14 +245,12 @@ Azul Claro: #5E9DC8
 </body>
 </html>
 
-<?php 
-$gestor = $GLOBALS['gestor'];
+<?php
+
+
+use core\classes\DataBase;
 if(isset($_POST['envio'])) {
-    $titulo = $_POST['nomebug'];
-    $categoria = $_POST['categoria'];
-    $descricao = $_POST['descricaobug'];
-    $data = date('Y-m-d');
-    $query = "INSERT INTO relato_bugs VALUES(NULL, '$titulo', '$categoria', '$descricao', '$data', 'Aberto')";
-    $gestor->query($query);
+    $data = new DataBase();
+    $data->addInfoBug($_POST['nome'], $_POST['categoria'], $_POST['descricaobug']);
 }
 ?>

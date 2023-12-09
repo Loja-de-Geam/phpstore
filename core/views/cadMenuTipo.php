@@ -3,13 +3,10 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 if (isset($_POST['enviar'])) {
-    $email = $_SESSION['email'];
-    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
-    $id_menu = $_POST['com'];
-    $id_tipo = $_POST['tipo'];
-    $gestor->query("INSERT INTO menutipo VALUES(NULL, $id_menu, $id_tipo, $id_adm)");
+    $data = new DataBase();
+    $data->addMenuTipo($_POST['com'], $_POST['tipo']);
 }
 ?>
 <!DOCTYPE html>
@@ -165,7 +162,7 @@ if (isset($_POST['enviar'])) {
                         <label for="com">Comida</label>
                         <select name="com" id="com">
                             <?php
-                            $com = $gestor->query("SELECT * FROM menu");
+                            $com = $data->viewMenu();
                             while ($comidas = $com->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <option value="<?= $comidas['id'] ?>"><?= $comidas['nome'] ?></option>
@@ -176,7 +173,7 @@ if (isset($_POST['enviar'])) {
                         <label for="tipo">Tipo</label>
                         <select name="tipo" id="tipo">
                             <?php
-                            $tipo = $gestor->query("SELECT * FROM tipo");
+                            $tipo = $data->viewTipo();
                             while ($tipos = $tipo->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <option value="<?= $tipos['id'] ?>"><?= $tipos['tipo'] ?></option>

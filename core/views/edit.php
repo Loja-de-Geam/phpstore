@@ -3,9 +3,9 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
-$id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-$comida_id = $gestor->query("SELECT * FROM menu WHERE id=$id");
+use core\classes\DataBase;
+$data = new DataBase();
+$comida_id = $data->getComida();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -188,19 +188,7 @@ $comida_id = $gestor->query("SELECT * FROM menu WHERE id=$id");
 <?php
 
 if (isset($_POST['update'])) {
-    $email = $_SESSION['email'];
-    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
-    $nome = $_POST['nome'];
-    $preco = $_POST['preco'];
-    $desc = $_POST['descricao'];
-    $descricao_saiba_mais = $_POST['descricao_saiba_mais'];
-    $data = date('Y-m-d');
-
-    if (isset($_GET['id'])) {
-        $sql_update = "UPDATE menu SET id_adm=$id_adm, nome='$nome', descricao='$desc', descricao_saiba_mais='$descricao_saiba_mais', preco=$preco, data_adicionamento_modificacao='$data' WHERE id=$id";
-
-        $result = $gestor->query($sql_update);
-    }
+    $data->editComida($_POST['nome'], $_POST['preco'], $_POST['descricao'], $_POST['descricao_saiba_mais']);
 
     echo "<script>window.location.href='./?a=comidas'</script>";
 }

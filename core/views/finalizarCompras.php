@@ -2,10 +2,10 @@
 if (!isset($_SESSION['logado'])) {
     header('Location: ./?a=login');
 }
+use core\classes\DataBase;
 
-$gestor = $GLOBALS['gestor'];
-$email = $_SESSION['email'];
-$preco = $gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
+$data = new DataBase();
+$preco = $data->finalizarCompras();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

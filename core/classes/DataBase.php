@@ -23,8 +23,16 @@
         }
 
         public function countidmenu() {
-            $result = $this->gestor->query("SELECT * FROM countidmenu ")->fetch()["count"];
+            $result = $this->gestor->query("SELECT * FROM countidmenu")->fetch()["count"];
             return $result;
+        }
+
+        public function viewMenu() {
+            return $this->gestor->query("SELECT * FROM viewmenu");
+        }
+
+        public function viewTipo() {
+            return $this->gestor->query("SELECT * FROM viewtipo");
         }
 
         public function paginacaoDinamica($nomeTabela, $limiteItens = 5) {
@@ -87,12 +95,75 @@
             }
         }
 
+        public function addTipo($tipo) {
+            $idAdm = $this->getIdADM($_SESSION['email']);
+            $data = date('Y-m-d');
+            return $this->gestor->query("INSERT INTO tipo VALUES(NULL, $idAdm, '$tipo', '$data')");
+        }
+
         public function addMenu($nome, $descricao, $descricaoMais, $preco, $files) {
-            $idAdm = $this->getEmailADM($_SESSION['email']);
+            $idAdm = $this->getIdADM($_SESSION['email']);
             $data = date('Y-m-d');
             $img = $files['foto']["name"];
             move_uploaded_file($files['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $files['foto']['name']);
             return $this->gestor->query("CALL addmenu($idAdm, '$nome', '$descricao', '$descricaoMais', $preco, '$img', '$data')");
+        }
+
+        public function addMenuTipo($idMenu, $idTipo) {
+            $idAdm = $this->getIdADM($_SESSION['email']);
+            return $this->gestor->query("CALL addmenutipo($idMenu, $idTipo, $idAdm)");
+        }
+
+        public function addInfoBug($titulo, $categoria, $descricao) {
+            $data = date('Y-m-d');
+            return $this->gestor->query("CALL addinformabug('$titulo', '$categoria', '$descricao', '$data')");
+        }
+
+        public function deleteComida() {
+            $id = $this->getId();
+            $sql_delete = "DELETE FROM menu WHERE id=$id";
+            $sql_delete_2 = "DELETE FROM menutipo WHERE id_menu=$id";
+            $sql_delete_3 = "DELETE FROM pedido WHERE id_produto=$id";
+
+            $this->gestor->query($sql_delete_3);
+            $this->gestor->query($sql_delete_2);
+            $this->gestor->query($sql_delete);
+        }
+
+        public function deleteTipo() {
+            $id = $this->getId();
+            $sql_delete = "DELETE FROM tipo WHERE id=$id";
+            $sql_delete_2 = "DELETE FROM menutipo WHERE id_tipo=$id";
+
+            $this->gestor->query($sql_delete_2);
+            $this->gestor->query($sql_delete);
+        }
+
+        public function deleteMenuTipo() {
+            $id = $this->getId();
+            $sql_delete = "DELETE FROM menutipo WHERE id=$id";
+            $this->gestor->query($sql_delete);
+        }
+
+        public function editComida($novoNome, $novoPreco, $novoDesc, $novoDescMais, ) {
+            $id = $this->getId();
+            $idAdm = $this->getIdADM($_SESSION['email']);
+            $data = date('Y-m-d');
+            if (isset($_GET['id'])) {
+                $sql_update = "UPDATE menu SET id_adm=$idAdm, nome='$novoNome', descricao='$novoDesc', descricao_saiba_mais='$novoDescMais', preco=$novoPreco, data_adicionamento_modificacao='$data' WHERE id=$id";
+        
+                return $this->gestor->query($sql_update);
+            }
+        }
+
+        public function getComida() {
+            $id = $this->getId();
+            return $this->gestor->query("SELECT * FROM menu WHERE id=$id");;
+        }
+
+        public function finalizarCompras() {
+            $email = $_SESSION['email'];
+            return $this->gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
         }
 
         private function consultaUsuario($email, $senha, $tabela='usuarios') {
@@ -110,7 +181,12 @@
             return $comando;
         }
 
-        private function getEmailADM($email) {
+        private function getIdADM($email) {
             return $this->gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
         }
+
+        private function getId() {
+            return filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+        }
+
     }

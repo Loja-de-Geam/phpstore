@@ -1,16 +1,14 @@
-<?php 
+<?php
+
+
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 if (isset($_GET['id'])) {
-    $id = filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
-    $sql_delete = "DELETE FROM tipo WHERE id=$id";
-    $sql_delete_2 = "DELETE FROM menutipo WHERE id_tipo=$id";
-
-    $gestor->query($sql_delete_2);
-    $gestor->query($sql_delete);
+    $data = new DataBase();
+    $data->deleteTipo();
 }
 
 header('Location: ./?a=tipo');
