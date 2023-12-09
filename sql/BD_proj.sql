@@ -2,6 +2,8 @@ create schema fynderfood;
 
 use fynderfood;
 
+-- Início Tabelas
+
 CREATE TABLE adm (
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(200) NOT NULL,
@@ -103,6 +105,12 @@ CREATE TABLE relato_bugs (
     status_relato VARCHAR(20) DEFAULT 'Aberto'
 );
 
+-- Fim tabelas
+
+-- --------------------------------------------------------------------------------------------------
+
+-- Início view
+
 CREATE VIEW countidmenu AS
     SELECT COUNT(id) count FROM menu;
 
@@ -111,6 +119,51 @@ CREATE VIEW countidmenutipo AS
     
 CREATE VIEW countipo AS
     SELECT COUNT(id) count FROM tipo;
+    
+-- Fim view
+
+-- --------------------------------------------------------------------------------------------------
+
+-- Início procedimento
+
+DELIMITER |
+	CREATE PROCEDURE addusuario(IN nome VARCHAR(200), IN telefone VARCHAR(15), IN email VARCHAR(50), IN cpf VARCHAR(15), IN senha VARCHAR(60), IN genero VARCHAR(3))
+    BEGIN
+		INSERT INTO usuarios VALUES(null, nome, telefone, email, cpf, senha, genero);
+	END
+|
+    
+DELIMITER |
+	CREATE PROCEDURE addtipo(IN adm INT, IN tipo VARCHAR(20), IN data_adicionamento_modificacao DATE)
+    BEGIN
+		INSERT INTO tipo VALUES(null, adm, tipo, data_adicionamento_modificacao);
+	END
+|
+
+DELIMITER |
+	CREATE PROCEDURE addmenu(IN adm INT, IN nome VARCHAR(50), IN descricao VARCHAR(50), IN descricao_saiba_mais TEXT, IN preco FLOAT(5 , 2 ), IN img TEXT, IN data_adicionamento_modificacao DATE)
+	BEGIN
+		INSERT INTO menu VALUES(null, adm, nome, descricao, descricao_saiba_mais, preco, img, data_adicionamento_modificacao);
+	END
+|
+    
+DELIMITER |
+	CREATE PROCEDURE addmenutipo(IN idmenu INT, IN idtipo INT, IN adm INT)
+    BEGIN
+		INSERT INTO menutipo VALUES(null, idmenu, idtipo, adm);
+	END
+|
+    
+DELIMITER |
+	CREATE PROCEDURE addpedido(IN idcliente INT, IN idproduto INT, IN estado ENUM('carrinho', 'comprado'), IN data_pedido DATETIME)
+    BEGIN
+		INSERT INTO pedido VALUES(null, idcliente, idproduto, estado, data_pedido);
+	END
+|
+
+-- Fim procedimento
+
+-- --------------------------------------------------------------------------------------------------
 
 insert into adm values (null, 'adm', 'admGG@gmail.com', 'adm12345', '2023-11-1');
 

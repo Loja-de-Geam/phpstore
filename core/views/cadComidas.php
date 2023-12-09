@@ -1,24 +1,14 @@
 <?php
+
+
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 if (isset($_POST['enviar'])) {
-
-    $email = $_SESSION['email'];
-
-    $nome = $_POST['nome'];
-    $id_adm = $gestor->query("SELECT id FROM adm WHERE email='$email'")->fetch()['id'];
-    $descricao = $_POST['descricao'];
-    $descricao_saiba_mais = $_POST['descricao_saiba_mais'];
-    $preco = $_POST['preco'];
-    $data = date('Y-m-d');
-    $img = $_FILES['foto']["name"];
-
-    move_uploaded_file($_FILES['foto']['tmp_name'], "../public_html/assets/images/comidas/" . $_FILES['foto']['name']);
-
-    $comando = $gestor->query("INSERT INTO menu VALUES (NULL, $id_adm, '$nome', '$descricao', '$descricao_saiba_mais', $preco, '$img', '$data')");
+    $dataBase = new DataBase();
+    $comando = $dataBase->addMenu($_POST['nome'], $_POST['descricao'], $_POST['descricao_saiba_mais'], $_POST['preco'], $_FILES);
 }
 
 ?>
