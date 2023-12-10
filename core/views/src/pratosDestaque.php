@@ -1,11 +1,8 @@
-<?php 
+<?php
+use core\classes\DataBase;
 
-$gestor = $GLOBALS['gestor'];
-
-$query = "SELECT menu.* FROM pedido, menu WHERE menu.id=pedido.id_produto GROUP BY id_produto ORDER BY count(id_produto) DESC LIMIT 2;";
-
-$result = $gestor->prepare($query);
-$result->execute();
+$data = new DataBase();
+$result = $data->pratosDestaque();
 
 while($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 ?>

@@ -4,7 +4,7 @@ use core\classes\DataBase;
 $data = new DataBase();
 $result = $data->paginacaoDinamica('menu', 6);
 $pagina = $data->getPagina();
-$paginas = $data->getPaginaFinal(6);
+$paginas = $data->getPaginaFinal($data->countid('menu'), 6);
 while ($comida = $result->fetch(PDO::FETCH_ASSOC)) {
 ?>
     <div>

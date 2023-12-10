@@ -2,13 +2,12 @@
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
-
 use core\classes\DataBase;
 
 $data = new DataBase();
-$result = $data->paginacaoDinamica('menu', 6);
+$result = $data->paginacaoDinamica('menu');
 $pagina = $data->getPagina();
-$paginas = $data->getPaginaFinal();
+$paginas = $data->getPaginaFinal($data->countid('menu'));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

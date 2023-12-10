@@ -126,6 +126,9 @@ CREATE VIEW viewmenu AS
 CREATE VIEW viewtipo AS
     SELECT * FROM tipo;
     
+CREATE VIEW pratosdestaque AS
+	SELECT menu.* FROM pedido, menu WHERE menu.id=pedido.id_produto GROUP BY id_produto ORDER BY count(id_produto) DESC LIMIT 2;
+    
 -- Fim view
 
 -- --------------------------------------------------------------------------------------------------

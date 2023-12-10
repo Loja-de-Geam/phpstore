@@ -6,7 +6,6 @@
 
         private $gestor;
         private $pagina;
-        private $paginaFinal;
 
         public function __construct() {
             $this->gestor = new \PDO("mysql:host=" . 'localhost' . ";dbname=" . 'fynderfood' . ";charset=utf8", 'root', '');
@@ -17,14 +16,12 @@
             return $this->pagina;
         }
 
-        public function getPaginaFinal($limiteItens = 5) {
-            $this->paginaFinal = ceil($this->countidmenu() / $limiteItens);
-            return $this->paginaFinal;
+        public function getPaginaFinal($quantId, $limiteItens = 5) {
+            return ceil($quantId / $limiteItens);
         }
 
-        public function countidmenu() {
-            $result = $this->gestor->query("SELECT * FROM countidmenu")->fetch()["count"];
-            return $result;
+        public function countid($tabela) {
+            return $this->gestor->query("SELECT * FROM countid" . $tabela)->fetch()["count"];
         }
 
         public function viewMenu() {
@@ -36,12 +33,21 @@
         }
 
         public function paginacaoDinamica($nomeTabela, $limiteItens = 5) {
-            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($limiteItens)) {
+            $quantId = $this->countid($nomeTabela);
+            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
                 $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
             }
-            $inicio = ($this->pagina * $limiteItens) - $limiteItens;
-            $registros = $this->gestor->query("SELECT * FROM $nomeTabela ORDER BY id LIMIT $inicio, $limiteItens");
-            return $registros;
+            $inicio = $this->getInicio($limiteItens);
+            return $this->gestor->query("SELECT * FROM $nomeTabela ORDER BY id LIMIT $inicio, $limiteItens");
+        }
+
+        public function pagDinamicaMenuTipo($nomeTabela, $limiteItens = 5) {
+            $quantId = $this->countid($nomeTabela);
+            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
+                $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+            }
+            $inicio = $this->getInicio($limiteItens);
+            return $this->gestor->query("SELECT menutipo.id, menu.nome, tipo.tipo FROM menutipo, menu, tipo WHERE menu.id=menutipo.id_menu AND menutipo.id_tipo=tipo.id ORDER BY id_menu LIMIT $inicio, $limiteItens");
         }
 
         public function cadastroUsuario($nome, $telefone, $email, $cpf, $senha, $genero) {
@@ -166,6 +172,18 @@
             return $this->gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
         }
 
+        public function getMaiorPreco() {
+            return $this->gestor->query("SELECT FORMAT(MAX(preco),2) AS maior FROM menu")->fetch()["maior"];
+        }
+
+        public function getMenorPreco() {
+            return $this->gestor->query("SELECT FORMAT(MIN(preco),2) AS menor FROM menu")->fetch()["menor"];
+        }
+
+        public function pratosDestaque() {
+            return $this->gestor->query("SELECT * FROM pratosdestaque");
+        }
+
         private function consultaUsuario($email, $senha, $tabela='usuarios') {
             $comando = $this->gestor->prepare("SELECT * FROM $tabela WHERE email = :email AND senha = :senha LIMIT 1");
 
@@ -187,6 +205,10 @@
 
         private function getId() {
             return filter_input(INPUT_GET, "id", FILTER_VALIDATE_INT);
+        }
+
+        private function getInicio($limiteItens) {
+            return  ($this->pagina * $limiteItens) - $limiteItens;
         }
 
     }

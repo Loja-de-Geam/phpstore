@@ -1,10 +1,10 @@
 <?php
-$gestor = $GLOBALS['gestor'];
+use core\classes\DataBase;
 
-$maior_preco = $gestor->query("SELECT FORMAT(MAX(preco),2) AS maior FROM menu")->fetch()["maior"];
-$menor_preco = $gestor->query("SELECT FORMAT(MIN(preco),2) AS menor FROM menu")->fetch()["menor"];
-
-$tipo = $gestor->query('SELECT * FROM tipo');
+$data = new DataBase();
+$maior_preco = $data->getMaiorPreco();
+$menor_preco = $data->getMenorPreco();
+$tipo = $data->viewTipo();
 ?>
 <div id="filtro-janela">
     <form action="./?a=menu&filtro" method="post">

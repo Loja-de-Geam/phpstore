@@ -3,22 +3,12 @@ if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
 
-$gestor = $GLOBALS['gestor'];
-$pagina = 1;
-$limite = 5;
+use core\classes\DataBase;
 
-$registros = $gestor->query("SELECT * FROM countidtipo")->fetch()["count"];
-
-$paginas = ceil($registros / $limite);
-
-if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-}
-
-$inicio = ($pagina * $limite) - $limite;
-$query = "SELECT * FROM tipo ORDER BY id LIMIT $inicio, $limite";
-$result = $gestor->prepare($query);
-$result->execute();
+$data = new DataBase();
+$result = $data->paginacaoDinamica('tipo');
+$pagina = $data->getPagina();
+$paginas = $data->getPaginaFinal($data->countid('tipo'));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

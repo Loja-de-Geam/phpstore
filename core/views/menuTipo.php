@@ -2,23 +2,12 @@
 if (!isset($_SESSION['adm'])) {
     header('Location: ./');
 }
+use core\classes\DataBase;
 
-$gestor = $GLOBALS['gestor'];
-$pagina = 1;
-$limite = 5;
-
-$registros = $gestor->query("SELECT * FROM countidmenutipo ")->fetch()["count"];
-
-$paginas = ceil($registros / $limite);
-
-if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $paginas) {
-    $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-}
-
-$inicio = ($pagina * $limite) - $limite;
-$query = "SELECT menutipo.id, menu.nome, tipo.tipo FROM menutipo, menu, tipo WHERE menu.id=menutipo.id_menu AND menutipo.id_tipo=tipo.id ORDER BY id_menu LIMIT $inicio, $limite";
-$result = $gestor->prepare($query);
-$result->execute();
+$data = new DataBase();
+$result = $data->pagDinamicaMenuTipo('menutipo');
+$pagina = $data->getPagina();
+$paginas = $data->getPaginaFinal($data->countid('menutipo'));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
