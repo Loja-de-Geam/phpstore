@@ -63,6 +63,7 @@
                     <div class="caixa">
                         <label for="csenha">Confirme sua senha</label>
                         <input type="password" name="csenha" id="id1csenha" placeholder="Digite sua senha outra vez" required minlength="8">
+                        <div id="erro_senha" style="color: red; font-size: 10px;"></div>
                     </div>
                 </div>
                 <div class="genero">
@@ -114,6 +115,34 @@
                 mostrarSenhaBtn.innerHTML = '<i class="bi bi-eye-fill eye"></i>';
             }
         }
+
+
+        function validarSenha() {
+            var senha = document.getElementById('idsenha').value;
+            var confirmarSenha = document.getElementById('id1csenha').value;
+            var mensagemErro = document.getElementById('erro_senha');
+            var inputSenha = document.getElementById('idsenha');
+            var inputConfirmarSenha = document.getElementById('id1csenha');
+
+            if (senha !== confirmarSenha) {
+                mensagemErro.innerHTML = 'As senhas não correspondem.';
+                inputSenha.style.border = '1px solid red';
+                inputConfirmarSenha.style.border = '1px solid red';
+                return false; 
+            } else {
+                mensagemErro.innerHTML = ''; 
+                inputSenha.style.border = ''; 
+                inputConfirmarSenha.style.border = ''; 
+                return true;
+            }
+        }
+
+    
+        document.querySelector('form').addEventListener('submit', function (event) {
+            if (!validarSenha()) {
+                event.preventDefault(); 
+            }
+        });
     </script>
 </body>
 
