@@ -230,15 +230,11 @@ Azul Claro: #5E9DC8
 </body>
 </html>
 
-<?php 
-$gestor = $GLOBALS['gestor'];
+<?php
+use core\classes\DataBase;
+
 if(isset($_POST['envio'])) {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $descricao = $_POST['descricao'];
-    $data = date('Y-m-d');
-    $query = "INSERT INTO formulario_de_reclamacao VALUES(NULL, '$nome', '$email', '$telefone', '$descricao', '$data', 'Aberto')";
-    $gestor->query($query);
+    $data = new DataBase();
+    $data->addRec($_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['descricao']);
 }
 ?>

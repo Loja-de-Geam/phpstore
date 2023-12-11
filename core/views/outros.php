@@ -269,15 +269,11 @@ Azul Claro: #5E9DC8
 
 </html>
 
-<?php 
+<?php
+use core\classes\DataBase;
+
 if(isset($_POST['envio'])) {
-    $gestor = $GLOBALS['gestor'];
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $titulo = $_POST['titulo'];
-    $descricao = $_POST['descricao'];
-    $data = date('Y-m-d');
-    $query = "INSERT INTO outros_problemas VALUES(NULL, '$nome', '$email', '$titulo', '$descricao', '$data', 'Aberto')";
-    $gestor->query($query);
+    $data = new DataBase();
+    $data->addOutros($_POST['nome'], $_POST['email'], $_POST['titulo'], $_POST['descricao']);
 }
 ?>

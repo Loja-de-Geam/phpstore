@@ -12,6 +12,8 @@
             $this->pagina = 1;
         }
 
+// ----------------------------------------------- Início dos get -----------------------------------------------
+
         public function getPagina() {
             return $this->pagina;
         }
@@ -19,88 +21,42 @@
         public function getPaginaFinal($quantId, $limiteItens = 5) {
             return ceil($quantId / $limiteItens);
         }
+        public function getComida() {
+            $id = $this->getId();
+            return $this->gestor->query("SELECT * FROM menu WHERE id=$id");;
+        }
+        public function getMaiorPreco() {
+            return $this->gestor->query("SELECT FORMAT(MAX(preco),2) AS maior FROM menu")->fetch()["maior"];
+        }
+
+        public function getMenorPreco() {
+            return $this->gestor->query("SELECT FORMAT(MIN(preco),2) AS menor FROM menu")->fetch()["menor"];
+        }
+
+// ----------------------------------------------- Fim dos get -----------------------------------------------
+
+// ----------------------------------------------- Início dos count -----------------------------------------------
 
         public function countid($tabela) {
             return $this->gestor->query("SELECT * FROM countid" . $tabela)->fetch()["count"];
         }
+        
+// ----------------------------------------------- Fim dos count -----------------------------------------------
+        
+// ----------------------------------------------- Início das views -----------------------------------------------
 
         public function viewMenu() {
             return $this->gestor->query("SELECT * FROM viewmenu");
         }
-
+        
         public function viewTipo() {
             return $this->gestor->query("SELECT * FROM viewtipo");
         }
+        
+// ----------------------------------------------- Fim das views -----------------------------------------------
 
-        public function paginacaoDinamica($nomeTabela, $limiteItens = 5) {
-            $quantId = $this->countid($nomeTabela);
-            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
-                $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-            }
-            $inicio = $this->getInicio($limiteItens);
-            return $this->gestor->query("SELECT * FROM $nomeTabela ORDER BY id LIMIT $inicio, $limiteItens");
-        }
-
-        public function pagDinamicaMenuTipo($nomeTabela, $limiteItens = 5) {
-            $quantId = $this->countid($nomeTabela);
-            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
-                $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
-            }
-            $inicio = $this->getInicio($limiteItens);
-            return $this->gestor->query("SELECT menutipo.id, menu.nome, tipo.tipo FROM menutipo, menu, tipo WHERE menu.id=menutipo.id_menu AND menutipo.id_tipo=tipo.id ORDER BY id_menu LIMIT $inicio, $limiteItens");
-        }
-
-        public function cadastroUsuario($nome, $telefone, $email, $cpf, $senha, $genero) {
-            try {
-                $comando = $this->gestor->prepare("INSERT INTO usuarios VALUES (NULL, :nome, :telefone, :email, :cpf, :senha, :genero, :data)");
-
-                $comando->execute(
-                    [
-                        ':nome' => $nome,
-                        ':telefone' => $telefone,
-                        ':email' => $email,
-                        ':cpf' => $cpf,
-                        ':senha' => $senha,
-                        ':genero' => $genero,
-                        ':data' => date('Y-m-d')
-                    ]
-                );
-
-                $_SESSION['logado'] = true;
-                $_SESSION['email'] = $email;
-
-                echo "<script>window.location.href='./'</script>";
-
-            } catch (\Throwable $e) {
-                echo "<script>alert('Usuario já existente!')</script>";
-                echo "<script>window.location.href='./?a=cadastro'</script>";
-            }
-        }
-
-        public function loginUsuario($email, $senha) {
-            $comando = $this->consultaUsuario($email, $senha);
-            if ($comando->rowCount() == 1) {
-
-                $_SESSION['logado'] = true;
-                $_SESSION['email'] = $email;
-
-                echo "<script>window.location.href='./'</script>";
-                
-            } else {
-                $comando = $this->consultaUsuario($email, $senha, 'adm');
-
-                if ($comando->rowCount() == 1) {
-
-                    $_SESSION['logado'] = true;
-                    $_SESSION['adm'] = true;
-                    $_SESSION['email'] = $email;
-
-                    echo "<script>window.location.href='./'</script>";
-                }
-
-            }
-        }
-
+// ----------------------------------------------- Início dos add -----------------------------------------------
+        
         public function addTipo($tipo) {
             $idAdm = $this->getIdADM($_SESSION['email']);
             $data = date('Y-m-d');
@@ -120,10 +76,24 @@
             return $this->gestor->query("CALL addmenutipo($idMenu, $idTipo, $idAdm)");
         }
 
+        public function addRec($nome, $email, $telefone, $descricao) {
+            $data = date('Y-m-d');
+            return $this->gestor->query("CALL addrec('$nome', '$email', '$telefone', '$descricao', '$data')");
+        }
+
         public function addInfoBug($titulo, $categoria, $descricao) {
             $data = date('Y-m-d');
             return $this->gestor->query("CALL addinformabug('$titulo', '$categoria', '$descricao', '$data')");
         }
+
+        public function addOutros($nome, $email, $titulo, $descricao) {
+            $data = date('Y-m-d');
+            return $this->gestor->query("CALL addoutros('$nome', '$email', '$titulo', '$descricao', '$data')");
+        }
+
+// ----------------------------------------------- Fim dos add -----------------------------------------------
+
+// ----------------------------------------------- Início dos deletes -----------------------------------------------
 
         public function deleteComida() {
             $id = $this->getId();
@@ -151,38 +121,108 @@
             $this->gestor->query($sql_delete);
         }
 
+//  ----------------------------------------------- Fim dos deletes -----------------------------------------------
+
+// ----------------------------------------------- Início dos edit -----------------------------------------------
+
         public function editComida($novoNome, $novoPreco, $novoDesc, $novoDescMais, ) {
             $id = $this->getId();
             $idAdm = $this->getIdADM($_SESSION['email']);
             $data = date('Y-m-d');
             if (isset($_GET['id'])) {
                 $sql_update = "UPDATE menu SET id_adm=$idAdm, nome='$novoNome', descricao='$novoDesc', descricao_saiba_mais='$novoDescMais', preco=$novoPreco, data_adicionamento_modificacao='$data' WHERE id=$id";
-        
+
                 return $this->gestor->query($sql_update);
             }
         }
 
-        public function getComida() {
-            $id = $this->getId();
-            return $this->gestor->query("SELECT * FROM menu WHERE id=$id");;
+//  ----------------------------------------------- Fim dos edit -----------------------------------------------
+
+        // Faz a paginação dinamica para tabelas únicas
+        public function paginacaoDinamica($nomeTabela, $limiteItens = 5) {
+            $quantId = $this->countid($nomeTabela);
+            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
+                $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+            }
+            $inicio = $this->getInicio($limiteItens);
+            return $this->gestor->query("SELECT * FROM $nomeTabela ORDER BY id LIMIT $inicio, $limiteItens");
+        }
+        
+        // É focado nos tipos por comida
+        public function pagDinamicaMenuTipo($nomeTabela, $limiteItens = 5) {
+            $quantId = $this->countid($nomeTabela);
+            if (isset($_GET['pagina']) && $_GET['pagina'] > 0 && $_GET['pagina'] <= $this->getPaginaFinal($quantId, $limiteItens)) {
+                $this->pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+            }
+            $inicio = $this->getInicio($limiteItens);
+            return $this->gestor->query("SELECT menutipo.id, menu.nome, tipo.tipo FROM menutipo, menu, tipo WHERE menu.id=menutipo.id_menu AND menutipo.id_tipo=tipo.id ORDER BY id_menu LIMIT $inicio, $limiteItens");
         }
 
+        // Cadastra usuários
+        public function cadastroUsuario($nome, $telefone, $email, $cpf, $senha, $genero) {
+            try {
+                $comando = $this->gestor->prepare("INSERT INTO usuarios VALUES (NULL, :nome, :telefone, :email, :cpf, :senha, :genero, :data)");
+
+                $comando->execute(
+                    [
+                        ':nome' => $nome,
+                        ':telefone' => $telefone,
+                        ':email' => $email,
+                        ':cpf' => $cpf,
+                        ':senha' => $senha,
+                        ':genero' => $genero,
+                        ':data' => date('Y-m-d')
+                    ]
+                );
+
+                $_SESSION['logado'] = true;
+                $_SESSION['email'] = $email;
+
+                echo "<script>window.location.href='./'</script>";
+
+            } catch (\Throwable $e) {
+                echo "<script>alert('Usuario já existente!')</script>";
+                echo "<script>window.location.href='./?a=cadastro'</script>";
+            }
+        }
+
+        // Realiza o login dos usuários
+        public function loginUsuario($email, $senha) {
+            $comando = $this->consultaUsuario($email, $senha);
+            if ($comando->rowCount() == 1) {
+
+                $_SESSION['logado'] = true;
+                $_SESSION['email'] = $email;
+
+                echo "<script>window.location.href='./'</script>";
+                
+            } else {
+                $comando = $this->consultaUsuario($email, $senha, 'adm');
+
+                if ($comando->rowCount() == 1) {
+
+                    $_SESSION['logado'] = true;
+                    $_SESSION['adm'] = true;
+                    $_SESSION['email'] = $email;
+
+                    echo "<script>window.location.href='./'</script>";
+                }
+
+            }
+        }
+
+        // Finaliza as compras
         public function finalizarCompras() {
             $email = $_SESSION['email'];
             return $this->gestor->query("SELECT sum(menu.preco) as preco FROM menu, usuarios, pedido WHERE menu.id=pedido.id_produto AND usuarios.id=pedido.id_cliente AND usuarios.email='$email' AND pedido.estado='carrinho';")->fetch()['preco'];
         }
 
-        public function getMaiorPreco() {
-            return $this->gestor->query("SELECT FORMAT(MAX(preco),2) AS maior FROM menu")->fetch()["maior"];
-        }
-
-        public function getMenorPreco() {
-            return $this->gestor->query("SELECT FORMAT(MIN(preco),2) AS menor FROM menu")->fetch()["menor"];
-        }
-
+        // Seleciona os dois pratos mais comprados
         public function pratosDestaque() {
             return $this->gestor->query("SELECT * FROM pratosdestaque");
         }
+
+//  ----------------------------------------------- Início das funções privadas -----------------------------------------------
 
         private function consultaUsuario($email, $senha, $tabela='usuarios') {
             $comando = $this->gestor->prepare("SELECT * FROM $tabela WHERE email = :email AND senha = :senha LIMIT 1");
@@ -211,4 +251,5 @@
             return  ($this->pagina * $limiteItens) - $limiteItens;
         }
 
-    }
+//  ----------------------------------------------- Fim das funções privadas -----------------------------------------------
+}

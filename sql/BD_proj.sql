@@ -171,9 +171,23 @@ DELIMITER |
 |
 
 DELIMITER |
+	CREATE PROCEDURE addrec(IN nome VARCHAR(150), IN email VARCHAR(200), IN telefone VARCHAR(20), IN descricao TEXT, IN data_relato DATE)
+    BEGIN
+		INSERT INTO formulario_de_reclamacao VALUES(NULL, nome, email, telefone, descricao, data_relato, 'Aberto');
+	END
+|
+
+DELIMITER |
 	CREATE PROCEDURE addinformabug(IN titulo VARCHAR(90), IN categoria VARCHAR(50), IN descricao TEXT, IN data_relato DATE)
     BEGIN
 		INSERT INTO relato_bugs VALUES(NULL, titulo, categoria, descricao, data_relato, 'Aberto');
+	END
+|
+
+DELIMITER |
+	CREATE PROCEDURE addoutros(IN nome VARCHAR(150), IN email VARCHAR(200), IN titulo VARCHAR(90), IN descricao TEXT, IN data_relato DATE)
+    BEGIN
+		INSERT INTO outros_problemas VALUES(NULL, nome, email, titulo, descricao, data_relato, 'Aberto');
 	END
 |
 
