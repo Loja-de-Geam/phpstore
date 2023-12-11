@@ -37,12 +37,14 @@ $preco = $data->finalizarCompras();
             <div class="endereco">
                 <h2>Informe o endereço de entrega</h2>
                 <form id="endereco-form">
-                    <label for="endereco">Endereço de Entrega</label>
+                    <label for="endereco">Endereço de Entrega</label> <br>
                     <input type="text" id="endereco" name="endereco" required>
                 </form>
             </div>
-            <div class="botao_f">
-                <button type="button" class="continuar" onclick="showPaymentButton()">Continuar</button>
+            <div class="botao_c">
+                <button type="button" class="voltar" onclick="window.location.href='./?a=menu'">Voltar</button>
+                <button type="button" class="continuar" onclick="showPaymentButton(1)">Continuar</button>
+                
             </div>
         </div>
         <div id="finalizar2" style="display: none;">
@@ -72,8 +74,10 @@ $preco = $data->finalizarCompras();
                     </div>
                 </div>
                 <div class="botao_f">
-                    <p>R$<?= number_format($preco, 2, '.', '')?></p>
+                    <p style="margin-bottom: 30%;">R$<?= number_format($preco, 2, '.', '')?></p>
+                    <button type="button" class="voltar" onclick="showPaymentButton(2)">Voltar</button>
                     <button id="payment-button" onclick="processPayment(this.value)" value="<?= $_SESSION['email'] ?>">Finalizar</button>
+                    
                     
                 </div>
             </div>
@@ -118,11 +122,17 @@ $preco = $data->finalizarCompras();
             }
         }
 
-        function showPaymentButton() {
+        function showPaymentButton(num) {
             const co1 = document.getElementById("finalizar1");
             const co2 = document.getElementById("finalizar2");
-            co1.style.display = 'none';
-            co2.style.display = 'block';
+            if (num === 1) {
+                co1.style.display = 'none';
+                co2.style.display = 'block';
+            } else if (num === 2) {
+                co1.style.display = 'block';
+                co2.style.display = 'none';
+            }
+            
             
         }
         function processPayment(email) {

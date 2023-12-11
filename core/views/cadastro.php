@@ -36,7 +36,7 @@
                 </div>
                 <div class="grupo_input">
                     <div class="caixa">
-                        <label for="idnome">Primeiro nome</label>
+                        <label for="idnome">Nome</label>
                         <input type="text" name="nome" id="idnome" placeholder="Digite seu primeiro nome" required maxlength="200">
                     </div>
                     <div class="caixa">
