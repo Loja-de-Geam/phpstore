@@ -149,6 +149,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     </style>
+    <link rel="shortcut icon" href="public_html\assets\images\logo\favicon.ico" type="image/x-icon">
     <title>cadastro de Menu com Tipo</title>
 </head>
 
